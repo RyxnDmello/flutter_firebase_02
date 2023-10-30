@@ -7,9 +7,7 @@ class RegisterLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 40,
-      ),
+      padding: const EdgeInsets.fromLTRB(0, 80, 0, 60),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
