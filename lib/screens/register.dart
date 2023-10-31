@@ -18,7 +18,7 @@ class RegisterScreen extends StatelessWidget {
           image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage(
-              "./lib/images/background.png",
+              "./lib/images/register/background.png",
             ),
             opacity: 0.65,
           ),

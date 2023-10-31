@@ -13,7 +13,7 @@ class RegisterLogo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            "./lib/images/logo.png",
+            "./lib/images/register/logo.png",
             width: 65,
           ),
           const SizedBox(
