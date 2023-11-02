@@ -6,11 +6,15 @@ import 'package:google_fonts/google_fonts.dart';
 class RegisterFormProfileImage extends StatelessWidget {
   const RegisterFormProfileImage({
     required this.onOpenCamera,
+    required this.onOpenAvatarModal,
+    required this.profileAvatar,
     required this.profileImage,
     super.key,
   });
 
   final Function() onOpenCamera;
+  final Function() onOpenAvatarModal;
+  final String? profileAvatar;
   final File? profileImage;
 
   @override
@@ -19,7 +23,7 @@ class RegisterFormProfileImage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        if (profileImage == null)
+        if (profileImage == null && profileAvatar == null)
           Image.asset(
             "./lib/images/register/profile.png",
             fit: BoxFit.cover,
@@ -34,6 +38,12 @@ class RegisterFormProfileImage extends StatelessWidget {
             ),
             maxRadius: 45,
           ),
+        if (profileAvatar != null)
+          Image.asset(
+            profileAvatar!,
+            width: 85,
+            fit: BoxFit.cover,
+          ),
         const SizedBox(
           height: 10,
         ),
@@ -42,7 +52,7 @@ class RegisterFormProfileImage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ProfileImageButton(
-              onOpenCamera: onOpenCamera,
+              onPressed: onOpenCamera,
               icon: Icons.camera,
               label: "Camera",
             ),
@@ -50,7 +60,7 @@ class RegisterFormProfileImage extends StatelessWidget {
               width: 10,
             ),
             ProfileImageButton(
-              onOpenCamera: onOpenCamera,
+              onPressed: onOpenAvatarModal,
               icon: Icons.face,
               label: "Avatar",
             ),
@@ -63,7 +73,7 @@ class RegisterFormProfileImage extends StatelessWidget {
 
 class ProfileImageButton extends StatelessWidget {
   const ProfileImageButton({
-    required this.onOpenCamera,
+    required this.onPressed,
     required this.label,
     required this.icon,
     super.key,
@@ -72,12 +82,12 @@ class ProfileImageButton extends StatelessWidget {
   final IconData icon;
   final String label;
 
-  final Function() onOpenCamera;
+  final Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
-      onPressed: onOpenCamera,
+      onPressed: onPressed,
       icon: Icon(
         icon,
         color: Colors.white,

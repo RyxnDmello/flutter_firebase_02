@@ -9,7 +9,7 @@ class RegisterFormButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: () {},
       style: OutlinedButton.styleFrom(
-        foregroundColor: const Color.fromARGB(255, 200, 0, 80),
+        foregroundColor: Colors.black,
         padding: const EdgeInsets.symmetric(
           vertical: 10,
         ),
