@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterTitle extends StatelessWidget {
-  const RegisterTitle({super.key});
+class RegisterFormTitle extends StatelessWidget {
+  const RegisterFormTitle({
+    required this.title,
+    required this.description,
+    super.key,
+  });
+
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +18,7 @@ class RegisterTitle extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "CREATE AN ACCOUNT",
+          title,
           style: GoogleFonts.abel(
             fontWeight: FontWeight.w600,
             color: Colors.white,
@@ -20,7 +27,7 @@ class RegisterTitle extends StatelessWidget {
           ),
         ),
         Text(
-          "Sync With The Clouds",
+          description,
           style: GoogleFonts.abel(
             color: Colors.white,
             fontWeight: FontWeight.w100,

@@ -3,10 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-import './form/register_form_profile_image.dart';
+import './form/register_form_title.dart';
+import './form/register_form_profile.dart';
 import './form/register_form_avatar_modal.dart';
 import './form/register_form_input.dart';
 import './form/register_form_button.dart';
+import './form/register_form_switcher.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
@@ -18,6 +20,7 @@ class RegisterForm extends StatefulWidget {
 class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
 
+  bool _isLogin = false;
   File? _profileImage;
   String? _profileAvatar;
 
@@ -65,31 +68,46 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
+  void _switchForm() {
+    setState(() => _isLogin = !_isLogin);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            RegisterFormProfileImage(
-              onOpenCamera: _openCamera,
-              onOpenAvatarModal: _openAvatarModal,
-              profileAvatar: _profileAvatar,
-              profileImage: _profileImage,
+            RegisterFormTitle(
+              title: _isLogin ? "WELCOME BACK" : "CREATE AN ACCOUNT",
+              description: "Sync With The Clouds",
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: _isLogin ? 100 : 50,
             ),
-            const RegisterFormInput(
-              label: "Username",
-            ),
-            const SizedBox(
-              height: 16.5,
-            ),
+            if (!_isLogin)
+              RegisterFormProfile(
+                onOpenCamera: _openCamera,
+                onOpenAvatarModal: _openAvatarModal,
+                profileAvatar: _profileAvatar,
+                profileImage: _profileImage,
+              ),
+            if (!_isLogin)
+              const SizedBox(
+                height: 20,
+              ),
+            if (!_isLogin)
+              const RegisterFormInput(
+                label: "Username",
+              ),
+            if (!_isLogin)
+              const SizedBox(
+                height: 16.5,
+              ),
             const RegisterFormInput(
               label: "Email Address",
             ),
@@ -103,7 +121,17 @@ class _RegisterFormState extends State<RegisterForm> {
             const SizedBox(
               height: 20,
             ),
-            const RegisterFormButton(),
+            RegisterFormButton(
+              label: _isLogin ? "Login" : "Create Account",
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            RegisterFormSwitcher(
+              onSwitchFrom: _switchForm,
+              label: _isLogin ? "Create Account?" : "Login Instead?",
+              icon: _isLogin ? Icons.cloud_outlined : Icons.cloud,
+            ),
           ],
         ),
       ),

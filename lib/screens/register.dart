@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import "../widgets/register/register_logo.dart";
-import '../widgets/register/register_title.dart';
 import '../widgets/register/register_form.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -29,7 +28,6 @@ class RegisterScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               RegisterLogo(),
-              RegisterTitle(),
               RegisterForm(),
             ],
           ),

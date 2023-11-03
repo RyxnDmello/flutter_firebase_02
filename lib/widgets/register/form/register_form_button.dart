@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RegisterFormButton extends StatelessWidget {
-  const RegisterFormButton({super.key});
+  const RegisterFormButton({
+    required this.label,
+    super.key,
+  });
+
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,7 @@ class RegisterFormButton extends StatelessWidget {
         ),
       ),
       child: Text(
-        "Create Account",
+        label,
         style: GoogleFonts.poppins(
           fontWeight: FontWeight.w400,
           color: Colors.white,

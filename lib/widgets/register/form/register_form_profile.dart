@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterFormProfileImage extends StatelessWidget {
-  const RegisterFormProfileImage({
+class RegisterFormProfile extends StatelessWidget {
+  const RegisterFormProfile({
     required this.onOpenCamera,
     required this.onOpenAvatarModal,
     required this.profileAvatar,
@@ -27,7 +27,7 @@ class RegisterFormProfileImage extends StatelessWidget {
           Image.asset(
             "./lib/images/register/profile.png",
             fit: BoxFit.cover,
-            width: 60,
+            width: 80,
           ),
         if (profileImage != null)
           CircleAvatar(
@@ -41,8 +41,8 @@ class RegisterFormProfileImage extends StatelessWidget {
         if (profileAvatar != null)
           Image.asset(
             profileAvatar!,
-            width: 85,
             fit: BoxFit.cover,
+            width: 85,
           ),
         const SizedBox(
           height: 10,
@@ -51,7 +51,7 @@ class RegisterFormProfileImage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ProfileImageButton(
+            ProfileButton(
               onPressed: onOpenCamera,
               icon: Icons.camera,
               label: "Camera",
@@ -59,7 +59,7 @@ class RegisterFormProfileImage extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            ProfileImageButton(
+            ProfileButton(
               onPressed: onOpenAvatarModal,
               icon: Icons.face,
               label: "Avatar",
@@ -71,8 +71,8 @@ class RegisterFormProfileImage extends StatelessWidget {
   }
 }
 
-class ProfileImageButton extends StatelessWidget {
-  const ProfileImageButton({
+class ProfileButton extends StatelessWidget {
+  const ProfileButton({
     required this.onPressed,
     required this.label,
     required this.icon,
