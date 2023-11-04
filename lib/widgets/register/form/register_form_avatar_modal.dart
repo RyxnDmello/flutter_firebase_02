@@ -9,7 +9,7 @@ class RegisterFormAvatarModal extends StatelessWidget {
     super.key,
   });
 
-  final void Function(String selectedImage) onSelectAvatar;
+  final void Function(String selectedAvatar) onSelectAvatar;
 
   @override
   Widget build(BuildContext context) {

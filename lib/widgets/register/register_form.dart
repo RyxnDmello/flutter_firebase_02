@@ -23,6 +23,62 @@ class _RegisterFormState extends State<RegisterForm> {
   bool _isLogin = false;
   File? _profileImage;
   String? _profileAvatar;
+  String? _username;
+  String? _email;
+  String? _password;
+
+  void _submitForm() {
+    if (!_formKey.currentState!.validate()) return;
+    if (_profileImage == null && _profileAvatar == null) return;
+
+    _formKey.currentState!.save();
+
+    print(_username);
+    print(_email);
+    print(_password);
+  }
+
+  String? _validateUsername(String? username) {
+    if (username == null || username.length < 4 || username.length > 50) {
+      return "Invalid Username";
+    }
+
+    return null;
+  }
+
+  String? _validateEmail(String? email) {
+    if (email == null ||
+        !email.contains("@gmail.com") &&
+            !email.contains("@outlook.com") &&
+            !email.contains("@hotmail.com")) {
+      return "Invalid Email Address";
+    }
+
+    return null;
+  }
+
+  String? _validatePassword(String? password) {
+    if (password == null || password.length < 6 || password.length > 20) {
+      return "Invalid Password";
+    }
+
+    return null;
+  }
+
+  void _saveUsername(String? username) {
+    if (username == null) return;
+    _username = username;
+  }
+
+  void _saveEmail(String? email) {
+    if (email == null) return;
+    _email = email;
+  }
+
+  void _savePassword(String? password) {
+    if (password == null) return;
+    _password = password;
+  }
 
   void _openCamera() async {
     final pickedImage = await ImagePicker().pickImage(
@@ -39,11 +95,11 @@ class _RegisterFormState extends State<RegisterForm> {
     });
   }
 
-  void _selectAvatar(String selectedImage) {
+  void _selectAvatar(String selectedAvatar) {
     Navigator.of(context).pop();
 
     setState(() {
-      _profileAvatar = selectedImage;
+      _profileAvatar = selectedAvatar;
       _profileImage = null;
     });
   }
@@ -70,6 +126,7 @@ class _RegisterFormState extends State<RegisterForm> {
 
   void _switchForm() {
     setState(() => _isLogin = !_isLogin);
+    _formKey.currentState!.reset();
   }
 
   @override
@@ -101,20 +158,26 @@ class _RegisterFormState extends State<RegisterForm> {
                 height: 20,
               ),
             if (!_isLogin)
-              const RegisterFormInput(
+              RegisterFormInput(
+                onValidate: _validateUsername,
+                onSave: _saveUsername,
                 label: "Username",
               ),
             if (!_isLogin)
               const SizedBox(
                 height: 16.5,
               ),
-            const RegisterFormInput(
+            RegisterFormInput(
+              onValidate: _validateEmail,
+              onSave: _saveEmail,
               label: "Email Address",
             ),
             const SizedBox(
               height: 16.5,
             ),
-            const RegisterFormInput(
+            RegisterFormInput(
+              onValidate: _validatePassword,
+              onSave: _savePassword,
               label: "Password",
               isPassword: true,
             ),
@@ -122,6 +185,7 @@ class _RegisterFormState extends State<RegisterForm> {
               height: 20,
             ),
             RegisterFormButton(
+              onSubmitForm: _submitForm,
               label: _isLogin ? "Login" : "Create Account",
             ),
             const SizedBox(
