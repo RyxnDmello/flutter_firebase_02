@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "960635793509",
+    "project_id": "skysync-164d4",
+    "storage_bucket": "skysync-164d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960635793509:android:25e8101e5c94b00658968c",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_02"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3TNU0ypINukA-a5SehfELdR7qyaswyog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

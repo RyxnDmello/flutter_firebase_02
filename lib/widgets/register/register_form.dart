@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../database/account_manager.dart';
+
 import './form/register_form_title.dart';
 import './form/register_form_profile.dart';
 import './form/register_form_avatar_modal.dart';
@@ -27,7 +29,7 @@ class _RegisterFormState extends State<RegisterForm> {
   String? _email;
   String? _password;
 
-  void _submitForm() {
+  Future<void> _submitForm() async {
     if (!_formKey.currentState!.validate()) return;
     if (_profileImage == null && _profileAvatar == null) return;
 
@@ -36,6 +38,20 @@ class _RegisterFormState extends State<RegisterForm> {
     print(_username);
     print(_email);
     print(_password);
+
+    if (_isLogin) {
+      await accountManager.loginAccount(
+        email: _email!,
+        password: _password!,
+      );
+
+      return;
+    }
+
+    await accountManager.createAccount(
+      email: _email!,
+      password: _password!,
+    );
   }
 
   String? _validateUsername(String? username) {
