@@ -11,6 +11,9 @@ import './form/register_form_avatar_modal.dart';
 import './form/register_form_input.dart';
 import './form/register_form_button.dart';
 import './form/register_form_switcher.dart';
+import './form/register_form_warning.dart';
+
+import '../../screens/home.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
@@ -31,7 +34,15 @@ class _RegisterFormState extends State<RegisterForm> {
 
   Future<void> _submitForm() async {
     if (!_formKey.currentState!.validate()) return;
-    if (_profileImage == null && _profileAvatar == null) return;
+
+    if (!_isLogin && _profileImage == null && _profileAvatar == null) {
+      _warningMessage(
+        message: "PROFILE IMAGE NOT SET",
+        icon: Icons.face,
+      );
+
+      return;
+    }
 
     _formKey.currentState!.save();
 
@@ -40,18 +51,39 @@ class _RegisterFormState extends State<RegisterForm> {
     print(_password);
 
     if (_isLogin) {
-      await accountManager.loginAccount(
+      final isLogged = await accountManager.loginAccount(
         email: _email!,
         password: _password!,
+      );
+
+      if (!isLogged) {
+        _warningMessage(
+          message: "FAILED TO LOGIN",
+          icon: Icons.error_outline,
+        );
+
+        return;
+      }
+
+      _navigateToHome();
+      return;
+    }
+
+    final isCreated = await accountManager.createAccount(
+      email: _email!,
+      password: _password!,
+    );
+
+    if (!isCreated) {
+      _warningMessage(
+        message: "FAILED TO CREATE ACCOUNT",
+        icon: Icons.error_outline,
       );
 
       return;
     }
 
-    await accountManager.createAccount(
-      email: _email!,
-      password: _password!,
-    );
+    _navigateToHome();
   }
 
   String? _validateUsername(String? username) {
@@ -137,6 +169,24 @@ class _RegisterFormState extends State<RegisterForm> {
           onSelectAvatar: _selectAvatar,
         );
       },
+    );
+  }
+
+  void _navigateToHome() {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const HomeScreen(),
+      ),
+    );
+  }
+
+  void _warningMessage({required String message, required IconData icon}) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      registerFormWarning(
+        message: message,
+        icon: icon,
+      ),
     );
   }
 

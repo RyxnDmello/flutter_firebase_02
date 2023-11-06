@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import "../widgets/register/register_logo.dart";
+import '../widgets/register/register_logo.dart';
 import '../widgets/register/register_form.dart';
 
 class RegisterScreen extends StatelessWidget {
