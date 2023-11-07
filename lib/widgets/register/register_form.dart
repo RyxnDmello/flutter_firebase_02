@@ -45,10 +45,7 @@ class _RegisterFormState extends State<RegisterForm> {
     }
 
     _formKey.currentState!.save();
-
-    print(_username);
-    print(_email);
-    print(_password);
+    _showLoadingIndicator();
 
     if (_isLogin) {
       final isLogged = await accountManager.loginAccount(
@@ -66,10 +63,12 @@ class _RegisterFormState extends State<RegisterForm> {
       }
 
       _navigateToHome();
+
       return;
     }
 
     final isCreated = await accountManager.createAccount(
+      username: _username!,
       email: _email!,
       password: _password!,
     );
@@ -153,6 +152,8 @@ class _RegisterFormState extends State<RegisterForm> {
   }
 
   void _openAvatarModal() {
+    _showLoadingIndicator();
+
     showModalBottomSheet(
       useSafeArea: true,
       enableDrag: true,
@@ -173,6 +174,7 @@ class _RegisterFormState extends State<RegisterForm> {
   }
 
   void _navigateToHome() {
+    Navigator.of(context).pop();
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (context) => const HomeScreen(),
@@ -187,6 +189,23 @@ class _RegisterFormState extends State<RegisterForm> {
         message: message,
         icon: icon,
       ),
+    );
+
+    if (icon.codePoint == Icons.face.codePoint) return;
+    Navigator.of(context).pop();
+  }
+
+  void _showLoadingIndicator() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(
+            color: Color.fromARGB(255, 0, 50, 255),
+            backgroundColor: Colors.black26,
+          ),
+        );
+      },
     );
   }
 
