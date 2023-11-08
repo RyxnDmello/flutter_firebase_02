@@ -68,6 +68,8 @@ class _RegisterFormState extends State<RegisterForm> {
     }
 
     final isCreated = await accountManager.createAccount(
+      profileImage: _profileImage,
+      profileAvatar: _profileAvatar,
       username: _username!,
       email: _email!,
       password: _password!,
@@ -152,8 +154,6 @@ class _RegisterFormState extends State<RegisterForm> {
   }
 
   void _openAvatarModal() {
-    _showLoadingIndicator();
-
     showModalBottomSheet(
       useSafeArea: true,
       enableDrag: true,

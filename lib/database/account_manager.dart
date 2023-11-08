@@ -1,19 +1,28 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class _AccountManager {
   _AccountManager()
       : _firebaseAuth = FirebaseAuth.instance,
+        _firebaseStorage = FirebaseStorage.instance,
         _firestore = FirebaseFirestore.instance,
         _userCredential = null,
+        _accountProfile = null,
         _account = null;
 
   final FirebaseAuth _firebaseAuth;
+  final FirebaseStorage _firebaseStorage;
   final FirebaseFirestore _firestore;
   UserCredential? _userCredential;
   DocumentReference? _account;
+  Reference? _accountProfile;
 
   Future<bool> createAccount({
+    required File? profileImage,
+    required String? profileAvatar,
     required String username,
     required String email,
     required String password,
@@ -28,8 +37,28 @@ class _AccountManager {
             _userCredential!.user!.uid,
           );
 
+      if (profileAvatar != null) {
+        await _account!.set(
+          {
+            "profile": profileAvatar,
+            "username": username,
+            "email": email,
+          },
+        );
+
+        return true;
+      }
+
+      _accountProfile = _firebaseStorage
+          .ref()
+          .child("accounts")
+          .child("${_userCredential!.user!.uid}.jpg");
+
+      await _accountProfile!.putFile(profileImage!);
+
       await _account!.set(
         {
+          "profile": await _accountProfile!.getDownloadURL(),
           "username": username,
           "email": email,
         },
@@ -50,6 +79,11 @@ class _AccountManager {
         email: email,
         password: password,
       );
+
+      _accountProfile = _firebaseStorage
+          .ref()
+          .child("accounts")
+          .child("${_userCredential!.user!.uid}.jpg");
 
       _account = _firestore.collection("accounts").doc(
             _userCredential!.user!.uid,
