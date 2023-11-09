@@ -19,6 +19,7 @@ dependencies:
   firebase_auth: ^4.12.1
   cloud_firestore: ^4.12.2
   firebase_storage: ^11.4.1
+  font_awesome_flutter: ^10.6.0
 
 dev_dependencies:
   flutter_test:
@@ -31,3 +32,5 @@ flutter:
 
   assets:
     - ./lib/images/register/
+    - ./lib/images/home/
+    - ./lib/images/home/drawer/

@@ -15,10 +15,10 @@ class RegisterScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Colors.black,
           image: DecorationImage(
-            fit: BoxFit.cover,
             image: AssetImage(
               "./lib/images/register/background.png",
             ),
+            fit: BoxFit.cover,
             opacity: 0.65,
           ),
         ),
