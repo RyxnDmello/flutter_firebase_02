@@ -4,11 +4,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeDrawerTile extends StatelessWidget {
   const HomeDrawerTile({
+    required this.onTapTile,
     required this.icon,
     required this.label,
     super.key,
   });
 
+  final void Function() onTapTile;
   final IconData icon;
   final String label;
 
@@ -25,16 +27,10 @@ class HomeDrawerTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            if (icon.fontPackage != null)
-              FaIcon(
-                icon,
-                color: Colors.black,
-              ),
-            if (icon.fontPackage == null)
-              Icon(
-                icon,
-                color: Colors.black,
-              ),
+            FaIcon(
+              icon,
+              color: Colors.black,
+            ),
             const SizedBox(
               width: 10,
             ),

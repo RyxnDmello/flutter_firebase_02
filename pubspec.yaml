@@ -20,6 +20,7 @@ dependencies:
   cloud_firestore: ^4.12.2
   firebase_storage: ^11.4.1
   font_awesome_flutter: ^10.6.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +35,4 @@ flutter:
     - ./lib/images/register/
     - ./lib/images/home/
     - ./lib/images/home/drawer/
+    - ./lib/images/home/weather/

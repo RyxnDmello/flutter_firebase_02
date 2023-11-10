@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import './drawer/home_drawer_account.dart';
@@ -29,21 +30,33 @@ class HomeDrawer extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const HomeDrawerTile(
+          HomeDrawerTile(
+            onTapTile: () {},
             icon: FontAwesomeIcons.circleUser,
             label: "Account",
           ),
-          const HomeDrawerTile(
+          HomeDrawerTile(
+            onTapTile: () {},
             icon: FontAwesomeIcons.heart,
             label: "Home",
           ),
-          const HomeDrawerTile(
+          HomeDrawerTile(
+            onTapTile: () {},
             icon: FontAwesomeIcons.map,
             label: "Favorites",
           ),
-          const HomeDrawerTile(
+          HomeDrawerTile(
+            onTapTile: () {},
             icon: FontAwesomeIcons.magnifyingGlass,
             label: "Search",
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          HomeDrawerTile(
+            onTapTile: () => FirebaseAuth.instance.signOut(),
+            icon: FontAwesomeIcons.arrowRightFromBracket,
+            label: "Logout",
           ),
         ],
       ),
