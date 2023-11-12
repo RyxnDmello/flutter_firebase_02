@@ -5,6 +5,7 @@ import '../../models/weather_model.dart';
 import './weather/home_weather_location.dart';
 import './weather/home_weather_temperature.dart';
 import './weather/home_weather_essentials.dart';
+import './weather/home_weather_hourly.dart';
 
 class HomeWeather extends StatefulWidget {
   const HomeWeather({super.key});
@@ -37,6 +38,10 @@ class _HomeWeatherState extends State<HomeWeather> {
           HomeWeatherEssentials(
             essentials: weather.essentials,
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          const HomeWeatherHourly(),
         ],
       ),
     );
