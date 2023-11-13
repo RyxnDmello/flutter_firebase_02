@@ -35,7 +35,7 @@ class EssentialSlide extends StatelessWidget {
     super.key,
   });
 
-  final List<Blocks> blocks;
+  final List<EssentialsBlock> blocks;
 
   @override
   Widget build(BuildContext context) {

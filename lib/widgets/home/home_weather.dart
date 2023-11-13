@@ -6,6 +6,7 @@ import './weather/home_weather_location.dart';
 import './weather/home_weather_temperature.dart';
 import './weather/home_weather_essentials.dart';
 import './weather/home_weather_hourly.dart';
+import './weather/home_weather_weekly_button.dart';
 
 class HomeWeather extends StatefulWidget {
   const HomeWeather({super.key});
@@ -14,7 +15,14 @@ class HomeWeather extends StatefulWidget {
   State<HomeWeather> createState() => _HomeWeatherState();
 }
 
-class _HomeWeatherState extends State<HomeWeather> {
+class _HomeWeatherState extends State<HomeWeather>
+    with TickerProviderStateMixin {
+  int _hourlySlide = 0;
+
+  void _switchHourlySlides(int currentSlide) {
+    setState(() => _hourlySlide = currentSlide);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,7 +49,16 @@ class _HomeWeatherState extends State<HomeWeather> {
           const SizedBox(
             height: 20,
           ),
-          const HomeWeatherHourly(),
+          HomeWeatherHourly(
+            onSlideChanged: _switchHourlySlides,
+            currentSlide: _hourlySlide,
+            hourly: weather.hourly,
+            tabVsync: this,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const HomeWeatherWeeklyButton(),
         ],
       ),
     );

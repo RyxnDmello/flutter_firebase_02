@@ -3,11 +3,11 @@ class WeatherEssentials {
     required this.blocks,
   });
 
-  final List<Blocks> blocks;
+  final List<EssentialsBlock> blocks;
 }
 
-class Blocks {
-  const Blocks({
+class EssentialsBlock {
+  const EssentialsBlock({
     required this.image,
     required this.title,
     required this.value,
