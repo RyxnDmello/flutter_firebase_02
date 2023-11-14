@@ -28,13 +28,7 @@ class HomeWeatherHourly extends StatelessWidget {
           width: double.infinity,
           child: PageView.builder(
             onPageChanged: (value) {
-              if (value == 0) {
-                onSlideChanged(0);
-                return;
-              }
-
-              if ((value + 1) % 4 != 0) return;
-
+              if (value != 0 && (value + 1) % 4 != 0) return;
               onSlideChanged(((value + 1) ~/ 4));
             },
             controller: PageController(
@@ -54,9 +48,10 @@ class HomeWeatherHourly extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 15,
+          height: 20,
         ),
         TabPageSelector(
+          selectedColor: Colors.white,
           controller: TabController(
             initialIndex: currentSlide,
             vsync: tabVsync,

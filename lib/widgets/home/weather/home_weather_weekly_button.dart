@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeWeatherWeeklyButton extends StatelessWidget {
-  const HomeWeatherWeeklyButton({super.key});
+  const HomeWeatherWeeklyButton({
+    required this.openScreen,
+    super.key,
+  });
+
+  final void Function() openScreen;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: openScreen,
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(255, 0, 0, 255),
+        backgroundColor: const Color.fromARGB(255, 0, 0, 200),
         padding: const EdgeInsets.symmetric(
           horizontal: 0,
           vertical: 8,

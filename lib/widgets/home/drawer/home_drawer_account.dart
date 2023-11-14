@@ -5,15 +5,15 @@ import 'package:google_fonts/google_fonts.dart';
 
 class HomeDrawerAccount extends StatelessWidget {
   const HomeDrawerAccount({
-    required this.username,
-    required this.profileImage,
     required this.profileAvatar,
+    required this.profileImage,
+    required this.username,
     super.key,
   });
 
-  final String username;
-  final File? profileImage;
   final String? profileAvatar;
+  final File? profileImage;
+  final String username;
 
   @override
   Widget build(BuildContext context) {

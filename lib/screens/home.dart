@@ -15,8 +15,9 @@ class HomeScreen extends StatelessWidget {
       key: scaffoldKey,
       backgroundColor: const Color.fromARGB(255, 0, 0, 20),
       drawer: const HomeDrawer(
+        profileAvatar: "./lib/images/register/avatar-1.png",
+        profileImage: null,
         username: "RyanDmello",
-        email: "ryan@gmail.com",
       ),
       body: SafeArea(
         child: SingleChildScrollView(

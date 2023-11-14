@@ -8,6 +8,8 @@ import './weather/home_weather_essentials.dart';
 import './weather/home_weather_hourly.dart';
 import './weather/home_weather_weekly_button.dart';
 
+import '../../screens/weekly.dart';
+
 class HomeWeather extends StatefulWidget {
   const HomeWeather({super.key});
 
@@ -18,6 +20,14 @@ class HomeWeather extends StatefulWidget {
 class _HomeWeatherState extends State<HomeWeather>
     with TickerProviderStateMixin {
   int _hourlySlide = 0;
+
+  void _openWeeklyScreen() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const WeeklyScreen(),
+      ),
+    );
+  }
 
   void _switchHourlySlides(int currentSlide) {
     setState(() => _hourlySlide = currentSlide);
@@ -58,7 +68,9 @@ class _HomeWeatherState extends State<HomeWeather>
           const SizedBox(
             height: 20,
           ),
-          const HomeWeatherWeeklyButton(),
+          HomeWeatherWeeklyButton(
+            openScreen: _openWeeklyScreen,
+          ),
         ],
       ),
     );
