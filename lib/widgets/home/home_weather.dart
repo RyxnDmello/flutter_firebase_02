@@ -10,33 +10,21 @@ import './weather/home_weather_weekly_button.dart';
 
 import '../../screens/weekly.dart';
 
-class HomeWeather extends StatefulWidget {
+class HomeWeather extends StatelessWidget {
   const HomeWeather({super.key});
 
   @override
-  State<HomeWeather> createState() => _HomeWeatherState();
-}
-
-class _HomeWeatherState extends State<HomeWeather>
-    with TickerProviderStateMixin {
-  int _hourlySlide = 0;
-
-  void _openWeeklyScreen() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const WeeklyScreen(
-          weather: weather,
-        ),
-      ),
-    );
-  }
-
-  void _switchHourlySlides(int currentSlide) {
-    setState(() => _hourlySlide = currentSlide);
-  }
-
-  @override
   Widget build(BuildContext context) {
+    void openWeeklyScreen() {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const WeeklyScreen(
+            weather: weather,
+          ),
+        ),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(15, 0, 15, 20),
       child: Column(
@@ -62,16 +50,13 @@ class _HomeWeatherState extends State<HomeWeather>
             height: 20,
           ),
           HomeWeatherHourly(
-            onSlideChanged: _switchHourlySlides,
-            currentSlide: _hourlySlide,
             hourly: weather.hourly,
-            tabVsync: this,
           ),
           const SizedBox(
             height: 20,
           ),
           HomeWeatherWeeklyButton(
-            openScreen: () => _openWeeklyScreen(),
+            openScreen: openWeeklyScreen,
           ),
         ],
       ),

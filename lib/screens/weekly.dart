@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../models/weather_model.dart';
 
-import '../widgets/weekly/weekly_day.dart';
+import '../widgets/weekly/weekly_days.dart';
 
 class WeeklyScreen extends StatelessWidget {
   const WeeklyScreen({
@@ -38,28 +38,8 @@ class WeeklyScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            ListView.separated(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 0,
-                vertical: 20,
-              ),
-              shrinkWrap: true,
-              physics: const BouncingScrollPhysics(),
-              itemCount: weather.weekly.length,
-              itemBuilder: (context, index) {
-                return WeeklyDay(
-                  onTapDay: () {},
-                  temperature: weather.weekly[index].temperature,
-                  image: weather.weekly[index].image,
-                  date: weather.weekly[index].date,
-                  day: weather.weekly[index].day,
-                );
-              },
-              separatorBuilder: (context, index) {
-                return const SizedBox(
-                  height: 10,
-                );
-              },
+            WeeklyDays(
+              weekly: weather.weekly,
             ),
           ],
         ),

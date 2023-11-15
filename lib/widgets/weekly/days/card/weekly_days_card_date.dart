@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WeeklyDayDate extends StatelessWidget {
-  const WeeklyDayDate({
+class WeeklyDaysCardDate extends StatelessWidget {
+  const WeeklyDaysCardDate({
     required this.date,
     required this.day,
     super.key,

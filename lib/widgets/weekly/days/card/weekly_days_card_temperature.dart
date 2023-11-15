@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WeeklyDayTemperature extends StatelessWidget {
-  const WeeklyDayTemperature({
+class WeeklyDaysCardTemperature extends StatelessWidget {
+  const WeeklyDaysCardTemperature({
     required this.temperature,
     super.key,
   });

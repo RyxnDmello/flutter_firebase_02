@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class WeeklyDayImage extends StatelessWidget {
-  const WeeklyDayImage({
+class WeeklyDaysCardImage extends StatelessWidget {
+  const WeeklyDaysCardImage({
     required this.image,
     super.key,
   });

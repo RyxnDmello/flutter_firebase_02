@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import './day/weekly_day_date.dart';
-import './day/weekly_day_image.dart';
-import './day/weekly_day_temperature.dart';
+import './card/weekly_days_card_date.dart';
+import './card/weekly_days_card_image.dart';
+import './card/weekly_days_card_temperature.dart';
 
-class WeeklyDay extends StatelessWidget {
-  const WeeklyDay({
+class WeeklyDaysCard extends StatelessWidget {
+  const WeeklyDaysCard({
     required this.temperature,
     required this.onTapDay,
     required this.image,
@@ -39,14 +39,14 @@ class WeeklyDay extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            WeeklyDayDate(
+            WeeklyDaysCardDate(
               date: date,
               day: day,
             ),
-            WeeklyDayTemperature(
+            WeeklyDaysCardTemperature(
               temperature: temperature,
             ),
-            WeeklyDayImage(
+            WeeklyDaysCardImage(
               image: image,
             ),
           ],
