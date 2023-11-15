@@ -17,8 +17,8 @@ class HomeWeatherTemperature extends StatelessWidget {
       children: [
         Text(
           "$temperature°",
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w300,
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w200,
             color: Colors.white,
             fontSize: 100,
           ),

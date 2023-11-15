@@ -1,14 +1,17 @@
 import './weather/weather_essentials_model.dart';
 import './weather/weather_hourly_model.dart';
+import './weather/weather_weekly_model.dart';
 
 class Weather {
   const Weather({
     required this.essentials,
     required this.hourly,
+    required this.weekly,
   });
 
   final List<WeatherEssentials> essentials;
   final List<WeatherHourly> hourly;
+  final List<WeatherWeekly> weekly;
 }
 
 const weather = Weather(
@@ -172,6 +175,50 @@ const weather = Weather(
       image: "./lib/images/home/weather/humidity.png",
       hour: "10Am",
       value: "26°",
+    ),
+  ],
+  weekly: [
+    WeatherWeekly(
+      image: "./lib/images/home/weather/wind.png",
+      temperature: "36°",
+      day: "Thursday",
+      date: "16 Nov",
+    ),
+    WeatherWeekly(
+      image: "./lib/images/home/weather/wind.png",
+      temperature: "36°",
+      day: "Thursday",
+      date: "16 Nov",
+    ),
+    WeatherWeekly(
+      image: "./lib/images/home/weather/wind.png",
+      temperature: "36°",
+      day: "Thursday",
+      date: "16 Nov",
+    ),
+    WeatherWeekly(
+      image: "./lib/images/home/weather/wind.png",
+      temperature: "36°",
+      day: "Thursday",
+      date: "16 Nov",
+    ),
+    WeatherWeekly(
+      image: "./lib/images/home/weather/wind.png",
+      temperature: "36°",
+      day: "Thursday",
+      date: "16 Nov",
+    ),
+    WeatherWeekly(
+      image: "./lib/images/home/weather/wind.png",
+      temperature: "36°",
+      day: "Thursday",
+      date: "16 Nov",
+    ),
+    WeatherWeekly(
+      image: "./lib/images/home/weather/wind.png",
+      temperature: "36°",
+      day: "Thursday",
+      date: "16 Nov",
     ),
   ],
 );

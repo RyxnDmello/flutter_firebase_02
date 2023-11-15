@@ -24,7 +24,9 @@ class _HomeWeatherState extends State<HomeWeather>
   void _openWeeklyScreen() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const WeeklyScreen(),
+        builder: (context) => const WeeklyScreen(
+          weather: weather,
+        ),
       ),
     );
   }
@@ -69,7 +71,7 @@ class _HomeWeatherState extends State<HomeWeather>
             height: 20,
           ),
           HomeWeatherWeeklyButton(
-            openScreen: _openWeeklyScreen,
+            openScreen: () => _openWeeklyScreen(),
           ),
         ],
       ),
