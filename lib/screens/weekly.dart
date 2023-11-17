@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_02/widgets/weekly/weekly_tomorrow.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../models/weather_model.dart';
@@ -35,9 +36,13 @@ class WeeklyScreen extends StatelessWidget {
           vertical: 20,
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            const WeeklyTomorrow(),
+            const SizedBox(
+              height: 50,
+            ),
             WeeklyDays(
               weekly: weather.weekly,
             ),

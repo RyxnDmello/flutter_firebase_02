@@ -36,3 +36,4 @@ flutter:
     - ./lib/images/home/
     - ./lib/images/home/drawer/
     - ./lib/images/home/weather/
+    - ./lib/images/weather/
