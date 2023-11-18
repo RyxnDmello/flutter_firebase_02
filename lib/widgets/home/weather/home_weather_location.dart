@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 
 class HomeWeatherLocation extends StatelessWidget {
   const HomeWeatherLocation({
     required this.location,
+    required this.date,
     super.key,
   });
 
   final String location;
+  final String date;
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +19,10 @@ class HomeWeatherLocation extends StatelessWidget {
       children: [
         Text(
           location,
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w400,
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w500,
             color: Colors.white,
-            letterSpacing: 1.5,
+            letterSpacing: 1,
             fontSize: 30,
             height: 1,
           ),
@@ -30,12 +31,12 @@ class HomeWeatherLocation extends StatelessWidget {
           height: 10,
         ),
         Text(
-          "Today, ${DateFormat("d MMM").format(DateTime.now())}",
-          style: GoogleFonts.poppins(
+          "Today, $date",
+          style: GoogleFonts.montserrat(
             color: const Color.fromARGB(165, 255, 255, 255),
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w500,
             letterSpacing: 1.5,
-            fontSize: 18,
+            fontSize: 20,
             height: 1,
           ),
         ),

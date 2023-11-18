@@ -3,16 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 class HomeWeatherWeeklyButton extends StatelessWidget {
   const HomeWeatherWeeklyButton({
-    required this.openScreen,
+    required this.onOpenScreen,
     super.key,
   });
 
-  final void Function() openScreen;
+  final void Function() onOpenScreen;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: openScreen,
+      onPressed: onOpenScreen,
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromARGB(255, 0, 0, 200),
         padding: const EdgeInsets.symmetric(
@@ -28,9 +28,9 @@ class HomeWeatherWeeklyButton extends StatelessWidget {
       child: Text(
         "Weekly Forecast",
         style: GoogleFonts.poppins(
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w500,
           color: Colors.white,
-          letterSpacing: 0.5,
+          letterSpacing: 0.65,
           fontSize: 18,
         ),
       ),

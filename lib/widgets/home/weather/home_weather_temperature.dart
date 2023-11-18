@@ -4,10 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 class HomeWeatherTemperature extends StatelessWidget {
   const HomeWeatherTemperature({
     required this.temperature,
+    required this.image,
     super.key,
   });
 
   final String temperature;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class HomeWeatherTemperature extends StatelessWidget {
           width: 10,
         ),
         Image.asset(
-          "./lib/images/home/weather/temperature.png",
+          image,
           fit: BoxFit.cover,
           width: 100,
         ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_02/widgets/weekly/weekly_tomorrow.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../models/weather_model.dart';
 
+import '../widgets/weekly/weekly_tomorrow.dart';
 import '../widgets/weekly/weekly_days.dart';
 
 class WeeklyScreen extends StatelessWidget {
@@ -39,7 +39,9 @@ class WeeklyScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const WeeklyTomorrow(),
+            WeeklyTomorrow(
+              day: weather.weekly[0],
+            ),
             const SizedBox(
               height: 50,
             ),

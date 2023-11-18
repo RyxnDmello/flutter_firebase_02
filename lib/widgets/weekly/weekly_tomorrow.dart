@@ -1,22 +1,34 @@
 import 'package:flutter/material.dart';
 
+import '../../models/weather/weather_weekly_model.dart';
+
 import './tomorrow/weekly_tomorrow_image.dart';
 import './tomorrow/weekly_tomorrow_temperature.dart';
 
 class WeeklyTomorrow extends StatelessWidget {
-  const WeeklyTomorrow({super.key});
+  const WeeklyTomorrow({
+    required this.day,
+    super.key,
+  });
+
+  final WeatherWeekly day;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        WeeklyTomorrowImage(),
-        SizedBox(
+        WeeklyTomorrowImage(
+          image: day.image,
+        ),
+        const SizedBox(
           width: 40,
         ),
-        WeeklyTomorrowTemperature()
+        WeeklyTomorrowTemperature(
+          temperature: day.temperature,
+          condition: day.condition,
+        )
       ],
     );
   }

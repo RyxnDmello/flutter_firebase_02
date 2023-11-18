@@ -7,6 +7,7 @@ import './weather/home_weather_temperature.dart';
 import './weather/home_weather_essentials.dart';
 import './weather/home_weather_hourly.dart';
 import './weather/home_weather_weekly_button.dart';
+import './weather/home_weather_details_button.dart';
 
 import '../../screens/weekly.dart';
 
@@ -18,7 +19,7 @@ class HomeWeather extends StatelessWidget {
     void openWeeklyScreen() {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => const WeeklyScreen(
+          builder: (context) => WeeklyScreen(
             weather: weather,
           ),
         ),
@@ -31,14 +32,16 @@ class HomeWeather extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const HomeWeatherLocation(
-            location: "Toronto Ontario",
+          HomeWeatherLocation(
+            location: weather.location.location,
+            date: weather.location.date,
           ),
           const SizedBox(
             height: 25,
           ),
-          const HomeWeatherTemperature(
-            temperature: "36",
+          HomeWeatherTemperature(
+            temperature: weather.temperature.temperature,
+            image: weather.temperature.image,
           ),
           const SizedBox(
             height: 20,
@@ -56,7 +59,13 @@ class HomeWeather extends StatelessWidget {
             height: 20,
           ),
           HomeWeatherWeeklyButton(
-            openScreen: openWeeklyScreen,
+            onOpenScreen: openWeeklyScreen,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          HomeWeatherDetailsButton(
+            onOpenScreen: () {},
           ),
         ],
       ),
