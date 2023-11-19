@@ -3,11 +3,11 @@ class WeatherDailyEssentialsModel {
     required this.blocks,
   });
 
-  final List<EssentialsModel> blocks;
+  final List<EssentialBlockModel> blocks;
 }
 
-class EssentialsModel {
-  const EssentialsModel({
+class EssentialBlockModel {
+  const EssentialBlockModel({
     required this.image,
     required this.title,
     required this.value,

@@ -8,8 +8,8 @@ import './weather/weather_temperature_model.dart';
 import './weather/weather_weekly_model.dart';
 import './weather/weather_daily_model.dart';
 
-class Weather {
-  const Weather({
+class WeatherModel {
+  const WeatherModel({
     required this.location,
     required this.temperature,
     required this.weekly,
@@ -22,13 +22,14 @@ class Weather {
   final List<WeatherDailyModel> daily;
 }
 
-final weather = Weather(
+final weather = WeatherModel(
   location: WeatherLocationModel(
     location: "Toronto Ontario",
     date: DateFormat("d MMM").format(DateTime.now()),
   ),
   temperature: const WeatherTemperatureModel(
     temperature: "36",
+    condition: "Partially Cloudy",
     image: "./lib/images/weather/clear-day.png",
   ),
   weekly: [
@@ -83,40 +84,49 @@ final weather = Weather(
     ),
   ],
   daily: [
-    const WeatherDailyModel(
+    WeatherDailyModel(
+      location: WeatherLocationModel(
+        location: "Toronto Ontario",
+        date: DateFormat("d MMM, EEEE").format(DateTime.now()),
+      ),
+      temperature: const WeatherTemperatureModel(
+        temperature: "36",
+        condition: "Partially Cloudy",
+        image: "./lib/images/weather/clear-day.png",
+      ),
       essentials: [
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/rain.png",
               title: "Rain",
               value: "100%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/wind.png",
               title: "Wind",
               value: "10ms",
             ),
           ],
         ),
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/cloud.png",
               title: "Cover",
               value: "50.2%",
@@ -125,162 +135,171 @@ final weather = Weather(
         ),
       ],
       hourly: [
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
       ],
     ),
-    const WeatherDailyModel(
+    WeatherDailyModel(
+      location: WeatherLocationModel(
+        location: "Toronto Ontario",
+        date: DateFormat("d MMM, EEEE").format(DateTime.now()),
+      ),
+      temperature: const WeatherTemperatureModel(
+        temperature: "36",
+        condition: "Partially Cloudy",
+        image: "./lib/images/weather/clear-day.png",
+      ),
       essentials: [
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/rain.png",
               title: "Rain",
               value: "100%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/wind.png",
               title: "Wind",
               value: "10ms",
             ),
           ],
         ),
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/cloud.png",
               title: "Cover",
               value: "50.2%",
@@ -289,162 +308,171 @@ final weather = Weather(
         ),
       ],
       hourly: [
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
       ],
     ),
-    const WeatherDailyModel(
+    WeatherDailyModel(
+      location: WeatherLocationModel(
+        location: "Toronto Ontario",
+        date: DateFormat("d MMM, EEEE").format(DateTime.now()),
+      ),
+      temperature: const WeatherTemperatureModel(
+        temperature: "36",
+        condition: "Partially Cloudy",
+        image: "./lib/images/weather/clear-day.png",
+      ),
       essentials: [
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/rain.png",
               title: "Rain",
               value: "100%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/wind.png",
               title: "Wind",
               value: "10ms",
             ),
           ],
         ),
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/cloud.png",
               title: "Cover",
               value: "50.2%",
@@ -453,162 +481,171 @@ final weather = Weather(
         ),
       ],
       hourly: [
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
       ],
     ),
-    const WeatherDailyModel(
+    WeatherDailyModel(
+      location: WeatherLocationModel(
+        location: "Toronto Ontario",
+        date: DateFormat("d MMM, EEEE").format(DateTime.now()),
+      ),
+      temperature: const WeatherTemperatureModel(
+        temperature: "36",
+        condition: "Partially Cloudy",
+        image: "./lib/images/weather/clear-day.png",
+      ),
       essentials: [
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/rain.png",
               title: "Rain",
               value: "100%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/wind.png",
               title: "Wind",
               value: "10ms",
             ),
           ],
         ),
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/cloud.png",
               title: "Cover",
               value: "50.2%",
@@ -617,162 +654,171 @@ final weather = Weather(
         ),
       ],
       hourly: [
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
       ],
     ),
-    const WeatherDailyModel(
+    WeatherDailyModel(
+      location: WeatherLocationModel(
+        location: "Toronto Ontario",
+        date: DateFormat("d MMM, EEEE").format(DateTime.now()),
+      ),
+      temperature: const WeatherTemperatureModel(
+        temperature: "36",
+        condition: "Partially Cloudy",
+        image: "./lib/images/weather/clear-day.png",
+      ),
       essentials: [
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/rain.png",
               title: "Rain",
               value: "100%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/wind.png",
               title: "Wind",
               value: "10ms",
             ),
           ],
         ),
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/cloud.png",
               title: "Cover",
               value: "50.2%",
@@ -781,162 +827,171 @@ final weather = Weather(
         ),
       ],
       hourly: [
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
       ],
     ),
-    const WeatherDailyModel(
+    WeatherDailyModel(
+      location: WeatherLocationModel(
+        location: "Toronto Ontario",
+        date: DateFormat("d MMM, EEEE").format(DateTime.now()),
+      ),
+      temperature: const WeatherTemperatureModel(
+        temperature: "36",
+        condition: "Partially Cloudy",
+        image: "./lib/images/weather/clear-day.png",
+      ),
       essentials: [
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/rain.png",
               title: "Rain",
               value: "100%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/wind.png",
               title: "Wind",
               value: "10ms",
             ),
           ],
         ),
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/cloud.png",
               title: "Cover",
               value: "50.2%",
@@ -945,162 +1000,171 @@ final weather = Weather(
         ),
       ],
       hourly: [
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
       ],
     ),
-    const WeatherDailyModel(
+    WeatherDailyModel(
+      location: WeatherLocationModel(
+        location: "Toronto Ontario",
+        date: DateFormat("d MMM, EEEE").format(DateTime.now()),
+      ),
+      temperature: const WeatherTemperatureModel(
+        temperature: "36",
+        condition: "Partially Cloudy",
+        image: "./lib/images/weather/clear-day.png",
+      ),
       essentials: [
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/rain.png",
               title: "Rain",
               value: "100%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/wind.png",
               title: "Wind",
               value: "10ms",
             ),
           ],
         ),
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/cloud.png",
               title: "Cover",
               value: "50.2%",
@@ -1109,162 +1173,171 @@ final weather = Weather(
         ),
       ],
       hourly: [
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
       ],
     ),
-    const WeatherDailyModel(
+    WeatherDailyModel(
+      location: WeatherLocationModel(
+        location: "Toronto Ontario",
+        date: DateFormat("d MMM, EEEE").format(DateTime.now()),
+      ),
+      temperature: const WeatherTemperatureModel(
+        temperature: "36",
+        condition: "Partially Cloudy",
+        image: "./lib/images/weather/clear-day.png",
+      ),
       essentials: [
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/rain.png",
               title: "Rain",
               value: "100%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/wind.png",
               title: "Wind",
               value: "10ms",
             ),
           ],
         ),
-        WeatherDailyEssentialsModel(
+        const WeatherDailyEssentialsModel(
           blocks: [
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
-            EssentialsModel(
+            EssentialBlockModel(
               image: "./lib/images/home/weather/cloud.png",
               title: "Cover",
               value: "50.2%",
@@ -1273,122 +1346,122 @@ final weather = Weather(
         ),
       ],
       hourly: [
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",
         ),
-        WeatherDailyHourlyModel(
+        const WeatherDailyHourlyModel(
           image: "./lib/images/home/weather/humidity.png",
           hour: "10Am",
           value: "26°",

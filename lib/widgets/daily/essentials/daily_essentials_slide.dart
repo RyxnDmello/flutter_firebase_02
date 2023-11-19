@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../../../models/weather/daily/weather_daily_essentials_model.dart';
+import '../../../models/weather/daily/weather_daily_essentials_model.dart';
 
-import './home_weather_essentials_block.dart';
+import './daily_essentials_block.dart';
 
-class HomeWeatherEssentialsSlide extends StatelessWidget {
-  const HomeWeatherEssentialsSlide({
+class DailyEssentialsSlide extends StatelessWidget {
+  const DailyEssentialsSlide({
     required this.blocks,
+    required this.onTap,
     super.key,
   });
 
   final List<EssentialBlockModel> blocks;
+  final void Function(String type) onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -19,22 +21,13 @@ class HomeWeatherEssentialsSlide extends StatelessWidget {
         horizontal: 6.5,
         vertical: 0,
       ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 36.5,
-        vertical: 22.5,
-      ),
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(15),
-        ),
-        color: Color.fromARGB(255, 0, 0, 40),
-      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ...blocks.map(
-            (block) => HomeWeatherEssentialsBlock(
+            (block) => DailyEssentialsBlock(
+              onTap: onTap,
               image: block.image,
               title: block.title,
               value: block.value,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_02/screens/daily.dart';
 
 import '../../models/weather_model.dart';
 
@@ -26,6 +27,18 @@ class HomeWeather extends StatelessWidget {
       );
     }
 
+    void openDailyScreen() {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) {
+            return DailyScreen(
+              day: weather.daily[0],
+            );
+          },
+        ),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(15, 0, 15, 20),
       child: Column(
@@ -37,14 +50,14 @@ class HomeWeather extends StatelessWidget {
             date: weather.location.date,
           ),
           const SizedBox(
-            height: 25,
+            height: 30,
           ),
           HomeWeatherTemperature(
             temperature: weather.temperature.temperature,
             image: weather.temperature.image,
           ),
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
           HomeWeatherEssentials(
             essentials: weather.daily[0].essentials,
@@ -65,7 +78,7 @@ class HomeWeather extends StatelessWidget {
             height: 10,
           ),
           HomeWeatherDetailsButton(
-            onOpenScreen: () {},
+            onOpenScreen: openDailyScreen,
           ),
         ],
       ),

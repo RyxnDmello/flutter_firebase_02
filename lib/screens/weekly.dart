@@ -12,7 +12,7 @@ class WeeklyScreen extends StatelessWidget {
     super.key,
   });
 
-  final Weather weather;
+  final WeatherModel weather;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +47,7 @@ class WeeklyScreen extends StatelessWidget {
             ),
             WeeklyDays(
               weekly: weather.weekly,
+              daily: weather.daily,
             ),
           ],
         ),

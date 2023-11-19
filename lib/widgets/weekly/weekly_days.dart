@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_02/screens/daily.dart';
 
 import '../../models/weather/weather_weekly_model.dart';
+import '../../models/weather/weather_daily_model.dart';
 
 import './days/weekly_days_title.dart';
 import './days/weekly_days_card.dart';
@@ -8,13 +10,29 @@ import './days/weekly_days_card.dart';
 class WeeklyDays extends StatelessWidget {
   const WeeklyDays({
     required this.weekly,
+    required this.daily,
     super.key,
   });
 
   final List<WeatherWeeklyModel> weekly;
+  final List<WeatherDailyModel> daily;
 
   @override
   Widget build(BuildContext context) {
+    void openDailyScreen(int index) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) {
+            return DailyScreen(
+              day: daily[index],
+            );
+          },
+        ),
+      );
+
+      print(daily[index].location.date);
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +47,7 @@ class WeeklyDays extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
             return WeeklyDaysCard(
-              onTapDay: () {},
+              onTapDay: () => openDailyScreen(index),
               temperature: weekly[index].temperature,
               image: weekly[index].image,
               date: weekly[index].date,

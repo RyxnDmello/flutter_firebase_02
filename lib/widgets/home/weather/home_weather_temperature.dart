@@ -22,7 +22,7 @@ class HomeWeatherTemperature extends StatelessWidget {
           style: GoogleFonts.montserrat(
             fontWeight: FontWeight.w200,
             color: Colors.white,
-            fontSize: 100,
+            fontSize: 85,
           ),
         ),
         const SizedBox(
@@ -31,7 +31,7 @@ class HomeWeatherTemperature extends StatelessWidget {
         Image.asset(
           image,
           fit: BoxFit.cover,
-          width: 100,
+          width: 120,
         ),
       ],
     );
