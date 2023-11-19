@@ -11,7 +11,7 @@ class WeeklyTomorrow extends StatelessWidget {
     super.key,
   });
 
-  final WeatherWeekly day;
+  final WeatherWeeklyModel day;
 
   @override
   Widget build(BuildContext context) {

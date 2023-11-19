@@ -1,5 +1,5 @@
-class WeatherTemperature {
-  const WeatherTemperature({
+class WeatherTemperatureModel {
+  const WeatherTemperatureModel({
     required this.temperature,
     required this.image,
   });

@@ -1,5 +1,5 @@
-class WeatherHourly {
-  const WeatherHourly({
+class WeatherDailyHourlyModel {
+  const WeatherDailyHourlyModel({
     required this.image,
     required this.hour,
     required this.value,

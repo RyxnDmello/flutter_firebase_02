@@ -1,5 +1,5 @@
-class WeatherLocation {
-  WeatherLocation({
+class WeatherLocationModel {
+  WeatherLocationModel({
     required this.location,
     required this.date,
   });

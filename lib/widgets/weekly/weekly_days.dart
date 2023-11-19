@@ -11,7 +11,7 @@ class WeeklyDays extends StatelessWidget {
     super.key,
   });
 
-  final List<WeatherWeekly> weekly;
+  final List<WeatherWeeklyModel> weekly;
 
   @override
   Widget build(BuildContext context) {

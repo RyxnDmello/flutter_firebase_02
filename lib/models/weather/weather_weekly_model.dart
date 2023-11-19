@@ -1,5 +1,5 @@
-class WeatherWeekly {
-  const WeatherWeekly({
+class WeatherWeeklyModel {
+  const WeatherWeeklyModel({
     required this.temperature,
     required this.condition,
     required this.image,

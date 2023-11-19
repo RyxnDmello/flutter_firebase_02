@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/weather/weather_hourly_model.dart';
+import '../../../models/weather/daily/weather_daily_hourly_model.dart';
 
 import './hourly/home_weather_hourly_block.dart';
 
@@ -10,7 +10,7 @@ class HomeWeatherHourly extends StatefulWidget {
     super.key,
   });
 
-  final List<WeatherHourly> hourly;
+  final List<WeatherDailyHourlyModel> hourly;
 
   @override
   State<HomeWeatherHourly> createState() => _HomeWeatherHourlyState();

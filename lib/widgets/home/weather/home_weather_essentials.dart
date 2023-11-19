@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/weather/weather_essentials_model.dart';
+import '../../../models/weather/daily/weather_daily_essentials_model.dart';
 
 import './essentials/home_weather_essentials_slide.dart';
 
@@ -10,7 +10,7 @@ class HomeWeatherEssentials extends StatelessWidget {
     super.key,
   });
 
-  final List<WeatherEssentials> essentials;
+  final List<WeatherDailyEssentialsModel> essentials;
 
   @override
   Widget build(BuildContext context) {

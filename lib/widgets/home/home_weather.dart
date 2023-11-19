@@ -47,13 +47,13 @@ class HomeWeather extends StatelessWidget {
             height: 20,
           ),
           HomeWeatherEssentials(
-            essentials: weather.essentials,
+            essentials: weather.daily[0].essentials,
           ),
           const SizedBox(
             height: 20,
           ),
           HomeWeatherHourly(
-            hourly: weather.hourly,
+            hourly: weather.daily[0].hourly,
           ),
           const SizedBox(
             height: 20,

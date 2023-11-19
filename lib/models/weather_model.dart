@@ -1,247 +1,1399 @@
 import 'package:intl/intl.dart';
 
+import './weather/daily/weather_daily_essentials_model.dart';
+import './weather/daily/weather_daily_hourly_model.dart';
+
 import './weather/weather_location_model.dart';
 import './weather/weather_temperature_model.dart';
-import './weather/weather_essentials_model.dart';
-import './weather/weather_hourly_model.dart';
 import './weather/weather_weekly_model.dart';
+import './weather/weather_daily_model.dart';
 
 class Weather {
   const Weather({
     required this.location,
     required this.temperature,
-    required this.essentials,
-    required this.hourly,
     required this.weekly,
+    required this.daily,
   });
 
-  final WeatherLocation location;
-  final WeatherTemperature temperature;
-  final List<WeatherEssentials> essentials;
-  final List<WeatherHourly> hourly;
-  final List<WeatherWeekly> weekly;
+  final WeatherLocationModel location;
+  final WeatherTemperatureModel temperature;
+  final List<WeatherWeeklyModel> weekly;
+  final List<WeatherDailyModel> daily;
 }
 
 final weather = Weather(
-  location: WeatherLocation(
+  location: WeatherLocationModel(
     location: "Toronto Ontario",
     date: DateFormat("d MMM").format(DateTime.now()),
   ),
-  temperature: const WeatherTemperature(
+  temperature: const WeatherTemperatureModel(
     temperature: "36",
     image: "./lib/images/weather/clear-day.png",
   ),
-  essentials: [
-    const WeatherEssentials(
-      blocks: [
-        EssentialsBlock(
-          image: "./lib/images/home/weather/rain.png",
-          title: "Rain",
-          value: "100%",
-        ),
-        EssentialsBlock(
-          image: "./lib/images/home/weather/humidity.png",
-          title: "Humidity",
-          value: "85%",
-        ),
-        EssentialsBlock(
-          image: "./lib/images/home/weather/wind.png",
-          title: "Wind",
-          value: "10ms",
-        ),
-      ],
-    ),
-    const WeatherEssentials(
-      blocks: [
-        EssentialsBlock(
-          image: "./lib/images/home/weather/dew.png",
-          title: "Dew",
-          value: "20.8%",
-        ),
-        EssentialsBlock(
-          image: "./lib/images/home/weather/pressure.png",
-          title: "Pressure",
-          value: "1012.4mb",
-        ),
-        EssentialsBlock(
-          image: "./lib/images/home/weather/cloud.png",
-          title: "Cover",
-          value: "50.2%",
-        ),
-      ],
-    ),
-  ],
-  hourly: [
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-    const WeatherHourly(
-      image: "./lib/images/home/weather/humidity.png",
-      hour: "10Am",
-      value: "26°",
-    ),
-  ],
   weekly: [
-    const WeatherWeekly(
+    const WeatherWeeklyModel(
       image: "./lib/images/weather/clear-day.png",
       condition: "Partially Cloudy",
       temperature: "36°",
       day: "Thursday",
       date: "16 Nov",
     ),
-    const WeatherWeekly(
+    const WeatherWeeklyModel(
       image: "./lib/images/weather/clear-night.png",
       condition: "Partially Cloudy",
       temperature: "36°",
       day: "Thursday",
       date: "16 Nov",
     ),
-    const WeatherWeekly(
+    const WeatherWeeklyModel(
       image: "./lib/images/weather/cloudy.png",
       condition: "Partially Cloudy",
       temperature: "36°",
       day: "Thursday",
       date: "16 Nov",
     ),
-    const WeatherWeekly(
+    const WeatherWeeklyModel(
       image: "./lib/images/weather/hail.png",
       condition: "Partially Cloudy",
       temperature: "36°",
       day: "Thursday",
       date: "16 Nov",
     ),
-    const WeatherWeekly(
+    const WeatherWeeklyModel(
       image: "./lib/images/weather/rain.png",
       condition: "Partially Cloudy",
       temperature: "36°",
       day: "Thursday",
       date: "16 Nov",
     ),
-    const WeatherWeekly(
+    const WeatherWeeklyModel(
       image: "./lib/images/weather/snow-showers.png",
       condition: "Partially Cloudy",
       temperature: "36°",
       day: "Thursday",
       date: "16 Nov",
     ),
-    const WeatherWeekly(
+    const WeatherWeeklyModel(
       image: "./lib/images/weather/snow.png",
       condition: "Partially Cloudy",
       temperature: "36°",
       day: "Thursday",
       date: "16 Nov",
+    ),
+  ],
+  daily: [
+    const WeatherDailyModel(
+      essentials: [
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/rain.png",
+              title: "Rain",
+              value: "100%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/humidity.png",
+              title: "Humidity",
+              value: "85%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/wind.png",
+              title: "Wind",
+              value: "10ms",
+            ),
+          ],
+        ),
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/dew.png",
+              title: "Dew",
+              value: "20.8%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/pressure.png",
+              title: "Pressure",
+              value: "1012.4mb",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/cloud.png",
+              title: "Cover",
+              value: "50.2%",
+            ),
+          ],
+        ),
+      ],
+      hourly: [
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+      ],
+    ),
+    const WeatherDailyModel(
+      essentials: [
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/rain.png",
+              title: "Rain",
+              value: "100%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/humidity.png",
+              title: "Humidity",
+              value: "85%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/wind.png",
+              title: "Wind",
+              value: "10ms",
+            ),
+          ],
+        ),
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/dew.png",
+              title: "Dew",
+              value: "20.8%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/pressure.png",
+              title: "Pressure",
+              value: "1012.4mb",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/cloud.png",
+              title: "Cover",
+              value: "50.2%",
+            ),
+          ],
+        ),
+      ],
+      hourly: [
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+      ],
+    ),
+    const WeatherDailyModel(
+      essentials: [
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/rain.png",
+              title: "Rain",
+              value: "100%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/humidity.png",
+              title: "Humidity",
+              value: "85%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/wind.png",
+              title: "Wind",
+              value: "10ms",
+            ),
+          ],
+        ),
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/dew.png",
+              title: "Dew",
+              value: "20.8%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/pressure.png",
+              title: "Pressure",
+              value: "1012.4mb",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/cloud.png",
+              title: "Cover",
+              value: "50.2%",
+            ),
+          ],
+        ),
+      ],
+      hourly: [
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+      ],
+    ),
+    const WeatherDailyModel(
+      essentials: [
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/rain.png",
+              title: "Rain",
+              value: "100%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/humidity.png",
+              title: "Humidity",
+              value: "85%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/wind.png",
+              title: "Wind",
+              value: "10ms",
+            ),
+          ],
+        ),
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/dew.png",
+              title: "Dew",
+              value: "20.8%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/pressure.png",
+              title: "Pressure",
+              value: "1012.4mb",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/cloud.png",
+              title: "Cover",
+              value: "50.2%",
+            ),
+          ],
+        ),
+      ],
+      hourly: [
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+      ],
+    ),
+    const WeatherDailyModel(
+      essentials: [
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/rain.png",
+              title: "Rain",
+              value: "100%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/humidity.png",
+              title: "Humidity",
+              value: "85%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/wind.png",
+              title: "Wind",
+              value: "10ms",
+            ),
+          ],
+        ),
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/dew.png",
+              title: "Dew",
+              value: "20.8%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/pressure.png",
+              title: "Pressure",
+              value: "1012.4mb",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/cloud.png",
+              title: "Cover",
+              value: "50.2%",
+            ),
+          ],
+        ),
+      ],
+      hourly: [
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+      ],
+    ),
+    const WeatherDailyModel(
+      essentials: [
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/rain.png",
+              title: "Rain",
+              value: "100%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/humidity.png",
+              title: "Humidity",
+              value: "85%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/wind.png",
+              title: "Wind",
+              value: "10ms",
+            ),
+          ],
+        ),
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/dew.png",
+              title: "Dew",
+              value: "20.8%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/pressure.png",
+              title: "Pressure",
+              value: "1012.4mb",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/cloud.png",
+              title: "Cover",
+              value: "50.2%",
+            ),
+          ],
+        ),
+      ],
+      hourly: [
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+      ],
+    ),
+    const WeatherDailyModel(
+      essentials: [
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/rain.png",
+              title: "Rain",
+              value: "100%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/humidity.png",
+              title: "Humidity",
+              value: "85%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/wind.png",
+              title: "Wind",
+              value: "10ms",
+            ),
+          ],
+        ),
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/dew.png",
+              title: "Dew",
+              value: "20.8%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/pressure.png",
+              title: "Pressure",
+              value: "1012.4mb",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/cloud.png",
+              title: "Cover",
+              value: "50.2%",
+            ),
+          ],
+        ),
+      ],
+      hourly: [
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+      ],
+    ),
+    const WeatherDailyModel(
+      essentials: [
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/rain.png",
+              title: "Rain",
+              value: "100%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/humidity.png",
+              title: "Humidity",
+              value: "85%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/wind.png",
+              title: "Wind",
+              value: "10ms",
+            ),
+          ],
+        ),
+        WeatherDailyEssentialsModel(
+          blocks: [
+            EssentialsModel(
+              image: "./lib/images/home/weather/dew.png",
+              title: "Dew",
+              value: "20.8%",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/pressure.png",
+              title: "Pressure",
+              value: "1012.4mb",
+            ),
+            EssentialsModel(
+              image: "./lib/images/home/weather/cloud.png",
+              title: "Cover",
+              value: "50.2%",
+            ),
+          ],
+        ),
+      ],
+      hourly: [
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+        WeatherDailyHourlyModel(
+          image: "./lib/images/home/weather/humidity.png",
+          hour: "10Am",
+          value: "26°",
+        ),
+      ],
     ),
   ],
 );
