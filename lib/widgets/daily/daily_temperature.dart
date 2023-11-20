@@ -58,8 +58,8 @@ class DailyTemperature extends StatelessWidget {
             Text(
               condition,
               style: GoogleFonts.montserrat(
-                color: const Color.fromARGB(180, 255, 255, 255),
                 fontWeight: FontWeight.w500,
+                color: Colors.white,
                 letterSpacing: 0.5,
                 fontSize: 20,
               ),

@@ -16,11 +16,15 @@ class HomeWeatherHourlyBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 0, 40),
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: const Color.fromARGB(255, 0, 0, 100),
+          width: 2,
+        ),
+        borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
+        color: const Color.fromARGB(255, 0, 0, 40),
       ),
       margin: const EdgeInsets.symmetric(
         horizontal: 6.5,

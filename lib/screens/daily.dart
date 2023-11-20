@@ -6,6 +6,7 @@ import '../models/weather/weather_daily_model.dart';
 import '../widgets/daily/daily_location.dart';
 import '../widgets/daily/daily_temperature.dart';
 import '../widgets/daily/daily_essentials.dart';
+import '../widgets/daily/daily_hourly.dart';
 
 class DailyScreen extends StatefulWidget {
   const DailyScreen({
@@ -72,6 +73,9 @@ class _DailyScreenState extends State<DailyScreen> {
             ),
             const SizedBox(
               height: 20,
+            ),
+            DailyHourly(
+              hourly: widget.day.hourly,
             ),
           ],
         ),

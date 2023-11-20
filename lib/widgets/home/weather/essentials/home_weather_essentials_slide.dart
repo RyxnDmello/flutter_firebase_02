@@ -23,11 +23,15 @@ class HomeWeatherEssentialsSlide extends StatelessWidget {
         horizontal: 36.5,
         vertical: 22.5,
       ),
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: const Color.fromARGB(255, 0, 0, 100),
+          width: 2,
+        ),
+        borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
-        color: Color.fromARGB(255, 0, 0, 40),
+        color: const Color.fromARGB(255, 0, 0, 40),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
