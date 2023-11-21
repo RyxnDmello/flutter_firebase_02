@@ -37,7 +37,7 @@ class _DailyHourlyState extends State<DailyHourly>
           height: 150,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(
-              Radius.circular(10),
+              Radius.circular(15),
             ),
             border: Border.all(
               color: const Color.fromARGB(255, 0, 0, 100),
@@ -58,7 +58,7 @@ class _DailyHourlyState extends State<DailyHourly>
               return DailyHourlyBlock(
                 hour: widget.hourly[index].hour,
                 image: widget.hourly[index].image,
-                value: widget.hourly[index].value,
+                value: widget.hourly[index].temperature,
               );
             },
           ),

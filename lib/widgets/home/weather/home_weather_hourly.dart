@@ -45,9 +45,9 @@ class _HomeWeatherHourlyState extends State<HomeWeatherHourly>
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
               return HomeWeatherHourlyBlock(
-                image: widget.hourly[index].image,
                 hour: widget.hourly[index].hour,
-                value: widget.hourly[index].value,
+                image: widget.hourly[index].image,
+                value: widget.hourly[index].temperature,
               );
             },
           ),

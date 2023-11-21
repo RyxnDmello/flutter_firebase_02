@@ -7,6 +7,7 @@ import '../widgets/daily/daily_location.dart';
 import '../widgets/daily/daily_temperature.dart';
 import '../widgets/daily/daily_essentials.dart';
 import '../widgets/daily/daily_hourly.dart';
+import '../widgets/daily/daily_graphs.dart';
 
 class DailyScreen extends StatefulWidget {
   const DailyScreen({
@@ -75,6 +76,12 @@ class _DailyScreenState extends State<DailyScreen> {
               height: 20,
             ),
             DailyHourly(
+              hourly: widget.day.hourly,
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            DailyGraphs(
               hourly: widget.day.hourly,
             ),
           ],
