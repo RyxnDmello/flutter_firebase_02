@@ -18,7 +18,7 @@ class RegisterFormAvatarModal extends StatelessWidget {
         color: Colors.black,
         image: DecorationImage(
           image: AssetImage(
-            "./lib/images/register/avatar-modal-background.png",
+            "./lib/images/register/avatars/avatar-modal.png",
           ),
           fit: BoxFit.cover,
           opacity: 0.65,

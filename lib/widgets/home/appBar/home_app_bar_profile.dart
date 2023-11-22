@@ -13,7 +13,7 @@ class HomeAppBarProfile extends StatelessWidget {
     return GestureDetector(
       onTap: onTapProfile,
       child: Image.asset(
-        "./lib/images/register/avatar-1.png",
+        "./lib/images/register/avatars/avatar-1.png",
         fit: BoxFit.cover,
         width: 45,
       ),

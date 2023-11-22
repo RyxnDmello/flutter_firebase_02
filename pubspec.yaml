@@ -33,8 +33,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - ./lib/images/register/
+    - ./lib/images/
     - ./lib/images/home/
-    - ./lib/images/home/drawer/
-    - ./lib/images/home/weather/
+    - ./lib/images/account/
+    
+    - ./lib/images/register/
+    - ./lib/images/register/avatars/
+
     - ./lib/images/weather/
+    - ./lib/images/weather/essentials/

@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/weather/daily/weather_daily_essentials_model.dart';
+import '../../../models/weather/daily/weather_daily_hourly_model.dart';
 
 import './daily_essentials_block.dart';
 
 class DailyEssentialsSlide extends StatelessWidget {
   const DailyEssentialsSlide({
     required this.blocks,
-    required this.onTap,
+    required this.onSelect,
+    required this.selected,
     super.key,
   });
 
   final List<EssentialBlockModel> blocks;
-  final void Function(String type) onTap;
+  final void Function(HourlyWeatherType type) onSelect;
+  final HourlyWeatherType selected;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,8 @@ class DailyEssentialsSlide extends StatelessWidget {
         children: [
           ...blocks.map(
             (block) => DailyEssentialsBlock(
-              onTap: onTap,
+              onSelect: onSelect,
+              selected: selected,
               image: block.image,
               title: block.title,
               value: block.value,

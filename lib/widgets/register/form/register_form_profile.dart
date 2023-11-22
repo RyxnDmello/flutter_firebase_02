@@ -25,7 +25,7 @@ class RegisterFormProfile extends StatelessWidget {
       children: [
         if (profileImage == null && profileAvatar == null)
           Image.asset(
-            "./lib/images/register/profile.png",
+            "./lib/images/account/profile.png",
             fit: BoxFit.cover,
             width: 80,
           ),

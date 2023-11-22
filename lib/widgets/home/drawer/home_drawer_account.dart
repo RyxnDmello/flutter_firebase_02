@@ -26,7 +26,7 @@ class HomeDrawerAccount extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            "./lib/images/home/drawer/account-background.png",
+            "./lib/images/home/drawer.png",
           ),
           fit: BoxFit.cover,
         ),

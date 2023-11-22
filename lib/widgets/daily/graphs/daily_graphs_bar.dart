@@ -23,7 +23,7 @@ class DailyGraphsBar extends StatelessWidget {
   final List<WeatherDailyHourlyModel> hourly;
   final HourlyWeatherType weatherType;
   final double sidePadding;
-  final String graphTitle;
+  final String? graphTitle;
   final double barWidth;
   final double graphMax;
   final Color barColor;
@@ -34,16 +34,17 @@ class DailyGraphsBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          graphTitle,
-          textAlign: TextAlign.center,
-          style: GoogleFonts.montserrat(
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
-            letterSpacing: 0.65,
-            fontSize: 20,
+        if (graphTitle != null)
+          Text(
+            graphTitle!,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.montserrat(
+              fontWeight: FontWeight.w500,
+              color: Colors.white,
+              letterSpacing: 0.65,
+              fontSize: 20,
+            ),
           ),
-        ),
         const SizedBox(
           height: 15,
         ),

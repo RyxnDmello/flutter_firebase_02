@@ -98,17 +98,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/rain.png",
+              image: "./lib/images/weather/essentials/rain.png",
               title: "Rain",
               value: "100%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/humidity.png",
+              image: "./lib/images/weather/essentials/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/wind.png",
+              image: "./lib/images/weather/essentials/wind.png",
               title: "Wind",
               value: "10ms",
             ),
@@ -117,17 +117,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/dew.png",
+              image: "./lib/images/weather/essentials/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/pressure.png",
+              image: "./lib/images/weather/essentials/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/cloud.png",
+              image: "./lib/images/weather/essentials/cloud.png",
               title: "Cover",
               value: "50.2%",
             ),
@@ -136,7 +136,7 @@ final weather = WeatherModel(
       ],
       hourly: [
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "00",
           temperature: "10",
           precipitation: "10",
@@ -147,7 +147,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "01",
           temperature: "80",
           precipitation: "15",
@@ -158,7 +158,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "02",
           temperature: "20",
           precipitation: "20",
@@ -169,7 +169,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "03",
           temperature: "70",
           precipitation: "80",
@@ -180,7 +180,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "04",
           temperature: "25",
           precipitation: "70",
@@ -191,7 +191,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "05",
           temperature: "65",
           precipitation: "60",
@@ -202,7 +202,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "06",
           temperature: "30",
           precipitation: "40",
@@ -213,7 +213,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "07",
           temperature: "60",
           precipitation: "50",
@@ -224,7 +224,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "08",
           temperature: "35",
           precipitation: "60",
@@ -235,7 +235,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "09",
           temperature: "55",
           precipitation: "50",
@@ -246,7 +246,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "10",
           temperature: "40",
           precipitation: "70",
@@ -257,7 +257,7 @@ final weather = WeatherModel(
           wind: "11",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "12",
           temperature: "50",
           precipitation: "10",
@@ -268,7 +268,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "95",
           precipitation: "85",
@@ -279,7 +279,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "14",
           temperature: "18",
           precipitation: "80",
@@ -290,7 +290,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "15",
           temperature: "74",
           precipitation: "90",
@@ -301,7 +301,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "16",
           temperature: "32",
           precipitation: "20",
@@ -312,7 +312,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "17",
           temperature: "54",
           precipitation: "25",
@@ -323,7 +323,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "18",
           temperature: "33",
           precipitation: "30",
@@ -334,7 +334,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "19",
           temperature: "65",
           precipitation: "40",
@@ -345,7 +345,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "20",
           temperature: "87",
           precipitation: "15",
@@ -356,7 +356,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "21",
           temperature: "98",
           precipitation: "25",
@@ -367,7 +367,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "22",
           temperature: "35",
           precipitation: "30",
@@ -378,7 +378,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "23",
           precipitation: "34",
@@ -389,7 +389,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "24",
           temperature: "18",
           precipitation: "22",
@@ -415,17 +415,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/rain.png",
+              image: "./lib/images/weather/essentials/rain.png",
               title: "Rain",
               value: "100%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/humidity.png",
+              image: "./lib/images/weather/essentials/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/wind.png",
+              image: "./lib/images/weather/essentials/wind.png",
               title: "Wind",
               value: "10ms",
             ),
@@ -434,17 +434,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/dew.png",
+              image: "./lib/images/weather/essentials/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/pressure.png",
+              image: "./lib/images/weather/essentials/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/cloud.png",
+              image: "./lib/images/weather/essentials/cloud.png",
               title: "Cover",
               value: "50.2%",
             ),
@@ -453,7 +453,7 @@ final weather = WeatherModel(
       ],
       hourly: [
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "00",
           temperature: "10",
           precipitation: "10",
@@ -464,7 +464,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "01",
           temperature: "80",
           precipitation: "15",
@@ -475,7 +475,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "02",
           temperature: "20",
           precipitation: "20",
@@ -486,7 +486,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "03",
           temperature: "70",
           precipitation: "80",
@@ -497,7 +497,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "04",
           temperature: "25",
           precipitation: "70",
@@ -508,7 +508,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "05",
           temperature: "65",
           precipitation: "60",
@@ -519,7 +519,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "06",
           temperature: "30",
           precipitation: "40",
@@ -530,7 +530,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "07",
           temperature: "60",
           precipitation: "50",
@@ -541,7 +541,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "08",
           temperature: "35",
           precipitation: "60",
@@ -552,7 +552,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "09",
           temperature: "55",
           precipitation: "50",
@@ -563,7 +563,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "10",
           temperature: "40",
           precipitation: "70",
@@ -574,7 +574,7 @@ final weather = WeatherModel(
           wind: "11",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "12",
           temperature: "50",
           precipitation: "10",
@@ -585,7 +585,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "95",
           precipitation: "85",
@@ -596,7 +596,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "14",
           temperature: "18",
           precipitation: "80",
@@ -607,7 +607,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "15",
           temperature: "74",
           precipitation: "90",
@@ -618,7 +618,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "16",
           temperature: "32",
           precipitation: "20",
@@ -629,7 +629,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "17",
           temperature: "54",
           precipitation: "25",
@@ -640,7 +640,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "18",
           temperature: "33",
           precipitation: "30",
@@ -651,7 +651,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "19",
           temperature: "65",
           precipitation: "40",
@@ -662,7 +662,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "20",
           temperature: "87",
           precipitation: "15",
@@ -673,7 +673,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "21",
           temperature: "98",
           precipitation: "25",
@@ -684,7 +684,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "22",
           temperature: "35",
           precipitation: "30",
@@ -695,7 +695,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "23",
           precipitation: "34",
@@ -706,7 +706,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "24",
           temperature: "18",
           precipitation: "22",
@@ -732,17 +732,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/rain.png",
+              image: "./lib/images/weather/essentials/rain.png",
               title: "Rain",
               value: "100%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/humidity.png",
+              image: "./lib/images/weather/essentials/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/wind.png",
+              image: "./lib/images/weather/essentials/wind.png",
               title: "Wind",
               value: "10ms",
             ),
@@ -751,17 +751,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/dew.png",
+              image: "./lib/images/weather/essentials/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/pressure.png",
+              image: "./lib/images/weather/essentials/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/cloud.png",
+              image: "./lib/images/weather/essentials/cloud.png",
               title: "Cover",
               value: "50.2%",
             ),
@@ -770,7 +770,7 @@ final weather = WeatherModel(
       ],
       hourly: [
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "00",
           temperature: "10",
           precipitation: "10",
@@ -781,7 +781,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "01",
           temperature: "80",
           precipitation: "15",
@@ -792,7 +792,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "02",
           temperature: "20",
           precipitation: "20",
@@ -803,7 +803,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "03",
           temperature: "70",
           precipitation: "80",
@@ -814,7 +814,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "04",
           temperature: "25",
           precipitation: "70",
@@ -825,7 +825,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "05",
           temperature: "65",
           precipitation: "60",
@@ -836,7 +836,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "06",
           temperature: "30",
           precipitation: "40",
@@ -847,7 +847,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "07",
           temperature: "60",
           precipitation: "50",
@@ -858,7 +858,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "08",
           temperature: "35",
           precipitation: "60",
@@ -869,7 +869,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "09",
           temperature: "55",
           precipitation: "50",
@@ -880,7 +880,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "10",
           temperature: "40",
           precipitation: "70",
@@ -891,7 +891,7 @@ final weather = WeatherModel(
           wind: "11",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "12",
           temperature: "50",
           precipitation: "10",
@@ -902,7 +902,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "95",
           precipitation: "85",
@@ -913,7 +913,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "14",
           temperature: "18",
           precipitation: "80",
@@ -924,7 +924,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "15",
           temperature: "74",
           precipitation: "90",
@@ -935,7 +935,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "16",
           temperature: "32",
           precipitation: "20",
@@ -946,7 +946,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "17",
           temperature: "54",
           precipitation: "25",
@@ -957,7 +957,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "18",
           temperature: "33",
           precipitation: "30",
@@ -968,7 +968,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "19",
           temperature: "65",
           precipitation: "40",
@@ -979,7 +979,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "20",
           temperature: "87",
           precipitation: "15",
@@ -990,7 +990,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "21",
           temperature: "98",
           precipitation: "25",
@@ -1001,7 +1001,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "22",
           temperature: "35",
           precipitation: "30",
@@ -1012,7 +1012,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "23",
           precipitation: "34",
@@ -1023,7 +1023,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "24",
           temperature: "18",
           precipitation: "22",
@@ -1049,17 +1049,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/rain.png",
+              image: "./lib/images/weather/essentials/rain.png",
               title: "Rain",
               value: "100%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/humidity.png",
+              image: "./lib/images/weather/essentials/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/wind.png",
+              image: "./lib/images/weather/essentials/wind.png",
               title: "Wind",
               value: "10ms",
             ),
@@ -1068,17 +1068,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/dew.png",
+              image: "./lib/images/weather/essentials/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/pressure.png",
+              image: "./lib/images/weather/essentials/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/cloud.png",
+              image: "./lib/images/weather/essentials/cloud.png",
               title: "Cover",
               value: "50.2%",
             ),
@@ -1087,7 +1087,7 @@ final weather = WeatherModel(
       ],
       hourly: [
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "00",
           temperature: "10",
           precipitation: "10",
@@ -1098,7 +1098,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "01",
           temperature: "80",
           precipitation: "15",
@@ -1109,7 +1109,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "02",
           temperature: "20",
           precipitation: "20",
@@ -1120,7 +1120,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "03",
           temperature: "70",
           precipitation: "80",
@@ -1131,7 +1131,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "04",
           temperature: "25",
           precipitation: "70",
@@ -1142,7 +1142,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "05",
           temperature: "65",
           precipitation: "60",
@@ -1153,7 +1153,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "06",
           temperature: "30",
           precipitation: "40",
@@ -1164,7 +1164,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "07",
           temperature: "60",
           precipitation: "50",
@@ -1175,7 +1175,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "08",
           temperature: "35",
           precipitation: "60",
@@ -1186,7 +1186,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "09",
           temperature: "55",
           precipitation: "50",
@@ -1197,7 +1197,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "10",
           temperature: "40",
           precipitation: "70",
@@ -1208,7 +1208,7 @@ final weather = WeatherModel(
           wind: "11",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "12",
           temperature: "50",
           precipitation: "10",
@@ -1219,7 +1219,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "95",
           precipitation: "85",
@@ -1230,7 +1230,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "14",
           temperature: "18",
           precipitation: "80",
@@ -1241,7 +1241,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "15",
           temperature: "74",
           precipitation: "90",
@@ -1252,7 +1252,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "16",
           temperature: "32",
           precipitation: "20",
@@ -1263,7 +1263,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "17",
           temperature: "54",
           precipitation: "25",
@@ -1274,7 +1274,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "18",
           temperature: "33",
           precipitation: "30",
@@ -1285,7 +1285,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "19",
           temperature: "65",
           precipitation: "40",
@@ -1296,7 +1296,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "20",
           temperature: "87",
           precipitation: "15",
@@ -1307,7 +1307,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "21",
           temperature: "98",
           precipitation: "25",
@@ -1318,7 +1318,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "22",
           temperature: "35",
           precipitation: "30",
@@ -1329,7 +1329,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "23",
           precipitation: "34",
@@ -1340,7 +1340,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "24",
           temperature: "18",
           precipitation: "22",
@@ -1366,17 +1366,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/rain.png",
+              image: "./lib/images/weather/essentials/rain.png",
               title: "Rain",
               value: "100%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/humidity.png",
+              image: "./lib/images/weather/essentials/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/wind.png",
+              image: "./lib/images/weather/essentials/wind.png",
               title: "Wind",
               value: "10ms",
             ),
@@ -1385,17 +1385,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/dew.png",
+              image: "./lib/images/weather/essentials/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/pressure.png",
+              image: "./lib/images/weather/essentials/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/cloud.png",
+              image: "./lib/images/weather/essentials/cloud.png",
               title: "Cover",
               value: "50.2%",
             ),
@@ -1404,7 +1404,7 @@ final weather = WeatherModel(
       ],
       hourly: [
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "00",
           temperature: "10",
           precipitation: "10",
@@ -1415,7 +1415,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "01",
           temperature: "80",
           precipitation: "15",
@@ -1426,7 +1426,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "02",
           temperature: "20",
           precipitation: "20",
@@ -1437,7 +1437,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "03",
           temperature: "70",
           precipitation: "80",
@@ -1448,7 +1448,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "04",
           temperature: "25",
           precipitation: "70",
@@ -1459,7 +1459,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "05",
           temperature: "65",
           precipitation: "60",
@@ -1470,7 +1470,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "06",
           temperature: "30",
           precipitation: "40",
@@ -1481,7 +1481,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "07",
           temperature: "60",
           precipitation: "50",
@@ -1492,7 +1492,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "08",
           temperature: "35",
           precipitation: "60",
@@ -1503,7 +1503,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "09",
           temperature: "55",
           precipitation: "50",
@@ -1514,7 +1514,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "10",
           temperature: "40",
           precipitation: "70",
@@ -1525,7 +1525,7 @@ final weather = WeatherModel(
           wind: "11",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "12",
           temperature: "50",
           precipitation: "10",
@@ -1536,7 +1536,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "95",
           precipitation: "85",
@@ -1547,7 +1547,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "14",
           temperature: "18",
           precipitation: "80",
@@ -1558,7 +1558,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "15",
           temperature: "74",
           precipitation: "90",
@@ -1569,7 +1569,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "16",
           temperature: "32",
           precipitation: "20",
@@ -1580,7 +1580,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "17",
           temperature: "54",
           precipitation: "25",
@@ -1591,7 +1591,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "18",
           temperature: "33",
           precipitation: "30",
@@ -1602,7 +1602,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "19",
           temperature: "65",
           precipitation: "40",
@@ -1613,7 +1613,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "20",
           temperature: "87",
           precipitation: "15",
@@ -1624,7 +1624,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "21",
           temperature: "98",
           precipitation: "25",
@@ -1635,7 +1635,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "22",
           temperature: "35",
           precipitation: "30",
@@ -1646,7 +1646,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "23",
           precipitation: "34",
@@ -1657,7 +1657,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "24",
           temperature: "18",
           precipitation: "22",
@@ -1683,17 +1683,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/rain.png",
+              image: "./lib/images/weather/essentials/rain.png",
               title: "Rain",
               value: "100%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/humidity.png",
+              image: "./lib/images/weather/essentials/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/wind.png",
+              image: "./lib/images/weather/essentials/wind.png",
               title: "Wind",
               value: "10ms",
             ),
@@ -1702,17 +1702,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/dew.png",
+              image: "./lib/images/weather/essentials/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/pressure.png",
+              image: "./lib/images/weather/essentials/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/cloud.png",
+              image: "./lib/images/weather/essentials/cloud.png",
               title: "Cover",
               value: "50.2%",
             ),
@@ -1721,7 +1721,7 @@ final weather = WeatherModel(
       ],
       hourly: [
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "00",
           temperature: "10",
           precipitation: "10",
@@ -1732,7 +1732,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "01",
           temperature: "80",
           precipitation: "15",
@@ -1743,7 +1743,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "02",
           temperature: "20",
           precipitation: "20",
@@ -1754,7 +1754,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "03",
           temperature: "70",
           precipitation: "80",
@@ -1765,7 +1765,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "04",
           temperature: "25",
           precipitation: "70",
@@ -1776,7 +1776,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "05",
           temperature: "65",
           precipitation: "60",
@@ -1787,7 +1787,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "06",
           temperature: "30",
           precipitation: "40",
@@ -1798,7 +1798,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "07",
           temperature: "60",
           precipitation: "50",
@@ -1809,7 +1809,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "08",
           temperature: "35",
           precipitation: "60",
@@ -1820,7 +1820,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "09",
           temperature: "55",
           precipitation: "50",
@@ -1831,7 +1831,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "10",
           temperature: "40",
           precipitation: "70",
@@ -1842,7 +1842,7 @@ final weather = WeatherModel(
           wind: "11",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "12",
           temperature: "50",
           precipitation: "10",
@@ -1853,7 +1853,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "95",
           precipitation: "85",
@@ -1864,7 +1864,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "14",
           temperature: "18",
           precipitation: "80",
@@ -1875,7 +1875,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "15",
           temperature: "74",
           precipitation: "90",
@@ -1886,7 +1886,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "16",
           temperature: "32",
           precipitation: "20",
@@ -1897,7 +1897,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "17",
           temperature: "54",
           precipitation: "25",
@@ -1908,7 +1908,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "18",
           temperature: "33",
           precipitation: "30",
@@ -1919,7 +1919,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "19",
           temperature: "65",
           precipitation: "40",
@@ -1930,7 +1930,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "20",
           temperature: "87",
           precipitation: "15",
@@ -1941,7 +1941,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "21",
           temperature: "98",
           precipitation: "25",
@@ -1952,7 +1952,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "22",
           temperature: "35",
           precipitation: "30",
@@ -1963,7 +1963,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "23",
           precipitation: "34",
@@ -1974,7 +1974,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "24",
           temperature: "18",
           precipitation: "22",
@@ -2000,17 +2000,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/rain.png",
+              image: "./lib/images/weather/essentials/rain.png",
               title: "Rain",
               value: "100%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/humidity.png",
+              image: "./lib/images/weather/essentials/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/wind.png",
+              image: "./lib/images/weather/essentials/wind.png",
               title: "Wind",
               value: "10ms",
             ),
@@ -2019,17 +2019,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/dew.png",
+              image: "./lib/images/weather/essentials/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/pressure.png",
+              image: "./lib/images/weather/essentials/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/cloud.png",
+              image: "./lib/images/weather/essentials/cloud.png",
               title: "Cover",
               value: "50.2%",
             ),
@@ -2038,7 +2038,7 @@ final weather = WeatherModel(
       ],
       hourly: [
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "00",
           temperature: "10",
           precipitation: "10",
@@ -2049,7 +2049,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "01",
           temperature: "80",
           precipitation: "15",
@@ -2060,7 +2060,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "02",
           temperature: "20",
           precipitation: "20",
@@ -2071,7 +2071,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "03",
           temperature: "70",
           precipitation: "80",
@@ -2082,7 +2082,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "04",
           temperature: "25",
           precipitation: "70",
@@ -2093,7 +2093,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "05",
           temperature: "65",
           precipitation: "60",
@@ -2104,7 +2104,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "06",
           temperature: "30",
           precipitation: "40",
@@ -2115,7 +2115,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "07",
           temperature: "60",
           precipitation: "50",
@@ -2126,7 +2126,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "08",
           temperature: "35",
           precipitation: "60",
@@ -2137,7 +2137,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "09",
           temperature: "55",
           precipitation: "50",
@@ -2148,7 +2148,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "10",
           temperature: "40",
           precipitation: "70",
@@ -2159,7 +2159,7 @@ final weather = WeatherModel(
           wind: "11",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "12",
           temperature: "50",
           precipitation: "10",
@@ -2170,7 +2170,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "95",
           precipitation: "85",
@@ -2181,7 +2181,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "14",
           temperature: "18",
           precipitation: "80",
@@ -2192,7 +2192,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "15",
           temperature: "74",
           precipitation: "90",
@@ -2203,7 +2203,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "16",
           temperature: "32",
           precipitation: "20",
@@ -2214,7 +2214,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "17",
           temperature: "54",
           precipitation: "25",
@@ -2225,7 +2225,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "18",
           temperature: "33",
           precipitation: "30",
@@ -2236,7 +2236,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "19",
           temperature: "65",
           precipitation: "40",
@@ -2247,7 +2247,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "20",
           temperature: "87",
           precipitation: "15",
@@ -2258,7 +2258,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "21",
           temperature: "98",
           precipitation: "25",
@@ -2269,7 +2269,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "22",
           temperature: "35",
           precipitation: "30",
@@ -2280,7 +2280,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "23",
           precipitation: "34",
@@ -2291,7 +2291,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "24",
           temperature: "18",
           precipitation: "22",
@@ -2317,17 +2317,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/rain.png",
+              image: "./lib/images/weather/essentials/rain.png",
               title: "Rain",
               value: "100%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/humidity.png",
+              image: "./lib/images/weather/essentials/humidity.png",
               title: "Humidity",
               value: "85%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/wind.png",
+              image: "./lib/images/weather/essentials/wind.png",
               title: "Wind",
               value: "10ms",
             ),
@@ -2336,17 +2336,17 @@ final weather = WeatherModel(
         const WeatherDailyEssentialsModel(
           blocks: [
             EssentialBlockModel(
-              image: "./lib/images/home/weather/dew.png",
+              image: "./lib/images/weather/essentials/dew.png",
               title: "Dew",
               value: "20.8%",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/pressure.png",
+              image: "./lib/images/weather/essentials/pressure.png",
               title: "Pressure",
               value: "1012.4mb",
             ),
             EssentialBlockModel(
-              image: "./lib/images/home/weather/cloud.png",
+              image: "./lib/images/weather/essentials/cloud.png",
               title: "Cover",
               value: "50.2%",
             ),
@@ -2355,7 +2355,7 @@ final weather = WeatherModel(
       ],
       hourly: [
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "00",
           temperature: "10",
           precipitation: "10",
@@ -2366,7 +2366,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "01",
           temperature: "80",
           precipitation: "15",
@@ -2377,7 +2377,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "02",
           temperature: "20",
           precipitation: "20",
@@ -2388,7 +2388,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "03",
           temperature: "70",
           precipitation: "80",
@@ -2399,7 +2399,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "04",
           temperature: "25",
           precipitation: "70",
@@ -2410,7 +2410,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "05",
           temperature: "65",
           precipitation: "60",
@@ -2421,7 +2421,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "06",
           temperature: "30",
           precipitation: "40",
@@ -2432,7 +2432,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "07",
           temperature: "60",
           precipitation: "50",
@@ -2443,7 +2443,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "08",
           temperature: "35",
           precipitation: "60",
@@ -2454,7 +2454,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "09",
           temperature: "55",
           precipitation: "50",
@@ -2465,7 +2465,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "10",
           temperature: "40",
           precipitation: "70",
@@ -2476,7 +2476,7 @@ final weather = WeatherModel(
           wind: "11",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "12",
           temperature: "50",
           precipitation: "10",
@@ -2487,7 +2487,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "95",
           precipitation: "85",
@@ -2498,7 +2498,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "14",
           temperature: "18",
           precipitation: "80",
@@ -2509,7 +2509,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "15",
           temperature: "74",
           precipitation: "90",
@@ -2520,7 +2520,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "16",
           temperature: "32",
           precipitation: "20",
@@ -2531,7 +2531,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "17",
           temperature: "54",
           precipitation: "25",
@@ -2542,7 +2542,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "18",
           temperature: "33",
           precipitation: "30",
@@ -2553,7 +2553,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "19",
           temperature: "65",
           precipitation: "40",
@@ -2564,7 +2564,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "20",
           temperature: "87",
           precipitation: "15",
@@ -2575,7 +2575,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "21",
           temperature: "98",
           precipitation: "25",
@@ -2586,7 +2586,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "22",
           temperature: "35",
           precipitation: "30",
@@ -2597,7 +2597,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "23",
           temperature: "23",
           precipitation: "34",
@@ -2608,7 +2608,7 @@ final weather = WeatherModel(
           wind: "10",
         ),
         const WeatherDailyHourlyModel(
-          image: "./lib/images/home/weather/humidity.png",
+          image: "./lib/images/weather/essentials/humidity.png",
           hour: "24",
           temperature: "18",
           precipitation: "22",
