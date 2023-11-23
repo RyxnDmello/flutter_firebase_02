@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../models/weather/daily/weather_daily_hourly_model.dart';
 import '../models/weather/weather_daily_model.dart';
@@ -31,15 +30,12 @@ class _DailyScreenState extends State<DailyScreen> {
     setState(() => _essentialsGraphType = type);
 
     _openEssentialsGraph(
-      title:
-          "${type.toString()[0].toUpperCase()}${type.toString().substring(1)}",
       weatherType: type,
     );
   }
 
   void _openEssentialsGraph({
     required HourlyWeatherType weatherType,
-    required String title,
   }) {
     showModalBottomSheet(
       backgroundColor: const Color.fromARGB(255, 0, 0, 40),
@@ -58,7 +54,6 @@ class _DailyScreenState extends State<DailyScreen> {
         return DailyEssentialsGraphs(
           hourly: widget.day.hourly,
           weatherType: weatherType,
-          title: title,
         );
       },
     );
@@ -72,11 +67,12 @@ class _DailyScreenState extends State<DailyScreen> {
         backgroundColor: const Color.fromARGB(255, 0, 0, 20),
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: const FaIcon(
-            FontAwesomeIcons.arrowLeft,
+          icon: const Icon(
+            Icons.arrow_back,
             color: Colors.white,
           ),
           splashRadius: 25,
+          iconSize: 30,
         ),
         elevation: 0,
       ),
