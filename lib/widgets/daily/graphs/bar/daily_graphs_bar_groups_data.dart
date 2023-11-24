@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 
 import '../../../../models/weather/daily/weather_daily_hourly_model.dart';
 
-List<BarChartGroupData> barChartGroupsData({
-  required List<WeatherDailyHourlyModel> hourly,
-  required HourlyWeatherType weatherType,
-  required double width,
-  required Color color,
-}) {
-  List<BarChartGroupData> groupsData = _getHourlyData(hourly).map((hour) {
+import '../utils/daily_graphs_hourly_data.dart';
+
+List<BarChartGroupData> barChartGroupsData(
+    {required List<WeatherDailyHourlyModel> hourly,
+    required HourlyWeatherType weatherType,
+    required double width,
+    required Color color,
+    s}) {
+  List<BarChartGroupData> groupsData = getHourlyData(hourly).map((hour) {
     return BarChartGroupData(
       x: int.parse(hour.hour),
       barRods: [
@@ -66,24 +68,4 @@ BarChartRodData _getBarChartRodData({
     color: color,
     width: width,
   );
-}
-
-List<WeatherDailyHourlyModel> _getHourlyData(
-  List<WeatherDailyHourlyModel> hourly,
-) {
-  List<WeatherDailyHourlyModel> graphPoints = [];
-
-  if (DateTime.now().hour > 12) {
-    for (var i = 12; i < 24; i++) {
-      graphPoints.add(hourly[i]);
-    }
-
-    return graphPoints;
-  }
-
-  for (var i = 0; i < 12; i++) {
-    graphPoints.add(hourly[i]);
-  }
-
-  return graphPoints;
 }

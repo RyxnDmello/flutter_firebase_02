@@ -4,12 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../models/weather/daily/weather_daily_hourly_model.dart';
 
+import '../utils/daily_graphs_hourly_data.dart';
+
 List<PieChartSectionData> pieChartSectionsData({
   required List<WeatherDailyHourlyModel> hourly,
   required HourlyWeatherType weatherType,
   required Color color,
 }) {
-  return _getHourlyData(hourly).asMap().entries.map((element) {
+  return getHourlyData(hourly).asMap().entries.map((element) {
     if (weatherType == HourlyWeatherType.precipitation) {
       return _getPieChartSectionData(
         value: element.value.precipitation,
@@ -73,7 +75,7 @@ PieChartSectionData _getPieChartSectionData({
     badgeWidget: Text(
       int.parse(hour) < 12 ? "${hour}Am" : "${hour}Pm",
       style: GoogleFonts.poppins(
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w500,
         color: Colors.white,
         letterSpacing: 0.65,
       ),
@@ -87,24 +89,4 @@ PieChartSectionData _getPieChartSectionData({
     title: value,
     radius: 90,
   );
-}
-
-List<WeatherDailyHourlyModel> _getHourlyData(
-  List<WeatherDailyHourlyModel> hourly,
-) {
-  List<WeatherDailyHourlyModel> graphPoints = [];
-
-  if (DateTime.now().hour > 12) {
-    for (var i = 12; i < 24; i++) {
-      graphPoints.add(hourly[i]);
-    }
-
-    return graphPoints;
-  }
-
-  for (var i = 0; i < 12; i++) {
-    graphPoints.add(hourly[i]);
-  }
-
-  return graphPoints;
 }

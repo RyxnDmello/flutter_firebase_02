@@ -15,12 +15,28 @@ class DailyHourlyBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String getFormattedHour() {
+      if (int.parse(hour) == 0) {
+        return "12Am";
+      }
+
+      if (int.parse(hour) < 12) {
+        return "${int.parse(hour)}Am";
+      }
+
+      if (int.parse(hour) > 12) {
+        return "${int.parse(hour) - 12}Pm";
+      }
+
+      return "12Pm";
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          hour,
+          getFormattedHour(),
           style: GoogleFonts.poppins(
             color: const Color.fromARGB(180, 255, 255, 255),
             fontWeight: FontWeight.w400,
@@ -39,10 +55,10 @@ class DailyHourlyBlock extends StatelessWidget {
           height: 8.5,
         ),
         Text(
-          value,
+          "$value°C",
           style: GoogleFonts.poppins(
-            color: const Color.fromARGB(180, 255, 255, 255),
             fontWeight: FontWeight.w500,
+            color: Colors.white,
             fontSize: 20,
           ),
         ),

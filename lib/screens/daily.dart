@@ -81,6 +81,7 @@ class _DailyScreenState extends State<DailyScreen> {
           horizontal: 15,
           vertical: 20,
         ),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,

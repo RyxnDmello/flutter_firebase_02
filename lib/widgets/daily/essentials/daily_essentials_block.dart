@@ -62,6 +62,22 @@ class DailyEssentialsBlock extends StatelessWidget {
       return const Color.fromARGB(255, 0, 0, 100);
     }
 
+    String getPostFix() {
+      if (title == "Pressure") {
+        return "mb";
+      }
+
+      if (title == "Wind") {
+        return "kph";
+      }
+
+      if (title == "Dew") {
+        return "°C";
+      }
+
+      return "%";
+    }
+
     return GestureDetector(
       onTap: () => invokeOnSelect(),
       child: Container(
@@ -89,7 +105,7 @@ class DailyEssentialsBlock extends StatelessWidget {
               height: 10,
             ),
             Text(
-              value,
+              "$value${getPostFix()}",
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w500,
                 color: Colors.white,

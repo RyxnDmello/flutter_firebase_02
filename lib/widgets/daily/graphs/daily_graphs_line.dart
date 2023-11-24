@@ -4,30 +4,30 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../models/weather/daily/weather_daily_hourly_model.dart';
 
-import './bar/daily_graphs_bar_groups_data.dart';
+import './line/daily_graphs_line_data.dart';
 
 import './utils/daily_graphs_bottom_tiles.dart';
 import './utils/daily_graphs_left_tiles.dart';
 
-class DailyGraphsBar extends StatelessWidget {
-  const DailyGraphsBar({
+class DailyGraphsLine extends StatelessWidget {
+  const DailyGraphsLine({
     required this.hourly,
     required this.weatherType,
     required this.graphTitle,
-    required this.barColor,
+    required this.color,
     this.sidePadding = 0,
-    this.barWidth = 6.5,
     this.graphMax = 100,
+    this.barWidth = 2.5,
     super.key,
   });
 
   final List<WeatherDailyHourlyModel> hourly;
   final HourlyWeatherType weatherType;
-  final double sidePadding;
   final String? graphTitle;
+  final double sidePadding;
   final double barWidth;
   final double graphMax;
-  final Color barColor;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -56,15 +56,19 @@ class DailyGraphsBar extends StatelessWidget {
             vertical: 0,
           ),
           height: 200,
-          child: BarChart(
-            BarChartData(
+          child: LineChart(
+            LineChartData(
               maxY: graphMax,
-              barGroups: barChartGroupsData(
-                weatherType: weatherType,
-                hourly: hourly,
-                color: barColor,
-                width: barWidth,
-              ),
+              lineBarsData: [
+                LineChartBarData(
+                  spots: lineChartSpotsData(
+                    weatherType: weatherType,
+                    hourly: hourly,
+                  ),
+                  barWidth: barWidth,
+                  color: color,
+                )
+              ],
               titlesData: FlTitlesData(
                 bottomTitles: AxisTitles(
                   sideTitles: bottomTiles(),
@@ -79,7 +83,6 @@ class DailyGraphsBar extends StatelessWidget {
                   sideTitles: SideTitles(showTitles: false),
                 ),
               ),
-              alignment: BarChartAlignment.spaceEvenly,
               gridData: const FlGridData(show: false),
               borderData: FlBorderData(show: false),
             ),

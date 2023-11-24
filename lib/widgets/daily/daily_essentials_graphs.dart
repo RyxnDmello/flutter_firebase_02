@@ -5,6 +5,7 @@ import '../../models/weather/daily/weather_daily_hourly_model.dart';
 import './essentials/graphs/daily_essentials_graphs_title.dart';
 import './essentials/graphs/daily_essentials_graphs_exit.dart';
 
+import './graphs/daily_graphs_line.dart';
 import './graphs/daily_graphs_bar.dart';
 import './graphs/daily_graphs_pie.dart';
 
@@ -41,8 +42,8 @@ class DailyEssentialsGraphs extends StatelessWidget {
           const SizedBox(
             height: 25,
           ),
-          DailyGraphsBar(
-            barColor: const Color.fromARGB(255, 0, 0, 225),
+          DailyGraphsLine(
+            color: const Color.fromARGB(255, 0, 0, 225),
             weatherType: weatherType,
             graphTitle: null,
             hourly: hourly,
@@ -50,8 +51,17 @@ class DailyEssentialsGraphs extends StatelessWidget {
           const SizedBox(
             height: 60,
           ),
+          DailyGraphsBar(
+            barColor: const Color.fromARGB(255, 255, 0, 50),
+            weatherType: weatherType,
+            graphTitle: null,
+            hourly: hourly,
+          ),
+          const SizedBox(
+            height: 65,
+          ),
           DailyGraphsPie(
-            graphColor: const Color.fromARGB(255, 0, 0, 225),
+            graphColor: const Color.fromARGB(255, 0, 255, 125),
             weatherType: weatherType,
             graphTitle: null,
             hourly: hourly,
