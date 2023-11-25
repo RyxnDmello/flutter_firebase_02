@@ -14,7 +14,7 @@ class DailyGraphsLine extends StatelessWidget {
     required this.hourly,
     required this.weatherType,
     required this.graphTitle,
-    required this.color,
+    required this.barColor,
     this.sidePadding = 0,
     this.graphMax = 100,
     this.barWidth = 2.5,
@@ -27,7 +27,7 @@ class DailyGraphsLine extends StatelessWidget {
   final double sidePadding;
   final double barWidth;
   final double graphMax;
-  final Color color;
+  final Color barColor;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +66,7 @@ class DailyGraphsLine extends StatelessWidget {
                     hourly: hourly,
                   ),
                   barWidth: barWidth,
-                  color: color,
+                  color: barColor,
                 )
               ],
               titlesData: FlTitlesData(

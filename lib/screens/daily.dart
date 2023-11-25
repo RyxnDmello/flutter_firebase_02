@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_02/widgets/daily/daily_hourly_graphs.dart';
 
 import '../models/weather/daily/weather_daily_hourly_model.dart';
 import '../models/weather/weather_daily_model.dart';
@@ -29,13 +30,32 @@ class _DailyScreenState extends State<DailyScreen> {
   void _selectEssentialsGraph(HourlyWeatherType type) {
     setState(() => _essentialsGraphType = type);
 
-    _openEssentialsGraph(
+    _openEssentialsGraphs(
       weatherType: type,
     );
   }
 
-  void _openEssentialsGraph({
+  void _openEssentialsGraphs({
     required HourlyWeatherType weatherType,
+  }) {
+    _openGraphModal(
+      graphModal: DailyEssentialsGraphs(
+        hourly: widget.day.hourly,
+        weatherType: weatherType,
+      ),
+    );
+  }
+
+  void _openHourlyGraphs() {
+    _openGraphModal(
+      graphModal: DailyHourlyGraphs(
+        hourly: widget.day.hourly,
+      ),
+    );
+  }
+
+  void _openGraphModal({
+    required Widget graphModal,
   }) {
     showModalBottomSheet(
       backgroundColor: const Color.fromARGB(255, 0, 0, 40),
@@ -51,10 +71,7 @@ class _DailyScreenState extends State<DailyScreen> {
       enableDrag: true,
       context: context,
       builder: (context) {
-        return DailyEssentialsGraphs(
-          hourly: widget.day.hourly,
-          weatherType: weatherType,
-        );
+        return graphModal;
       },
     );
   }
@@ -110,6 +127,7 @@ class _DailyScreenState extends State<DailyScreen> {
               height: 20,
             ),
             DailyHourly(
+              onPressed: _openHourlyGraphs,
               hourly: widget.day.hourly,
             ),
             const SizedBox(

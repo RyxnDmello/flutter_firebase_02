@@ -8,11 +8,13 @@ import './hourly/daily_hourly_indicators.dart';
 
 class DailyHourly extends StatefulWidget {
   const DailyHourly({
+    required this.onPressed,
     required this.hourly,
     super.key,
   });
 
   final List<WeatherDailyHourlyModel> hourly;
+  final void Function() onPressed;
 
   @override
   State<DailyHourly> createState() => _DailyHourlyState();
@@ -71,7 +73,7 @@ class _DailyHourlyState extends State<DailyHourly>
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             DailyHourlyButton(
-              onPressed: () {},
+              onPressed: widget.onPressed,
             ),
             DailyHourlyIndicators(
               currentSlide: _currentSlide,

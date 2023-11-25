@@ -11,14 +11,14 @@ class DailyGraphsPie extends StatelessWidget {
     required this.hourly,
     required this.weatherType,
     required this.graphTitle,
-    required this.graphColor,
+    required this.sectionsColor,
     super.key,
   });
 
   final List<WeatherDailyHourlyModel> hourly;
   final HourlyWeatherType weatherType;
   final String? graphTitle;
-  final Color graphColor;
+  final Color sectionsColor;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class DailyGraphsPie extends StatelessWidget {
                 centerSpaceRadius: 20,
                 sections: pieChartSectionsData(
                   weatherType: weatherType,
-                  color: graphColor,
+                  color: sectionsColor,
                   hourly: hourly,
                 ),
               ),

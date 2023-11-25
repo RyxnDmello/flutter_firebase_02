@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/weather/daily/weather_daily_hourly_model.dart';
 
-import './essentials/graphs/daily_essentials_graphs_title.dart';
-import './essentials/graphs/daily_essentials_graphs_exit.dart';
+import './graphs/utils/daily_graphs_modal_header.dart';
 
 import './graphs/daily_graphs_line.dart';
 import './graphs/daily_graphs_bar.dart';
@@ -27,23 +26,14 @@ class DailyEssentialsGraphs extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              DailyEssentialsGraphsTitle(
-                title: weatherType.name,
-              ),
-              DailyEssentialsGraphsExit(
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-            ],
+          DailyGraphsModalHeader(
+            title: weatherType.name,
           ),
           const SizedBox(
             height: 25,
           ),
           DailyGraphsLine(
-            color: const Color.fromARGB(255, 0, 0, 225),
+            barColor: const Color.fromARGB(255, 0, 0, 225),
             weatherType: weatherType,
             graphTitle: null,
             hourly: hourly,
@@ -61,7 +51,7 @@ class DailyEssentialsGraphs extends StatelessWidget {
             height: 65,
           ),
           DailyGraphsPie(
-            graphColor: const Color.fromARGB(255, 0, 255, 125),
+            sectionsColor: const Color.fromARGB(255, 0, 255, 125),
             weatherType: weatherType,
             graphTitle: null,
             hourly: hourly,
