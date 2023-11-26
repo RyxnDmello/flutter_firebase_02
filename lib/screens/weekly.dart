@@ -35,6 +35,7 @@ class WeeklyScreen extends StatelessWidget {
           horizontal: 15,
           vertical: 20,
         ),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,

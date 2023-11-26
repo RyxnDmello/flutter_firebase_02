@@ -29,8 +29,6 @@ class WeeklyDays extends StatelessWidget {
           },
         ),
       );
-
-      print(daily[index].location.date);
     }
 
     return Column(

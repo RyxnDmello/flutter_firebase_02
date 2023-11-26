@@ -34,53 +34,21 @@ class _DailyHourlyGraphsCarouselState extends State<DailyHourlyGraphsCarousel>
     return "${widget.weatherType.name[0].toUpperCase()}${widget.weatherType.name.substring(1)} Graphs";
   }
 
-  String _getImage() {
-    switch (widget.weatherType) {
-      case HourlyWeatherType.temperature:
-        return "./lib/images/weather/essentials/temperature.png";
-      case HourlyWeatherType.precipitation:
-        return "./lib/images/weather/essentials/rain.png";
-      case HourlyWeatherType.humidity:
-        return "./lib/images/weather/essentials/humidity.png";
-      case HourlyWeatherType.wind:
-        return "./lib/images/weather/essentials/wind.png";
-      case HourlyWeatherType.pressure:
-        return "./lib/images/weather/essentials/pressure.png";
-      case HourlyWeatherType.cover:
-        return "./lib/images/weather/essentials/cloud.png";
-      case HourlyWeatherType.dew:
-        return "./lib/images/weather/essentials/dew.png";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset(
-              _getImage(),
-              width: 35,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Text(
-              _getTitle(),
-              style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-                letterSpacing: 0.5,
-                fontSize: 20,
-              ),
-            ),
-          ],
+        Text(
+          _getTitle(),
+          textAlign: TextAlign.left,
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+            letterSpacing: 0.5,
+            fontSize: 22.5,
+          ),
         ),
         SizedBox(
           height: _slideIndex == 2 ? 25 : 15,
@@ -95,6 +63,9 @@ class _DailyHourlyGraphsCarouselState extends State<DailyHourlyGraphsCarousel>
                 barColor: const Color.fromARGB(255, 255, 0, 50),
                 weatherType: widget.weatherType,
                 hourly: widget.hourly,
+                graphMax: widget.weatherType == HourlyWeatherType.pressure
+                    ? 1500
+                    : 100,
                 graphTitle: null,
               ),
               DailyGraphsLine(
@@ -115,13 +86,19 @@ class _DailyHourlyGraphsCarouselState extends State<DailyHourlyGraphsCarousel>
         SizedBox(
           height: _slideIndex == 2 ? 25 : 0,
         ),
-        TabPageSelector(
-          selectedColor: Colors.white,
-          controller: TabController(
-            initialIndex: _slideIndex,
-            length: 3,
-            vsync: this,
-          ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TabPageSelector(
+              selectedColor: Colors.white,
+              controller: TabController(
+                initialIndex: _slideIndex,
+                length: 3,
+                vsync: this,
+              ),
+            ),
+          ],
         ),
       ],
     );

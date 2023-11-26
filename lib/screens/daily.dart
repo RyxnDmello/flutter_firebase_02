@@ -58,7 +58,7 @@ class _DailyScreenState extends State<DailyScreen> {
     required Widget graphModal,
   }) {
     showModalBottomSheet(
-      backgroundColor: const Color.fromARGB(255, 0, 0, 40),
+      backgroundColor: const Color.fromARGB(255, 0, 0, 30),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(40),

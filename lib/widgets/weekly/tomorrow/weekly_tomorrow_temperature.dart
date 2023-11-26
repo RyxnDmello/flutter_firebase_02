@@ -42,9 +42,9 @@ class WeeklyTomorrowTemperature extends StatelessWidget {
           height: 5,
         ),
         Text(
-          temperature,
+          "$temperature°C",
           style: GoogleFonts.montserrat(
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             color: Colors.white,
             letterSpacing: 1,
             fontSize: 40,

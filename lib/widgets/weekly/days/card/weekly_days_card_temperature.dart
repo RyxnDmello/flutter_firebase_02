@@ -12,7 +12,7 @@ class WeeklyDaysCardTemperature extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      temperature,
+      "$temperature°C",
       style: GoogleFonts.montserrat(
         fontWeight: FontWeight.w400,
         color: Colors.white,

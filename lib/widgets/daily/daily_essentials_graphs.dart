@@ -33,6 +33,7 @@ class DailyEssentialsGraphs extends StatelessWidget {
             height: 25,
           ),
           DailyGraphsLine(
+            graphMax: weatherType == HourlyWeatherType.pressure ? 1500 : 100,
             barColor: const Color.fromARGB(255, 0, 0, 225),
             weatherType: weatherType,
             graphTitle: null,
@@ -42,6 +43,7 @@ class DailyEssentialsGraphs extends StatelessWidget {
             height: 60,
           ),
           DailyGraphsBar(
+            graphMax: weatherType == HourlyWeatherType.pressure ? 1500 : 100,
             barColor: const Color.fromARGB(255, 255, 0, 50),
             weatherType: weatherType,
             graphTitle: null,
