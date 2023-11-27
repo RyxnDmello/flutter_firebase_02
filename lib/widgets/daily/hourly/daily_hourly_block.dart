@@ -55,7 +55,7 @@ class DailyHourlyBlock extends StatelessWidget {
           height: 8.5,
         ),
         Text(
-          "$value°C",
+          "${double.parse(value).round()}°C",
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w500,
             color: Colors.white,

@@ -18,7 +18,7 @@ class HomeWeatherTemperature extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "$temperature°C",
+          "${double.parse(temperature).round()}°C",
           style: GoogleFonts.montserrat(
             fontWeight: FontWeight.w200,
             color: Colors.white,

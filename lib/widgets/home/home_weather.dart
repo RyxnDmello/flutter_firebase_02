@@ -13,7 +13,12 @@ import './weather/home_weather_details_button.dart';
 import '../../screens/weekly.dart';
 
 class HomeWeather extends StatelessWidget {
-  const HomeWeather({super.key});
+  const HomeWeather({
+    required this.weather,
+    super.key,
+  });
+
+  final WeatherModel weather;
 
   @override
   Widget build(BuildContext context) {

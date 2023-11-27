@@ -26,26 +26,30 @@ class WeeklyTomorrowTemperature extends StatelessWidget {
             fontSize: 25,
           ),
         ),
-        const SizedBox(
-          height: 6.5,
-        ),
-        Text(
-          condition,
-          style: GoogleFonts.montserrat(
-            color: const Color.fromARGB(180, 255, 255, 255),
-            fontWeight: FontWeight.w500,
-            letterSpacing: 0.65,
-            fontSize: 16,
+        if (condition.length < 20)
+          const SizedBox(
+            height: 6.5,
           ),
-        ),
+        if (condition.length < 20)
+          Text(
+            condition,
+            style: GoogleFonts.montserrat(
+              color: const Color.fromARGB(180, 255, 255, 255),
+              fontWeight: FontWeight.w500,
+              letterSpacing: 0.65,
+              fontSize: 16,
+            ),
+          ),
         const SizedBox(
           height: 5,
         ),
         Text(
-          "$temperature°C",
+          "${double.parse(temperature).round()}°C",
           style: GoogleFonts.montserrat(
+            color: condition.length >= 20
+                ? const Color.fromARGB(160, 255, 255, 255)
+                : Colors.white,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
             letterSpacing: 1,
             fontSize: 40,
           ),

@@ -22,7 +22,7 @@ class WeatherModel {
   final List<WeatherDailyModel> daily;
 }
 
-final weather = WeatherModel(
+final dummyWeather = WeatherModel(
   location: WeatherLocationModel(
     location: "Toronto Ontario",
     date: DateFormat("d MMM").format(DateTime.now()),

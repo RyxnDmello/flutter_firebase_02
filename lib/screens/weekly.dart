@@ -41,7 +41,7 @@ class WeeklyScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             WeeklyTomorrow(
-              day: weather.weekly[0],
+              day: weather.weekly[1],
             ),
             const SizedBox(
               height: 50,

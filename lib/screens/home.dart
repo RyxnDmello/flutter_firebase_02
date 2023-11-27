@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../models/weather_model.dart';
+
 import '../widgets/home/home_app_bar.dart';
 import '../widgets/home/home_drawer.dart';
 import '../widgets/home/home_weather.dart';
@@ -31,7 +33,9 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const HomeWeather(),
+              HomeWeather(
+                weather: dummyWeather,
+              ),
             ],
           ),
         ),

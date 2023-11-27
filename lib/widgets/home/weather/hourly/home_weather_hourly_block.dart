@@ -60,17 +60,17 @@ class HomeWeatherHourlyBlock extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
           Image.asset(
             image,
             width: 40,
           ),
           const SizedBox(
-            height: 8.5,
+            height: 10,
           ),
           Text(
-            "$value°C",
+            "${double.parse(value).round()}°C",
             style: GoogleFonts.poppins(
               fontWeight: FontWeight.w500,
               color: Colors.white,

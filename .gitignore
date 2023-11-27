@@ -1,13 +1,8 @@
 # Visual Studio Code
 .vscode/
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
 # Flutter & Pub
+*.env
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
@@ -17,6 +12,12 @@
 .pub-cache/
 .pub/
 /build/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
 
 # Symbolication
 app.*.symbols
