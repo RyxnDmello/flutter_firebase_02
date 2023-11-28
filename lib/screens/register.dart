@@ -10,8 +10,8 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
         width: double.infinity,
+        height: double.infinity,
         decoration: const BoxDecoration(
           color: Colors.black,
           image: DecorationImage(

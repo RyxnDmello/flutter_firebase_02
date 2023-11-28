@@ -13,7 +13,7 @@ import './form/register_form_button.dart';
 import './form/register_form_switcher.dart';
 import './form/register_form_warning.dart';
 
-import '../../screens/home.dart';
+import '../../screens/splash.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
@@ -62,7 +62,7 @@ class _RegisterFormState extends State<RegisterForm> {
         return;
       }
 
-      _navigateToHome();
+      _navigateToSplash();
 
       return;
     }
@@ -84,7 +84,7 @@ class _RegisterFormState extends State<RegisterForm> {
       return;
     }
 
-    _navigateToHome();
+    _navigateToSplash();
   }
 
   String? _validateUsername(String? username) {
@@ -173,11 +173,13 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
-  void _navigateToHome() {
+  void _navigateToSplash() {
     Navigator.of(context).pop();
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => const HomeScreen(),
+        builder: (context) => SplashScreen(
+          isLogin: _isLogin,
+        ),
       ),
     );
   }

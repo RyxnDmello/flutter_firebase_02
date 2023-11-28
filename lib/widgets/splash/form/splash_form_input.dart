@@ -1,27 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterFormInput extends StatelessWidget {
-  const RegisterFormInput({
-    required this.onValidate,
-    required this.onSave,
-    required this.label,
-    this.isPassword = false,
+class SplashFormInput extends StatelessWidget {
+  const SplashFormInput({
+    required this.validateInput,
+    required this.saveInput,
     super.key,
   });
 
-  final String? Function(String? input) onValidate;
-  final void Function(String? input) onSave;
-
-  final bool isPassword;
-  final String label;
+  final String? Function(String? value) validateInput;
+  final void Function(String? value) saveInput;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) => onValidate(value),
-      onSaved: (newValue) => onSave(newValue),
-      obscureText: isPassword,
+      validator: (value) => validateInput(value),
+      onSaved: (newValue) => saveInput(newValue),
       style: GoogleFonts.poppins(
         fontWeight: FontWeight.w400,
         color: Colors.white,
@@ -33,7 +27,7 @@ class RegisterFormInput extends StatelessWidget {
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(15),
         label: Text(
-          label,
+          "Home City",
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w400,
             color: Colors.white,
@@ -43,7 +37,6 @@ class RegisterFormInput extends StatelessWidget {
           ),
         ),
         border: const OutlineInputBorder(
-          gapPadding: 10,
           borderSide: BorderSide(
             color: Colors.white,
             width: 2,
@@ -63,18 +56,19 @@ class RegisterFormInput extends StatelessWidget {
         ),
         errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 255, 50, 0),
+            color: Color.fromARGB(250, 255, 0, 0),
             width: 2,
           ),
         ),
         focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color.fromARGB(255, 255, 50, 0),
+            color: Color.fromARGB(255, 255, 0, 0),
             width: 2,
           ),
         ),
         errorStyle: GoogleFonts.poppins(
-          fontWeight: FontWeight.w400,
+          color: const Color.fromARGB(255, 255, 0, 0),
+          fontWeight: FontWeight.w500,
           letterSpacing: 0.5,
           fontSize: 12.5,
         ),

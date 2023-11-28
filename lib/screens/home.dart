@@ -7,7 +7,12 @@ import '../widgets/home/home_drawer.dart';
 import '../widgets/home/home_weather.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    required this.weather,
+    super.key,
+  });
+
+  final WeatherModel weather;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                 height: 15,
               ),
               HomeWeather(
-                weather: dummyWeather,
+                weather: weather,
               ),
             ],
           ),
