@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../models/account_model.dart';
+
 class _AccountManager {
   _AccountManager()
       : _firebaseAuth = FirebaseAuth.instance,
@@ -93,6 +95,27 @@ class _AccountManager {
     }
 
     return true;
+  }
+
+  Future<AccountModel> account() async {
+    final accountDoc = await _account!.get().then(
+          (doc) => doc.data() as Map,
+        );
+
+    return AccountModel(
+      email: accountDoc["email"],
+      username: accountDoc["username"],
+      profile: accountDoc["profile"],
+      location: accountDoc["location"],
+    );
+  }
+
+  Future<void> setAccountLocation({required String location}) async {
+    await _account!.update(
+      {
+        "location": location,
+      },
+    );
   }
 }
 

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -9,15 +7,13 @@ import 'drawer/home_drawer_tile.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({
-    required this.profileAvatar,
-    required this.profileImage,
     required this.username,
+    required this.profile,
     super.key,
   });
 
-  final String? profileAvatar;
-  final File? profileImage;
   final String username;
+  final String profile;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +24,7 @@ class HomeDrawer extends StatelessWidget {
         children: [
           HomeDrawerAccount(
             username: username,
-            profileImage: null,
-            profileAvatar: profileAvatar,
+            profile: profile,
           ),
           const SizedBox(
             height: 15,

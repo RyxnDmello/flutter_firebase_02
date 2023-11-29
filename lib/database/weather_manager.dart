@@ -20,17 +20,21 @@ class _WeatherManager {
   WeatherModel? _weatherModel;
   Map? _weatherData;
 
-  Future<void> initializeWeatherData({required String city}) async {
-    final String apiUri = "${dotenv.env['WEATHER_API_URI']}/$city/";
+  Future<bool> initializeWeather({required String location}) async {
+    final String apiUri = "${dotenv.env['WEATHER_API_URI']}/$location/";
     final String apiQuery = "${dotenv.env['WEATHER_API_QUERY']}";
     final String apiKey = "${dotenv.env['WEATHER_API_KEY']}";
     final String apiPath = "$apiUri$apiQuery$apiKey";
 
     final response = await Dio().get(apiPath);
+
+    if (response.statusCode != null && response.statusCode! > 299) return false;
     _weatherData = response.data as Map;
+
+    return true;
   }
 
-  WeatherModel? weatherModel() {
+  WeatherModel? weather() {
     if (_weatherData == null) return null;
 
     _weatherModel = WeatherModel(

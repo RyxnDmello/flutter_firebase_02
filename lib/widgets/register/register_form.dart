@@ -62,7 +62,7 @@ class _RegisterFormState extends State<RegisterForm> {
         return;
       }
 
-      _navigateToSplash();
+      _openSplashScreen();
 
       return;
     }
@@ -84,7 +84,7 @@ class _RegisterFormState extends State<RegisterForm> {
       return;
     }
 
-    _navigateToSplash();
+    _openSplashScreen();
   }
 
   String? _validateUsername(String? username) {
@@ -173,7 +173,7 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
-  void _navigateToSplash() {
+  void _openSplashScreen() {
     Navigator.of(context).pop();
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(

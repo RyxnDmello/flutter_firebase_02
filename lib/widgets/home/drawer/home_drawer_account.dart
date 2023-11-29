@@ -1,18 +1,14 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeDrawerAccount extends StatelessWidget {
   const HomeDrawerAccount({
-    required this.profileAvatar,
-    required this.profileImage,
+    required this.profile,
     required this.username,
     super.key,
   });
 
-  final String? profileAvatar;
-  final File? profileImage;
+  final String profile;
   final String username;
 
   @override
@@ -43,11 +39,19 @@ class HomeDrawerAccount extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            if (profileAvatar != null)
+            if (profile.contains("./lib/images/register/avatars/"))
               Image.asset(
-                profileAvatar!,
                 fit: BoxFit.cover,
                 width: 85,
+                profile,
+              ),
+            if (!profile.contains("./lib/images/register/avatars/"))
+              CircleAvatar(
+                foregroundImage: NetworkImage(
+                  profile,
+                ),
+                backgroundColor: Colors.black,
+                radius: 42.5,
               ),
             const SizedBox(
               height: 10,

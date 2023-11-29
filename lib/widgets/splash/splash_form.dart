@@ -1,8 +1,15 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import '../../database/account_manager.dart';
+import '../../database/weather_manager.dart';
+
+import '../../models/account_model.dart';
+import '../../models/weather_model.dart';
 
 import './form/splash_form_input.dart';
 import './form/splash_form_button.dart';
+
+import '../../screens/home.dart';
 
 class SplashForm extends StatefulWidget {
   const SplashForm({super.key});
@@ -13,28 +20,58 @@ class SplashForm extends StatefulWidget {
 
 class _SplashFormState extends State<SplashForm> {
   final _formKey = GlobalKey<FormState>();
-  String? _city;
+  String? _location;
 
-  void _submitForm() {
+  Future<void> _submitForm() async {
     if (!_formKey.currentState!.validate()) return;
     _formKey.currentState!.save();
 
-    if (kDebugMode) {
-      print(_city);
-    }
+    await accountManager.setAccountLocation(
+      location: _location!,
+    );
+
+    final isInitialized = await weatherManager.initializeWeather(
+      location: _location!,
+    );
+
+    if (!isInitialized) return;
+
+    final account = await accountManager.account();
+    final weather = weatherManager.weather();
+
+    _openHomeScreen(
+      account: account,
+      weather: weather!,
+    );
   }
 
-  String? _validateCity(String? city) {
-    if (city!.isEmpty || city.length < 4 || city.contains(" ")) {
+  String? _validateLocation(String? city) {
+    if (city!.isEmpty || city.length < 4) {
       return "INVALID CITY NAME";
     }
 
     return null;
   }
 
-  void _saveCity(String? city) {
+  void _saveLocation(String? city) {
     if (city == null) return;
-    _city = city;
+    _location = city;
+  }
+
+  void _openHomeScreen({
+    required AccountModel account,
+    required WeatherModel weather,
+  }) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) {
+          return HomeScreen(
+            account: account,
+            weather: weather,
+          );
+        },
+      ),
+    );
   }
 
   @override
@@ -51,8 +88,8 @@ class _SplashFormState extends State<SplashForm> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SplashFormInput(
-              validateInput: _validateCity,
-              saveInput: _saveCity,
+              validateInput: _validateLocation,
+              saveInput: _saveLocation,
             ),
             const SizedBox(
               height: 15,

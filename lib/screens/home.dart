@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/account_model.dart';
 import '../models/weather_model.dart';
 
 import '../widgets/home/home_app_bar.dart';
@@ -8,10 +9,12 @@ import '../widgets/home/home_weather.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
+    required this.account,
     required this.weather,
     super.key,
   });
 
+  final AccountModel account;
   final WeatherModel weather;
 
   @override
@@ -21,10 +24,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: const Color.fromARGB(255, 0, 0, 20),
-      drawer: const HomeDrawer(
-        profileAvatar: "./lib/images/register/avatars/avatar-1.png",
-        profileImage: null,
-        username: "RyanDmello",
+      drawer: HomeDrawer(
+        username: account.username,
+        profile: account.profile,
       ),
       body: SafeArea(
         child: SingleChildScrollView(

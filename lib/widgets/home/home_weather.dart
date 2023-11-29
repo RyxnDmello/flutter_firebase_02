@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_02/screens/daily.dart';
 
 import '../../models/weather_model.dart';
 
@@ -11,6 +10,7 @@ import './weather/home_weather_weekly_button.dart';
 import './weather/home_weather_details_button.dart';
 
 import '../../screens/weekly.dart';
+import '../../screens/daily.dart';
 
 class HomeWeather extends StatelessWidget {
   const HomeWeather({
