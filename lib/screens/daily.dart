@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_02/widgets/daily/daily_hourly_graphs.dart';
 
 import '../models/weather/daily/weather_daily_hourly_model.dart';
 import '../models/weather/weather_daily_model.dart';
@@ -11,6 +10,7 @@ import '../widgets/daily/daily_hourly.dart';
 import '../widgets/daily/daily_graphs.dart';
 
 import '../widgets/daily/daily_essentials_graphs.dart';
+import '../widgets/daily/daily_hourly_graphs.dart';
 
 class DailyScreen extends StatefulWidget {
   const DailyScreen({
@@ -94,11 +94,11 @@ class _DailyScreenState extends State<DailyScreen> {
         elevation: 0,
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(
           horizontal: 15,
           vertical: 20,
         ),
-        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
