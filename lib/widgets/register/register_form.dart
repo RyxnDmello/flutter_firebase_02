@@ -5,13 +5,14 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../database/account_manager.dart';
 
+import '../common/warning_snack_bar.dart';
+
 import './form/register_form_title.dart';
 import './form/register_form_profile.dart';
 import './form/register_form_avatar_modal.dart';
 import './form/register_form_input.dart';
 import './form/register_form_button.dart';
 import './form/register_form_switcher.dart';
-import './form/register_form_warning.dart';
 
 import '../../screens/splash.dart';
 
@@ -184,10 +185,13 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
-  void _warningMessage({required String message, required IconData icon}) {
+  void _warningMessage({
+    required String message,
+    required IconData icon,
+  }) {
     ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
-      registerFormWarning(
+      warningSnackBar(
         message: message,
         icon: icon,
       ),

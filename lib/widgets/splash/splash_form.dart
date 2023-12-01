@@ -6,6 +6,8 @@ import '../../database/weather_manager.dart';
 import '../../models/account_model.dart';
 import '../../models/weather_model.dart';
 
+import '../common/warning_snack_bar.dart';
+
 import './form/splash_form_input.dart';
 import './form/splash_form_button.dart';
 
@@ -30,18 +32,24 @@ class _SplashFormState extends State<SplashForm> {
       location: _location!,
     );
 
-    final isInitialized = await weatherManager.initializeWeather(
+    final account = await accountManager.account();
+
+    final weather = await weatherManager.weather(
       location: _location!,
     );
 
-    if (!isInitialized) return;
+    if (weather == null) {
+      _warningMessage(
+        message: "SERVER DOWN / INVALID CITY",
+        icon: Icons.wifi_off_sharp,
+      );
 
-    final account = await accountManager.account();
-    final weather = weatherManager.weather();
+      return;
+    }
 
     _openHomeScreen(
       account: account,
-      weather: weather!,
+      weather: weather,
     );
   }
 
@@ -70,6 +78,19 @@ class _SplashFormState extends State<SplashForm> {
             weather: weather,
           );
         },
+      ),
+    );
+  }
+
+  void _warningMessage({
+    required String message,
+    required IconData icon,
+  }) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      warningSnackBar(
+        message: message,
+        icon: icon,
       ),
     );
   }

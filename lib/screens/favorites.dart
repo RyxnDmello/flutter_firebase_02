@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../models/weather_model.dart';
+
 import '../widgets/favorites/favorites_header.dart';
 import '../widgets/favorites/favorites_search.dart';
+
+import './home.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});
@@ -11,6 +15,19 @@ class FavoritesScreen extends StatefulWidget {
 }
 
 class _FavoritesScreenState extends State<FavoritesScreen> {
+  void _exploreWeather({required WeatherModel weather}) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return HomeScreen(
+            account: null,
+            weather: weather,
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,9 +46,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         ),
         elevation: 0,
       ),
-      body: const SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(
           horizontal: 15,
           vertical: 20,
         ),
@@ -39,13 +56,15 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            FavoritesHeader(
+            const FavoritesHeader(
               image: "./lib/images/favorites/favorites.png",
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            FavoritesSearch(),
+            FavoritesSearch(
+              onSubmit: _exploreWeather,
+            ),
           ],
         ),
       ),

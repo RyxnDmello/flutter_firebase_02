@@ -13,42 +13,25 @@ import '../models/weather/daily/weather_daily_essentials_model.dart';
 import '../models/weather/daily/weather_daily_hourly_model.dart';
 
 class _WeatherManager {
-  _WeatherManager()
-      : _weatherData = null,
-        _weatherModel = null;
+  const _WeatherManager();
 
-  WeatherModel? _weatherModel;
-  Map? _weatherData;
+  Future<WeatherModel?> weather({required String location}) async {
+    final weatherData = await _weatherData(location: location);
 
-  Future<bool> initializeWeather({required String location}) async {
-    final String apiUri = "${dotenv.env['WEATHER_API_URI']}/$location/";
-    final String apiQuery = "${dotenv.env['WEATHER_API_QUERY']}";
-    final String apiKey = "${dotenv.env['WEATHER_API_KEY']}";
-    final String apiPath = "$apiUri$apiQuery$apiKey";
+    if (weatherData == null) return null;
 
-    final response = await Dio().get(apiPath);
-
-    if (response.statusCode != null && response.statusCode! > 299) return false;
-    _weatherData = response.data as Map;
-
-    return true;
-  }
-
-  WeatherModel? weather() {
-    if (_weatherData == null) return null;
-
-    _weatherModel = WeatherModel(
+    return WeatherModel(
       location: WeatherLocationModel(
-        date: _formattedDate(_weatherData!["days"][0]["datetime"]),
-        location: _weatherData!["resolvedAddress"],
+        date: _formattedDate(weatherData["days"][0]["datetime"]),
+        location: weatherData["resolvedAddress"],
       ),
       temperature: WeatherTemperatureModel(
-        temperature: _weatherData!["days"][0]["temp"].toString(),
-        condition: _weatherData!["days"][0]["conditions"],
+        temperature: weatherData["days"][0]["temp"].toString(),
+        condition: weatherData["days"][0]["conditions"],
         image: "./lib/images/weather/clear-day.png",
       ),
       weekly: [
-        ..._weatherData!["days"].map((day) {
+        ...weatherData["days"].map((day) {
           return WeatherWeeklyModel(
             day: _formattedDate(day["datetime"], "EEEE"),
             image: "./lib/images/weather/clear-day.png",
@@ -59,11 +42,11 @@ class _WeatherManager {
         }),
       ],
       daily: [
-        ..._weatherData!["days"].map((day) {
+        ...weatherData["days"].map((day) {
           return WeatherDailyModel(
             location: WeatherLocationModel(
               date: _formattedDate(day["datetime"], "d MMM, EEEE"),
-              location: _weatherData!["resolvedAddress"],
+              location: weatherData["resolvedAddress"],
             ),
             temperature: WeatherTemperatureModel(
               image: "./lib/images/weather/clear-day.png",
@@ -129,8 +112,24 @@ class _WeatherManager {
         }),
       ],
     );
+  }
 
-    return _weatherModel;
+  Future<Map?> _weatherData({required String location}) async {
+    final api = _api(location: location);
+
+    try {
+      final response = await Dio().get(api);
+      return response.data as Map;
+    } on DioException {
+      return null;
+    }
+  }
+
+  String _api({required String location}) {
+    final String apiUri = "${dotenv.env['WEATHER_API_URI']}/$location/";
+    final String apiQuery = "${dotenv.env['WEATHER_API_QUERY']}";
+    final String apiKey = "${dotenv.env['WEATHER_API_KEY']}";
+    return "$apiUri$apiQuery$apiKey";
   }
 }
 
@@ -142,4 +141,4 @@ String _getHour(String hour) {
   return hour.substring(0, 2);
 }
 
-final weatherManager = _WeatherManager();
+const weatherManager = _WeatherManager();

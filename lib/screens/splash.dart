@@ -22,9 +22,11 @@ class SplashScreen extends StatelessWidget {
     Future<void> openHomeScreen() async {
       final account = await accountManager.account();
 
-      await weatherManager.initializeWeather(
+      final weather = await weatherManager.weather(
         location: account.location,
       );
+
+      if (weather == null) return;
 
       await Future.delayed(
         const Duration(milliseconds: 1500),
@@ -32,8 +34,8 @@ class SplashScreen extends StatelessWidget {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (context) => HomeScreen(
-                weather: weatherManager.weather()!,
                 account: account,
+                weather: weather,
               ),
             ),
           );
