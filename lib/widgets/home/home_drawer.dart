@@ -2,16 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'drawer/home_drawer_account.dart';
-import 'drawer/home_drawer_tile.dart';
+import './drawer/home_drawer_account.dart';
+import './drawer/home_drawer_tile.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({
+    required this.onTapAccount,
+    required this.onTapRefresh,
+    required this.onTapSearch,
     required this.username,
     required this.profile,
     super.key,
   });
 
+  final void Function() onTapAccount;
+  final void Function() onTapRefresh;
+  final void Function() onTapSearch;
   final String username;
   final String profile;
 
@@ -27,34 +33,29 @@ class HomeDrawer extends StatelessWidget {
             profile: profile,
           ),
           const SizedBox(
-            height: 15,
+            height: 20,
           ),
           HomeDrawerTile(
-            onTapTile: () {},
             icon: FontAwesomeIcons.circleUser,
+            onTap: onTapAccount,
             label: "Account",
           ),
           HomeDrawerTile(
-            onTapTile: () {},
-            icon: FontAwesomeIcons.heart,
-            label: "Home",
-          ),
-          HomeDrawerTile(
-            onTapTile: () {},
             icon: FontAwesomeIcons.map,
+            onTap: onTapSearch,
             label: "Favorites",
           ),
           HomeDrawerTile(
-            onTapTile: () {},
-            icon: FontAwesomeIcons.magnifyingGlass,
-            label: "Search",
+            icon: FontAwesomeIcons.arrowRotateLeft,
+            onTap: onTapRefresh,
+            label: "Favorites",
           ),
           const SizedBox(
             height: 15,
           ),
           HomeDrawerTile(
-            onTapTile: () => FirebaseAuth.instance.signOut(),
             icon: FontAwesomeIcons.arrowRightFromBracket,
+            onTap: () => FirebaseAuth.instance.signOut(),
             label: "Logout",
           ),
         ],

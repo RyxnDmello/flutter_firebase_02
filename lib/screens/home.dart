@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../database/weather_manager.dart';
+
 import '../models/account_model.dart';
 import '../models/weather_model.dart';
 
@@ -8,7 +10,9 @@ import '../widgets/home/home_drawer.dart';
 import '../widgets/home/home_weather.dart';
 import '../widgets/home/home_favorites.dart';
 
-class HomeScreen extends StatelessWidget {
+import './favorites.dart';
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({
     required this.account,
     required this.weather,
@@ -19,21 +23,54 @@ class HomeScreen extends StatelessWidget {
   final WeatherModel weather;
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  WeatherModel? _weather;
+
+  @override
+  void initState() {
+    super.initState();
+    _weather = widget.weather;
+  }
+
+  Future<void> _updateWeather() async {
+    final weather = await weatherManager.weather(
+      location: widget.account!.location,
+    );
+
+    setState(() => _weather = weather);
+  }
+
+  void _openFavoritesScreen() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return const FavoritesScreen();
+        },
+      ),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (account == null) {
+    if (widget.account == null) {
       return HomeFavorites(
-        weather: weather,
+        weather: widget.weather,
       );
     }
 
-    final scaffoldKey = GlobalKey<ScaffoldState>();
-
     return Scaffold(
-      key: scaffoldKey,
+      key: _scaffoldKey,
       backgroundColor: const Color.fromARGB(255, 0, 0, 20),
       drawer: HomeDrawer(
-        username: account!.username,
-        profile: account!.profile,
+        username: widget.account!.username,
+        profile: widget.account!.profile,
+        onTapSearch: _openFavoritesScreen,
+        onTapRefresh: _updateWeather,
+        onTapAccount: () {},
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -42,13 +79,16 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               HomeAppBar(
-                onTapProfile: () => scaffoldKey.currentState!.openDrawer(),
+                profile: widget.account!.profile,
+                onTapProfile: () => _scaffoldKey.currentState!.openDrawer(),
+                onTapSearch: _openFavoritesScreen,
+                onTapRefresh: _updateWeather,
               ),
               const SizedBox(
                 height: 15,
               ),
               HomeWeather(
-                weather: weather,
+                weather: _weather!,
               ),
             ],
           ),

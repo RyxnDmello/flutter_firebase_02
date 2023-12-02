@@ -1,8 +1,4 @@
-# Visual Studio Code
-.vscode/
-
 # Flutter & Pub
-*.env
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
@@ -13,7 +9,18 @@
 .pub/
 /build/
 
-# IntelliJ related
+# Environment Variables
+*.env
+
+# Visual Studio Code
+.vscode/
+
+# Android Studio
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# IntelliJ IDEA
 *.iml
 *.ipr
 *.iws
@@ -24,11 +31,6 @@ app.*.symbols
 
 # Obfuscation
 app.*.map.json
-
-# Android Studio
-/android/app/debug
-/android/app/profile
-/android/app/release
 
 # Miscellaneous
 *.class

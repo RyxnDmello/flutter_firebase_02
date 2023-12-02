@@ -4,20 +4,20 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeDrawerTile extends StatelessWidget {
   const HomeDrawerTile({
-    required this.onTapTile,
+    required this.onTap,
     required this.icon,
     required this.label,
     super.key,
   });
 
-  final void Function() onTapTile;
+  final void Function() onTap;
   final IconData icon;
   final String label;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
