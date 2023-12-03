@@ -9,6 +9,7 @@ class HomeAppBar extends StatelessWidget {
     required this.onTapProfile,
     required this.onTapRefresh,
     required this.onTapSearch,
+    required this.onTapMap,
     required this.profile,
     super.key,
   });
@@ -16,6 +17,7 @@ class HomeAppBar extends StatelessWidget {
   final void Function() onTapProfile;
   final void Function() onTapRefresh;
   final void Function() onTapSearch;
+  final void Function() onTapMap;
   final String profile;
 
   @override
@@ -23,7 +25,7 @@ class HomeAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
-        vertical: 15,
+        vertical: 10,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,6 +39,10 @@ class HomeAppBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              HomeAppBarButton(
+                icon: FontAwesomeIcons.map,
+                onPressed: onTapMap,
+              ),
               HomeAppBarButton(
                 icon: FontAwesomeIcons.magnifyingGlass,
                 onPressed: onTapSearch,

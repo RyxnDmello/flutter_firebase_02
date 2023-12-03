@@ -6,11 +6,11 @@ import '../../models/weather_model.dart';
 
 import '../common/warning_snack_bar.dart';
 
-import './search/favorites_search_input.dart';
-import './search/favorites_search_button.dart';
+import './form/search_form_input.dart';
+import './form/search_form_button.dart';
 
-class FavoritesSearch extends StatelessWidget {
-  const FavoritesSearch({
+class SearchForm extends StatelessWidget {
+  const SearchForm({
     required this.onSubmit,
     super.key,
   });
@@ -38,7 +38,14 @@ class FavoritesSearch extends StatelessWidget {
     Future<void> submitForm() async {
       formKey.currentState!.save();
 
-      if (location!.length < 4) return;
+      if (location!.length < 4) {
+        warningMessage(
+          message: "INVALID CITY",
+          icon: Icons.error_outline,
+        );
+
+        return;
+      }
 
       final weather = await weatherManager.weather(
         location: location!,

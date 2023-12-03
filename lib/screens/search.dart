@@ -2,19 +2,24 @@ import 'package:flutter/material.dart';
 
 import '../models/weather_model.dart';
 
-import '../widgets/favorites/favorites_header.dart';
-import '../widgets/favorites/favorites_search.dart';
+import '../widgets/search/search_header.dart';
+import '../widgets/search/search_form.dart';
 
 import './home.dart';
 
-class FavoritesScreen extends StatefulWidget {
-  const FavoritesScreen({super.key});
+class SearchScreen extends StatefulWidget {
+  const SearchScreen({
+    required this.image,
+    super.key,
+  });
+
+  final String image;
 
   @override
-  State<FavoritesScreen> createState() => _FavoritesScreenState();
+  State<SearchScreen> createState() => _SearchScreenState();
 }
 
-class _FavoritesScreenState extends State<FavoritesScreen> {
+class _SearchScreenState extends State<SearchScreen> {
   void _exploreWeather({required WeatherModel weather}) {
     Navigator.of(context).push(
       MaterialPageRoute(
@@ -49,21 +54,24 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 20,
+          horizontal: 20,
+          vertical: 5,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const FavoritesHeader(
-              image: "./lib/images/favorites/favorites.png",
+            SearchHeader(
+              image: widget.image,
             ),
             const SizedBox(
               height: 40,
             ),
-            FavoritesSearch(
+            SearchForm(
               onSubmit: _exploreWeather,
+            ),
+            const SizedBox(
+              height: 40,
             ),
           ],
         ),

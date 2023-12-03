@@ -10,7 +10,7 @@ import '../widgets/home/home_drawer.dart';
 import '../widgets/home/home_weather.dart';
 import '../widgets/home/home_favorites.dart';
 
-import './favorites.dart';
+import './search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
@@ -36,7 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
     _weather = widget.weather;
   }
 
-  Future<void> _updateWeather() async {
+  Future<void> _refreshWeather() async {
+    _scaffoldKey.currentState!.closeDrawer();
+
     final weather = await weatherManager.weather(
       location: widget.account!.location,
     );
@@ -44,11 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() => _weather = weather);
   }
 
-  void _openFavoritesScreen() {
+  void _openSearchScreen() {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return const FavoritesScreen();
+          return SearchScreen(
+            image: _weather!.temperature.image,
+          );
         },
       ),
     );
@@ -68,9 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: HomeDrawer(
         username: widget.account!.username,
         profile: widget.account!.profile,
-        onTapSearch: _openFavoritesScreen,
-        onTapRefresh: _updateWeather,
+        onTapSearch: _openSearchScreen,
+        onTapRefresh: _refreshWeather,
         onTapAccount: () {},
+        onTapMap: () {},
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -81,8 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
               HomeAppBar(
                 profile: widget.account!.profile,
                 onTapProfile: () => _scaffoldKey.currentState!.openDrawer(),
-                onTapSearch: _openFavoritesScreen,
-                onTapRefresh: _updateWeather,
+                onTapSearch: _openSearchScreen,
+                onTapRefresh: _refreshWeather,
+                onTapMap: () {},
               ),
               const SizedBox(
                 height: 15,

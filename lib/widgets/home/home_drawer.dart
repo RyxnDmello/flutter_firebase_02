@@ -10,6 +10,7 @@ class HomeDrawer extends StatelessWidget {
     required this.onTapAccount,
     required this.onTapRefresh,
     required this.onTapSearch,
+    required this.onTapMap,
     required this.username,
     required this.profile,
     super.key,
@@ -18,6 +19,7 @@ class HomeDrawer extends StatelessWidget {
   final void Function() onTapAccount;
   final void Function() onTapRefresh;
   final void Function() onTapSearch;
+  final void Function() onTapMap;
   final String username;
   final String profile;
 
@@ -42,13 +44,21 @@ class HomeDrawer extends StatelessWidget {
           ),
           HomeDrawerTile(
             icon: FontAwesomeIcons.map,
-            onTap: onTapSearch,
+            onTap: onTapMap,
             label: "Favorites",
+          ),
+          HomeDrawerTile(
+            icon: FontAwesomeIcons.magnifyingGlass,
+            onTap: () {
+              Navigator.of(context).pop();
+              onTapSearch();
+            },
+            label: "Search",
           ),
           HomeDrawerTile(
             icon: FontAwesomeIcons.arrowRotateLeft,
             onTap: onTapRefresh,
-            label: "Favorites",
+            label: "Refresh",
           ),
           const SizedBox(
             height: 15,
