@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../database/account_manager.dart';
 
 import '../common/warning_snack_bar.dart';
+import '../common/loading_indicator.dart';
 
 import './form/register_form_title.dart';
 import './form/register_form_profile.dart';
@@ -46,7 +47,7 @@ class _RegisterFormState extends State<RegisterForm> {
     }
 
     _formKey.currentState!.save();
-    _showLoadingIndicator();
+    loadingIndicator(context: context);
 
     if (_isLogin) {
       final isLogged = await accountManager.loginAccount(
@@ -199,20 +200,6 @@ class _RegisterFormState extends State<RegisterForm> {
 
     if (icon.codePoint == Icons.face.codePoint) return;
     Navigator.of(context).pop();
-  }
-
-  void _showLoadingIndicator() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const Center(
-          child: CircularProgressIndicator(
-            color: Color.fromARGB(255, 0, 50, 255),
-            backgroundColor: Colors.black26,
-          ),
-        );
-      },
-    );
   }
 
   void _switchForm() {

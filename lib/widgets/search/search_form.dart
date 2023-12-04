@@ -5,17 +5,18 @@ import '../../database/weather_manager.dart';
 import '../../models/weather_model.dart';
 
 import '../common/warning_snack_bar.dart';
+import '../common/loading_indicator.dart';
 
 import './form/search_form_input.dart';
 import './form/search_form_button.dart';
 
 class SearchForm extends StatelessWidget {
   const SearchForm({
-    required this.onSubmit,
+    required this.exploreWeather,
     super.key,
   });
 
-  final Function({required WeatherModel weather}) onSubmit;
+  final Function({required WeatherModel weather}) exploreWeather;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +38,7 @@ class SearchForm extends StatelessWidget {
 
     Future<void> submitForm() async {
       formKey.currentState!.save();
+      loadingIndicator(context: context);
 
       if (location!.length < 4) {
         warningMessage(
@@ -62,7 +64,7 @@ class SearchForm extends StatelessWidget {
         return;
       }
 
-      onSubmit(weather: weather);
+      exploreWeather(weather: weather);
     }
 
     void saveLocation(String? loc) {
