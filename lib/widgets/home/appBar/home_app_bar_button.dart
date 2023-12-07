@@ -17,9 +17,9 @@ class HomeAppBarButton extends StatelessWidget {
       onPressed: onPressed,
       icon: FaIcon(
         icon,
-        color: Colors.white,
-        size: 20,
       ),
+      color: Colors.white,
+      iconSize: 20,
     );
   }
 }

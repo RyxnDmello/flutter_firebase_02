@@ -26,12 +26,12 @@ class DailyGraphsModalHeader extends StatelessWidget {
         ),
         IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          iconSize: 30,
-          splashRadius: 30,
           icon: const Icon(
             Icons.close_sharp,
-            color: Colors.white,
           ),
+          color: Colors.white,
+          splashRadius: 30,
+          iconSize: 30,
         )
       ],
     );

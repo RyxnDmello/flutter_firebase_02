@@ -53,7 +53,7 @@ class SplashScreen extends StatelessWidget {
           color: Colors.black,
           image: DecorationImage(
             image: AssetImage(
-              "./lib/images/register/background.png",
+              "./lib/images/splash/background.png",
             ),
             fit: BoxFit.cover,
             opacity: 0.65,

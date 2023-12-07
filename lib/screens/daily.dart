@@ -86,9 +86,8 @@ class _DailyScreenState extends State<DailyScreen> {
           onPressed: () => Navigator.of(context).pop(),
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.white,
           ),
-          splashRadius: 25,
+          color: Colors.white,
           iconSize: 30,
         ),
         elevation: 0,

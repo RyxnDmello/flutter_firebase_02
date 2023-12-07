@@ -8,7 +8,7 @@ import '../models/weather_model.dart';
 import '../widgets/home/home_app_bar.dart';
 import '../widgets/home/home_drawer.dart';
 import '../widgets/home/home_weather.dart';
-import '../widgets/home/home_favorites.dart';
+import '../widgets/home/home_search.dart';
 
 import './search.dart';
 
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     if (widget.account == null) {
-      return HomeFavorites(
+      return HomeSearch(
         weather: widget.weather,
       );
     }
@@ -84,8 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               HomeAppBar(
-                profile: widget.account!.profile,
                 onTapProfile: () => _scaffoldKey.currentState!.openDrawer(),
+                profile: widget.account!.profile,
                 onTapSearch: _openSearchScreen,
                 onTapRefresh: _refreshWeather,
                 onTapMap: () {},

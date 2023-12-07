@@ -40,9 +40,8 @@ class SearchScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.white,
           ),
-          splashColor: Colors.white,
+          color: Colors.white,
           splashRadius: 25,
           iconSize: 30,
         ),

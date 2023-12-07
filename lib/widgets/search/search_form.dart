@@ -36,18 +36,23 @@ class SearchForm extends StatelessWidget {
       );
     }
 
+    void removeLoadingIndicator() {
+      Navigator.of(context).pop();
+    }
+
     Future<void> submitForm() async {
       formKey.currentState!.save();
-      loadingIndicator(context: context);
 
       if (location!.length < 4) {
         warningMessage(
-          message: "INVALID CITY",
+          message: "PLEASE ENTER A CITY",
           icon: Icons.error_outline,
         );
 
         return;
       }
+
+      loadingIndicator(context: context);
 
       final weather = await weatherManager.weather(
         location: location!,
@@ -60,6 +65,8 @@ class SearchForm extends StatelessWidget {
           message: "SERVER DOWN / INVALID CITY",
           icon: Icons.wifi_off_sharp,
         );
+
+        removeLoadingIndicator();
 
         return;
       }

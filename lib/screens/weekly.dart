@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../models/weather_model.dart';
 
@@ -22,11 +21,11 @@ class WeeklyScreen extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 0, 0, 20),
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: const FaIcon(
-            FontAwesomeIcons.solidHeart,
-            color: Colors.white,
+          icon: const Icon(
+            Icons.arrow_back,
           ),
-          splashRadius: 25,
+          color: Colors.white,
+          iconSize: 30,
         ),
         elevation: 0,
       ),

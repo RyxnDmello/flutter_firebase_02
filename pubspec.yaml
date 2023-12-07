@@ -42,6 +42,7 @@ flutter:
     - ./lib/images/home/
     - ./lib/images/search/
     - ./lib/images/account/
+    - ./lib/images/splash/
 
     - ./lib/images/register/
     - ./lib/images/register/avatars/
