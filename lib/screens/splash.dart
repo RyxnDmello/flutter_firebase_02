@@ -34,6 +34,7 @@ class SplashScreen extends StatelessWidget {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (context) => HomeScreen(
+                favoriteID: null,
                 account: account,
                 weather: weather,
               ),

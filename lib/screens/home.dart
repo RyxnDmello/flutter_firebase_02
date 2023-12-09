@@ -14,6 +14,7 @@ import './search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
+    required this.favoriteID,
     required this.account,
     required this.weather,
     super.key,
@@ -21,6 +22,7 @@ class HomeScreen extends StatefulWidget {
 
   final AccountModel? account;
   final WeatherModel weather;
+  final String? favoriteID;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -62,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     if (widget.account == null) {
       return HomeSearch(
+        favoriteID: widget.favoriteID,
         weather: widget.weather,
       );
     }

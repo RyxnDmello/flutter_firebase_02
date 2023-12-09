@@ -22,6 +22,10 @@ class _AccountManager {
   DocumentReference? _account;
   Reference? _accountProfile;
 
+  DocumentReference? get firestoreAccount {
+    return _account;
+  }
+
   Future<bool> createAccount({
     required File? profileImage,
     required String? profileAvatar,

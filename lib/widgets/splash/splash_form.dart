@@ -74,6 +74,7 @@ class _SplashFormState extends State<SplashForm> {
       MaterialPageRoute(
         builder: (context) {
           return HomeScreen(
+            favoriteID: null,
             account: account,
             weather: weather,
           );

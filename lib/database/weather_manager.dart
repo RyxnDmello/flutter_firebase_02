@@ -23,7 +23,10 @@ class _WeatherManager {
     return WeatherModel(
       location: WeatherLocationModel(
         date: _formattedDate(weatherData["days"][0]["datetime"]),
+        longitude: weatherData["longitude"].toString(),
+        latitude: weatherData["latitude"].toString(),
         location: weatherData["resolvedAddress"],
+        timezone: weatherData["timezone"],
       ),
       temperature: WeatherTemperatureModel(
         temperature: weatherData["days"][0]["temp"].toString(),
@@ -46,7 +49,10 @@ class _WeatherManager {
           return WeatherDailyModel(
             location: WeatherLocationModel(
               date: _formattedDate(day["datetime"], "d MMM, EEEE"),
+              longitude: weatherData["longitude"].toString(),
+              latitude: weatherData["latitude"].toString(),
               location: weatherData["resolvedAddress"],
+              timezone: weatherData["timezone"],
             ),
             temperature: WeatherTemperatureModel(
               image: "./lib/images/weather/clear-day.png",

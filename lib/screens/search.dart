@@ -24,8 +24,9 @@ class SearchScreen extends StatelessWidget {
         MaterialPageRoute(
           builder: (context) {
             return HomeScreen(
-              account: null,
+              favoriteID: null,
               weather: weather,
+              account: null,
             );
           },
         ),

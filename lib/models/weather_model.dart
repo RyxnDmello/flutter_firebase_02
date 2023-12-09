@@ -25,6 +25,9 @@ class WeatherModel {
 final dummyWeather = WeatherModel(
   location: WeatherLocationModel(
     location: "Toronto Ontario",
+    longitude: "73.8057",
+    latitude: "15.4584",
+    timezone: "Asia/Kolkata",
     date: DateFormat("d MMM").format(DateTime.now()),
   ),
   temperature: const WeatherTemperatureModel(
@@ -87,6 +90,9 @@ final dummyWeather = WeatherModel(
     WeatherDailyModel(
       location: WeatherLocationModel(
         location: "Toronto Ontario",
+        longitude: "73.8057",
+        latitude: "15.4584",
+        timezone: "Asia/Kolkata",
         date: DateFormat("d MMM, EEEE").format(DateTime.now()),
       ),
       temperature: const WeatherTemperatureModel(
@@ -404,6 +410,9 @@ final dummyWeather = WeatherModel(
     WeatherDailyModel(
       location: WeatherLocationModel(
         location: "Toronto Ontario",
+        longitude: "73.8057",
+        latitude: "15.4584",
+        timezone: "Asia/Kolkata",
         date: DateFormat("d MMM, EEEE").format(DateTime.now()),
       ),
       temperature: const WeatherTemperatureModel(
@@ -721,6 +730,9 @@ final dummyWeather = WeatherModel(
     WeatherDailyModel(
       location: WeatherLocationModel(
         location: "Toronto Ontario",
+        longitude: "73.8057",
+        latitude: "15.4584",
+        timezone: "Asia/Kolkata",
         date: DateFormat("d MMM, EEEE").format(DateTime.now()),
       ),
       temperature: const WeatherTemperatureModel(
@@ -1038,6 +1050,9 @@ final dummyWeather = WeatherModel(
     WeatherDailyModel(
       location: WeatherLocationModel(
         location: "Toronto Ontario",
+        longitude: "73.8057",
+        latitude: "15.4584",
+        timezone: "Asia/Kolkata",
         date: DateFormat("d MMM, EEEE").format(DateTime.now()),
       ),
       temperature: const WeatherTemperatureModel(
@@ -1355,6 +1370,9 @@ final dummyWeather = WeatherModel(
     WeatherDailyModel(
       location: WeatherLocationModel(
         location: "Toronto Ontario",
+        longitude: "73.8057",
+        latitude: "15.4584",
+        timezone: "Asia/Kolkata",
         date: DateFormat("d MMM, EEEE").format(DateTime.now()),
       ),
       temperature: const WeatherTemperatureModel(
@@ -1672,6 +1690,9 @@ final dummyWeather = WeatherModel(
     WeatherDailyModel(
       location: WeatherLocationModel(
         location: "Toronto Ontario",
+        longitude: "73.8057",
+        latitude: "15.4584",
+        timezone: "Asia/Kolkata",
         date: DateFormat("d MMM, EEEE").format(DateTime.now()),
       ),
       temperature: const WeatherTemperatureModel(
@@ -1989,6 +2010,9 @@ final dummyWeather = WeatherModel(
     WeatherDailyModel(
       location: WeatherLocationModel(
         location: "Toronto Ontario",
+        longitude: "73.8057",
+        latitude: "15.4584",
+        timezone: "Asia/Kolkata",
         date: DateFormat("d MMM, EEEE").format(DateTime.now()),
       ),
       temperature: const WeatherTemperatureModel(
@@ -2306,6 +2330,9 @@ final dummyWeather = WeatherModel(
     WeatherDailyModel(
       location: WeatherLocationModel(
         location: "Toronto Ontario",
+        longitude: "73.8057",
+        latitude: "15.4584",
+        timezone: "Asia/Kolkata",
         date: DateFormat("d MMM, EEEE").format(DateTime.now()),
       ),
       temperature: const WeatherTemperatureModel(
