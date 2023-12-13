@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_02/screens/daily.dart';
 
 import '../../models/weather/weather_weekly_model.dart';
 import '../../models/weather/weather_daily_model.dart';
 
 import './days/weekly_days_title.dart';
 import './days/weekly_days_card.dart';
+
+import '../../screens/daily.dart';
 
 class WeeklyDays extends StatelessWidget {
   const WeeklyDays({

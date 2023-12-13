@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 import './firebase_options.dart';
 
-import './screens/search.dart';
+import './screens/favorites.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: SearchScreen(
-        image: "./lib/images/weather/clear-day.png",
+      home: FavoritesScreen(
+        favorites: [],
       ),
     );
   }

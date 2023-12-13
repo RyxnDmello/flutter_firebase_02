@@ -52,15 +52,17 @@ class _FavoritesManager {
           (value) => value.docs,
         );
 
-    final favorites = docs.map((doc) {
-      return FavoriteModel(
-        id: doc.id,
-        location: doc.data()["location"],
-        latitude: doc.data()["latitude"],
-        longitude: doc.data()["longitude"],
-        timezone: doc.data()["timezone"],
-      );
-    }) as List<FavoriteModel>;
+    List<FavoriteModel> favorites = [
+      ...docs.map((doc) {
+        return FavoriteModel(
+          id: doc.id,
+          location: doc.data()["location"],
+          latitude: doc.data()["latitude"],
+          longitude: doc.data()["longitude"],
+          timezone: doc.data()["timezone"],
+        );
+      }),
+    ];
 
     return favorites;
   }

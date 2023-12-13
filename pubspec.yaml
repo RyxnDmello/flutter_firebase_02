@@ -41,9 +41,10 @@ flutter:
 
     - ./lib/images/
     - ./lib/images/home/
+    - ./lib/images/splash/
     - ./lib/images/search/
     - ./lib/images/account/
-    - ./lib/images/splash/
+    - ./lib/images/favorites/
 
     - ./lib/images/register/
     - ./lib/images/register/avatars/

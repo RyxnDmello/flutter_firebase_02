@@ -16,10 +16,10 @@ class HomeDrawer extends StatelessWidget {
     super.key,
   });
 
+  final Future<void> Function() onTapRefresh;
+  final Future<void> Function() onTapMap;
   final void Function() onTapAccount;
-  final void Function() onTapRefresh;
   final void Function() onTapSearch;
-  final void Function() onTapMap;
   final String username;
   final String profile;
 
@@ -44,7 +44,7 @@ class HomeDrawer extends StatelessWidget {
           ),
           HomeDrawerTile(
             icon: FontAwesomeIcons.map,
-            onTap: onTapMap,
+            onTap: () async => await onTapMap(),
             label: "Favorites",
           ),
           HomeDrawerTile(
@@ -57,7 +57,7 @@ class HomeDrawer extends StatelessWidget {
           ),
           HomeDrawerTile(
             icon: FontAwesomeIcons.arrowRotateLeft,
-            onTap: onTapRefresh,
+            onTap: () async => await onTapRefresh(),
             label: "Refresh",
           ),
           const SizedBox(

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../database/weather_manager.dart';
+import '../database/favorites_manager.dart';
 
 import '../models/account_model.dart';
 import '../models/weather_model.dart';
+import '../models/favorite_model.dart';
 
 import '../widgets/home/home_app_bar.dart';
 import '../widgets/home/home_drawer.dart';
 import '../widgets/home/home_weather.dart';
 import '../widgets/home/home_search.dart';
 
+import './favorites.dart';
 import './search.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -48,12 +51,36 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() => _weather = weather);
   }
 
+  Future<void> _openFavoritesScreen() async {
+    final favorites = await favoritesManager.favorites();
+
+    if (favorites == null) return;
+
+    _favoritesScreen(
+      favorites: favorites,
+    );
+  }
+
   void _openSearchScreen() {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
           return SearchScreen(
             image: _weather!.temperature.image,
+          );
+        },
+      ),
+    );
+  }
+
+  void _favoritesScreen({
+    required List<FavoriteModel> favorites,
+  }) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return FavoritesScreen(
+            favorites: favorites,
           );
         },
       ),
@@ -75,10 +102,10 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: HomeDrawer(
         username: widget.account!.username,
         profile: widget.account!.profile,
+        onTapMap: _openFavoritesScreen,
         onTapSearch: _openSearchScreen,
         onTapRefresh: _refreshWeather,
         onTapAccount: () {},
-        onTapMap: () {},
       ),
       body: SafeArea(
         child: SingleChildScrollView(
