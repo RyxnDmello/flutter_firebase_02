@@ -7,10 +7,21 @@ import './list/favorites_list_city.dart';
 class FavoritesList extends StatelessWidget {
   const FavoritesList({
     required this.favorites,
+    required this.onExplore,
+    required this.onRemove,
     super.key,
   });
 
   final List<FavoriteModel> favorites;
+
+  final Future<void> Function({
+    required String favoriteID,
+  }) onRemove;
+
+  final Future<void> Function({
+    required String favoriteID,
+    required String location,
+  }) onExplore;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +36,8 @@ class FavoritesList extends StatelessWidget {
           latitude: favorites[index].latitude,
           longitude: favorites[index].longitude,
           timezone: favorites[index].timezone,
+          onExplore: onExplore,
+          onRemove: onRemove,
         );
       },
       separatorBuilder: (context, index) {

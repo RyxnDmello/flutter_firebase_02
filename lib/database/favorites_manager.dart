@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uuid/uuid.dart';
 
-import '../models/weather_model.dart';
 import '../models/favorite_model.dart';
 
 import './account_manager.dart';
@@ -14,7 +13,10 @@ class _FavoritesManager {
   DocumentReference? _account;
 
   Future<String?> addFavorite({
-    required WeatherModel weather,
+    required String location,
+    required String latitude,
+    required String longitude,
+    required String timezone,
   }) async {
     _account = accountManager.firestoreAccount;
 
@@ -24,10 +26,10 @@ class _FavoritesManager {
 
     await _account!.collection("favorites").doc(favoriteID).set(
       {
-        "location": weather.location.location,
-        "latitude": weather.location.latitude,
-        "longitude": weather.location.longitude,
-        "timezone": weather.location.timezone,
+        "location": location,
+        "latitude": latitude,
+        "longitude": longitude,
+        "timezone": timezone,
       },
     );
 

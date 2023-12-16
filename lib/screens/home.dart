@@ -116,9 +116,9 @@ class _HomeScreenState extends State<HomeScreen> {
               HomeAppBar(
                 onTapProfile: () => _scaffoldKey.currentState!.openDrawer(),
                 profile: widget.account!.profile,
+                onTapMap: _openFavoritesScreen,
                 onTapSearch: _openSearchScreen,
                 onTapRefresh: _refreshWeather,
-                onTapMap: () {},
               ),
               const SizedBox(
                 height: 15,

@@ -14,10 +14,10 @@ class HomeAppBar extends StatelessWidget {
     super.key,
   });
 
+  final Future<void> Function() onTapMap;
+  final void Function() onTapSearch;
   final void Function() onTapProfile;
   final void Function() onTapRefresh;
-  final void Function() onTapSearch;
-  final void Function() onTapMap;
   final String profile;
 
   @override
@@ -41,7 +41,7 @@ class HomeAppBar extends StatelessWidget {
             children: [
               HomeAppBarButton(
                 icon: FontAwesomeIcons.map,
-                onPressed: onTapMap,
+                onPressed: () async => await onTapMap(),
               ),
               HomeAppBarButton(
                 icon: FontAwesomeIcons.magnifyingGlass,

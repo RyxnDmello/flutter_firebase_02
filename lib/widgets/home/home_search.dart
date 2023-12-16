@@ -26,13 +26,22 @@ class HomeSearch extends StatefulWidget {
 class _HomeSearchState extends State<HomeSearch> {
   String? _favoriteID;
 
+  @override
+  void initState() {
+    super.initState();
+    _favoriteID = widget.favoriteID;
+  }
+
   Future<void> _addFavorite() async {
     loadingIndicator(
       context: context,
     );
 
     final favoriteID = await favoritesManager.addFavorite(
-      weather: widget.weather,
+      location: widget.weather.location.location,
+      latitude: widget.weather.location.latitude,
+      longitude: widget.weather.location.longitude,
+      timezone: widget.weather.location.timezone,
     );
 
     _removeLoadingIndicator();
