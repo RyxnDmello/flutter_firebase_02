@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../models/register/avatars.dart';
+import '../../models/register/avatars.dart';
 
-class RegisterFormAvatarModal extends StatelessWidget {
-  const RegisterFormAvatarModal({
+class AvatarsModal extends StatelessWidget {
+  const AvatarsModal({
     required this.onSelectAvatar,
     super.key,
   });
 
-  final void Function(String selectedAvatar) onSelectAvatar;
+  final void Function({
+    required String selectedAvatar,
+  }) onSelectAvatar;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,9 @@ class RegisterFormAvatarModal extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 return GestureDetector(
-                  onTap: () => onSelectAvatar(avatars[index]),
+                  onTap: () => onSelectAvatar(
+                    selectedAvatar: avatars[index],
+                  ),
                   child: Image.asset(
                     avatars[index],
                     fit: BoxFit.cover,

@@ -5,12 +5,12 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../database/account_manager.dart';
 
+import '../common/avatars_modal.dart';
 import '../common/warning_snack_bar.dart';
 import '../common/loading_indicator.dart';
 
 import './form/register_form_title.dart';
 import './form/register_form_profile.dart';
-import './form/register_form_avatar_modal.dart';
 import './form/register_form_input.dart';
 import './form/register_form_button.dart';
 import './form/register_form_switcher.dart';
@@ -146,7 +146,7 @@ class _RegisterFormState extends State<RegisterForm> {
     });
   }
 
-  void _selectAvatar(String selectedAvatar) {
+  void _selectAvatar({required String selectedAvatar}) {
     Navigator.of(context).pop();
 
     setState(() {
@@ -168,7 +168,7 @@ class _RegisterFormState extends State<RegisterForm> {
       ),
       context: context,
       builder: (context) {
-        return RegisterFormAvatarModal(
+        return AvatarsModal(
           onSelectAvatar: _selectAvatar,
         );
       },

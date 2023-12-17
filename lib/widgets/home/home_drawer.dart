@@ -39,12 +39,18 @@ class HomeDrawer extends StatelessWidget {
           ),
           HomeDrawerTile(
             icon: FontAwesomeIcons.circleUser,
-            onTap: onTapAccount,
+            onTap: () {
+              Navigator.of(context).pop();
+              onTapAccount();
+            },
             label: "Account",
           ),
           HomeDrawerTile(
             icon: FontAwesomeIcons.map,
-            onTap: () async => await onTapMap(),
+            onTap: () async {
+              Navigator.of(context).pop();
+              await onTapMap();
+            },
             label: "Favorites",
           ),
           HomeDrawerTile(
@@ -57,7 +63,10 @@ class HomeDrawer extends StatelessWidget {
           ),
           HomeDrawerTile(
             icon: FontAwesomeIcons.arrowRotateLeft,
-            onTap: () async => await onTapRefresh(),
+            onTap: () async {
+              Navigator.of(context).pop();
+              await onTapRefresh();
+            },
             label: "Refresh",
           ),
           const SizedBox(

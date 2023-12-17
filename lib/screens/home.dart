@@ -12,6 +12,7 @@ import '../widgets/home/home_drawer.dart';
 import '../widgets/home/home_weather.dart';
 import '../widgets/home/home_search.dart';
 
+import './account.dart';
 import './favorites.dart';
 import './search.dart';
 
@@ -41,14 +42,14 @@ class _HomeScreenState extends State<HomeScreen> {
     _weather = widget.weather;
   }
 
-  Future<void> _refreshWeather() async {
-    _scaffoldKey.currentState!.closeDrawer();
-
-    final weather = await weatherManager.weather(
-      location: widget.account!.location,
+  void _openAccountScreen() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => AccountScreen(
+          account: widget.account!,
+        ),
+      ),
     );
-
-    setState(() => _weather = weather);
   }
 
   Future<void> _openFavoritesScreen() async {
@@ -71,6 +72,14 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
     );
+  }
+
+  Future<void> _refreshWeather() async {
+    final weather = await weatherManager.weather(
+      location: widget.account!.location,
+    );
+
+    setState(() => _weather = weather);
   }
 
   void _favoritesScreen({
@@ -102,10 +111,10 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: HomeDrawer(
         username: widget.account!.username,
         profile: widget.account!.profile,
+        onTapAccount: _openAccountScreen,
         onTapMap: _openFavoritesScreen,
         onTapSearch: _openSearchScreen,
         onTapRefresh: _refreshWeather,
-        onTapAccount: () {},
       ),
       body: SafeArea(
         child: SingleChildScrollView(

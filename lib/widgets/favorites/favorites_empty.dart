@@ -23,7 +23,7 @@ class FavoritesEmpty extends StatelessWidget {
         Image.asset(
           image,
           fit: BoxFit.cover,
-          width: 150,
+          width: 125,
         ),
         const SizedBox(
           height: 25,
@@ -34,7 +34,7 @@ class FavoritesEmpty extends StatelessWidget {
             fontWeight: FontWeight.w500,
             color: Colors.white,
             letterSpacing: 1,
-            fontSize: 20,
+            fontSize: 18,
           ),
         ),
         const SizedBox(
@@ -45,14 +45,14 @@ class FavoritesEmpty extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromARGB(255, 0, 0, 150),
             padding: const EdgeInsets.symmetric(
-              horizontal: 40,
+              horizontal: 60,
               vertical: 12,
             ),
           ),
           icon: const FaIcon(
             FontAwesomeIcons.magnifyingGlass,
             color: Colors.white,
-            size: 18,
+            size: 16,
           ),
           label: Text(
             "Explore Places",
@@ -60,7 +60,7 @@ class FavoritesEmpty extends StatelessWidget {
               fontWeight: FontWeight.w500,
               color: Colors.white,
               letterSpacing: 0.65,
-              fontSize: 20,
+              fontSize: 18,
               height: 1,
             ),
           ),
