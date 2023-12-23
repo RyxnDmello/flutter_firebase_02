@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -8,6 +6,9 @@ import '../models/account_model.dart';
 import '../widgets/common/avatars_modal.dart';
 
 import '../widgets/account/account_profile.dart';
+import '../widgets/account/account_input.dart';
+import '../widgets/account/account_save.dart';
+import '../widgets/account/account_reset.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({
@@ -23,8 +24,17 @@ class AccountScreen extends StatefulWidget {
 
 class _AccountScreenState extends State<AccountScreen> {
   final _formKey = GlobalKey<FormState>();
+  bool _isProfileChanged = false;
+  bool _isUsernameChanged = false;
+  bool _isEmailChanged = false;
+  bool _isPasswordChanged = false;
+  bool _isLocationChanged = false;
   String? _profileAvatar;
-  File? _profileImage;
+  String? _profileImage;
+  String? _username;
+  String? _email;
+  String? _password;
+  String? _location;
 
   @override
   void initState() {
@@ -35,9 +45,7 @@ class _AccountScreenState extends State<AccountScreen> {
       return;
     }
 
-    _profileImage = File(
-      widget.account.profile,
-    );
+    _profileImage = widget.account.profile;
   }
 
   void _selectAvatar({required String selectedAvatar}) {
@@ -46,6 +54,7 @@ class _AccountScreenState extends State<AccountScreen> {
     setState(() {
       _profileAvatar = selectedAvatar;
       _profileImage = null;
+      _isProfileChanged = true;
     });
   }
 
@@ -79,9 +88,31 @@ class _AccountScreenState extends State<AccountScreen> {
     if (pickedImage == null) return;
 
     setState(() {
-      _profileImage = File(pickedImage.path);
+      _profileImage = pickedImage.path;
       _profileAvatar = null;
+      _isProfileChanged = true;
     });
+  }
+
+  void _resetAccount() {
+    if (widget.account.profile.contains("./lib/images/register/avatars/")) {
+      setState(() {
+        _profileAvatar = widget.account.profile;
+        _profileImage = null;
+      });
+    } else {
+      setState(() {
+        _profileImage = widget.account.profile;
+        _profileAvatar = null;
+      });
+    }
+
+    _formKey.currentState!.reset();
+    _isUsernameChanged = false;
+    _isPasswordChanged = false;
+    _isLocationChanged = false;
+    _isProfileChanged = false;
+    _isEmailChanged = false;
   }
 
   @override
@@ -102,7 +133,7 @@ class _AccountScreenState extends State<AccountScreen> {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
-          horizontal: 15,
+          horizontal: 20,
           vertical: 40,
         ),
         child: Form(
@@ -116,6 +147,49 @@ class _AccountScreenState extends State<AccountScreen> {
                 onOpenCamera: _openCamera,
                 profileAvatar: _profileAvatar,
                 profileImage: _profileImage,
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              AccountInput(
+                label: widget.account.location,
+                icon: Icons.place_outlined,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              AccountInput(
+                label: widget.account.username,
+                icon: Icons.face,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              AccountInput(
+                label: widget.account.email,
+                icon: Icons.email_outlined,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const AccountInput(
+                icon: Icons.shield_outlined,
+                isHidden: true,
+                label: "••••••",
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const AccountSave(
+                label: "Save Details",
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              AccountReset(
+                icon: Icons.restart_alt_outlined,
+                label: "Reset Defaults",
+                onReset: _resetAccount,
               ),
             ],
           ),

@@ -15,19 +15,31 @@ class AccountProfile extends StatelessWidget {
   final void Function() onOpenAvatars;
   final void Function() onOpenCamera;
   final String? profileAvatar;
-  final File? profileImage;
+  final String? profileImage;
 
   @override
   Widget build(BuildContext context) {
+    ImageProvider setProfileImage() {
+      if (profileImage!.contains("https://")) {
+        return NetworkImage(
+          profileImage!,
+        );
+      }
+
+      return FileImage(
+        File(
+          profileImage!,
+        ),
+      );
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         if (profileImage != null)
           CircleAvatar(
-            foregroundImage: FileImage(
-              profileImage!,
-            ),
+            foregroundImage: setProfileImage(),
             radius: 75,
           ),
         if (profileAvatar != null)
