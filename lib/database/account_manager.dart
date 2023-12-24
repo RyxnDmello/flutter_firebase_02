@@ -114,12 +114,66 @@ class _AccountManager {
     );
   }
 
-  Future<void> setAccountLocation({required String location}) async {
+  Future<void> updateProfile({
+    required String? profileAvatar,
+    required String? profileImage,
+  }) async {
+    if (profileAvatar != null) {
+      await _account!.update(
+        {
+          "profile": profileAvatar,
+        },
+      );
+
+      return;
+    }
+
+    await _accountProfile!.putFile(
+      File(profileImage!),
+    );
+
+    await _account!.update(
+      {
+        "profile": await _accountProfile!.getDownloadURL(),
+      },
+    );
+  }
+
+  Future<void> updateLocation({required String location}) async {
     await _account!.update(
       {
         "location": location,
       },
     );
+  }
+
+  Future<void> updateUsername({required String username}) async {
+    await _account!.update(
+      {
+        "username": username,
+      },
+    );
+  }
+
+  Future<void> updatePassword({
+    required String currentEmail,
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    final authCredential = EmailAuthProvider.credential(
+      email: currentEmail,
+      password: currentPassword,
+    );
+
+    _userCredential = await _userCredential!.user!.reauthenticateWithCredential(
+      authCredential,
+    );
+
+    await _userCredential!.user!.updatePassword(newPassword);
+  }
+
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
   }
 }
 

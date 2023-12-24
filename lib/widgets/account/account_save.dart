@@ -3,10 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AccountSave extends StatelessWidget {
   const AccountSave({
+    required this.onSubmit,
     required this.label,
     super.key,
   });
 
+  final void Function() onSubmit;
   final String label;
 
   @override
@@ -16,7 +18,7 @@ class AccountSave extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: onSubmit,
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromARGB(2550, 0, 0, 180),
             padding: const EdgeInsets.only(

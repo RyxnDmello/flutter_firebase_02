@@ -3,12 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AccountInput extends StatefulWidget {
   const AccountInput({
+    required this.validateInput,
+    required this.saveInput,
     required this.label,
     required this.icon,
     this.isHidden = false,
     super.key,
   });
 
+  final String? Function(String? input) validateInput;
+  final void Function(String? input) saveInput;
   final bool isHidden;
   final IconData icon;
   final String label;
@@ -34,6 +38,8 @@ class _AccountInputState extends State<AccountInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) => widget.validateInput(value),
+      onSaved: (newValue) => widget.saveInput(newValue),
       onChanged: (value) => onChanged(value: value),
       style: GoogleFonts.poppins(
         fontWeight: FontWeight.w400,

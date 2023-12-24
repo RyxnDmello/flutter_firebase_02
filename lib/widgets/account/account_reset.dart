@@ -17,6 +17,9 @@ class AccountReset extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton.icon(
       onPressed: onReset,
+      style: TextButton.styleFrom(
+        foregroundColor: Colors.white,
+      ),
       icon: Icon(
         icon,
         color: Colors.white,

@@ -28,7 +28,7 @@ class _SplashFormState extends State<SplashForm> {
     if (!_formKey.currentState!.validate()) return;
     _formKey.currentState!.save();
 
-    await accountManager.setAccountLocation(
+    await accountManager.updateLocation(
       location: _location!,
     );
 
