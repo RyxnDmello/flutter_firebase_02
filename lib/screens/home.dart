@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../database/account_manager.dart';
 import '../database/weather_manager.dart';
 import '../database/favorites_manager.dart';
 
@@ -34,11 +35,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
+  AccountModel? _account;
   WeatherModel? _weather;
 
   @override
   void initState() {
     super.initState();
+    _account = widget.account;
     _weather = widget.weather;
   }
 
@@ -46,7 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => AccountScreen(
-          account: widget.account!,
+          updateAccount: _updateAccount,
+          account: _account!,
         ),
       ),
     );
@@ -76,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _refreshWeather() async {
     final weather = await weatherManager.weather(
-      location: widget.account!.location,
+      location: _account!.location,
     );
 
     setState(() => _weather = weather);
@@ -96,9 +100,16 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Future<void> _updateAccount() async {
+    final account = await accountManager.account();
+    setState(() => _account = account);
+
+    await _refreshWeather();
+  }
+
   @override
   Widget build(BuildContext context) {
-    if (widget.account == null) {
+    if (_account == null) {
       return HomeSearch(
         favoriteID: widget.favoriteID,
         weather: widget.weather,
@@ -109,8 +120,8 @@ class _HomeScreenState extends State<HomeScreen> {
       key: _scaffoldKey,
       backgroundColor: const Color.fromARGB(255, 0, 0, 20),
       drawer: HomeDrawer(
-        username: widget.account!.username,
-        profile: widget.account!.profile,
+        username: _account!.username,
+        profile: _account!.profile,
         onTapAccount: _openAccountScreen,
         onTapMap: _openFavoritesScreen,
         onTapSearch: _openSearchScreen,
@@ -124,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               HomeAppBar(
                 onTapProfile: () => _scaffoldKey.currentState!.openDrawer(),
-                profile: widget.account!.profile,
+                profile: _account!.profile,
                 onTapMap: _openFavoritesScreen,
                 onTapSearch: _openSearchScreen,
                 onTapRefresh: _refreshWeather,

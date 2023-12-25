@@ -22,6 +22,10 @@ class _AccountManager {
   DocumentReference? _account;
   Reference? _accountProfile;
 
+  FirebaseAuth get firebaseAuthInstance {
+    return _firebaseAuth;
+  }
+
   DocumentReference? get firestoreAccount {
     return _account;
   }
@@ -43,6 +47,10 @@ class _AccountManager {
             _userCredential!.user!.uid,
           );
 
+      _accountProfile = _firebaseStorage.ref().child("accounts").child(
+            "${_userCredential!.user!.uid}.jpg",
+          );
+
       if (profileAvatar != null) {
         await _account!.set(
           {
@@ -54,11 +62,6 @@ class _AccountManager {
 
         return true;
       }
-
-      _accountProfile = _firebaseStorage
-          .ref()
-          .child("accounts")
-          .child("${_userCredential!.user!.uid}.jpg");
 
       await _accountProfile!.putFile(profileImage!);
 
@@ -86,13 +89,12 @@ class _AccountManager {
         password: password,
       );
 
-      _accountProfile = _firebaseStorage
-          .ref()
-          .child("accounts")
-          .child("${_userCredential!.user!.uid}.jpg");
-
       _account = _firestore.collection("accounts").doc(
             _userCredential!.user!.uid,
+          );
+
+      _accountProfile = _firebaseStorage.ref().child("accounts").child(
+            "${_userCredential!.user!.uid}.jpg",
           );
     } on FirebaseAuthException {
       return false;
@@ -155,7 +157,7 @@ class _AccountManager {
     );
   }
 
-  Future<void> updatePassword({
+  Future<bool> updatePassword({
     required String currentEmail,
     required String currentPassword,
     required String newPassword,
@@ -165,11 +167,18 @@ class _AccountManager {
       password: currentPassword,
     );
 
-    _userCredential = await _userCredential!.user!.reauthenticateWithCredential(
-      authCredential,
-    );
+    try {
+      _userCredential =
+          await _userCredential!.user!.reauthenticateWithCredential(
+        authCredential,
+      );
 
-    await _userCredential!.user!.updatePassword(newPassword);
+      await _userCredential!.user!.updatePassword(newPassword);
+    } on FirebaseAuthException {
+      return false;
+    }
+
+    return true;
   }
 
   Future<void> signOut() async {

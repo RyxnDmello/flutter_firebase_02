@@ -7,6 +7,8 @@ import '../models/account_model.dart';
 
 import '../widgets/common/avatars_modal.dart';
 import '../widgets/common/loading_indicator.dart';
+import '../widgets/common/warning_snack_bar.dart';
+import '../widgets/common/labelled_divider.dart';
 
 import '../widgets/account/account_profile.dart';
 import '../widgets/account/account_input.dart';
@@ -15,10 +17,12 @@ import '../widgets/account/account_reset.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({
+    required this.updateAccount,
     required this.account,
     super.key,
   });
 
+  final Future<void> Function() updateAccount;
   final AccountModel account;
 
   @override
@@ -54,9 +58,47 @@ class _AccountScreenState extends State<AccountScreen> {
     if (!_formKey.currentState!.validate()) return;
     _formKey.currentState!.save();
 
+    if (_password!.isEmpty && _oldPassword!.isNotEmpty) {
+      _showWarningSnackBar(
+        message: "ENTER THE NEW PASSWORD",
+        icon: Icons.error_outline,
+      );
+
+      return;
+    }
+
+    if (_password!.isNotEmpty && _oldPassword!.isEmpty) {
+      _showWarningSnackBar(
+        message: "ENTER THE OLD PASSWORD",
+        icon: Icons.error_outline,
+      );
+
+      return;
+    }
+
+    _isPasswordChanged = _password!.isNotEmpty && _oldPassword!.isNotEmpty;
+
     loadingIndicator(
       context: context,
     );
+
+    if (_isPasswordChanged) {
+      final isSuccessful = await accountManager.updatePassword(
+        currentEmail: widget.account.email,
+        currentPassword: _oldPassword!,
+        newPassword: _password!,
+      );
+
+      if (!isSuccessful) {
+        _showWarningSnackBar(
+          message: "OLD PASSWORD IS INCORRECT",
+          icon: Icons.error_outline,
+        );
+
+        _closeLoadingIndicator();
+        return;
+      }
+    }
 
     if (_isProfileChanged) {
       await accountManager.updateProfile(
@@ -77,17 +119,15 @@ class _AccountScreenState extends State<AccountScreen> {
       );
     }
 
+    if (_isPasswordChanged) {
+      await accountManager.signOut();
+      return;
+    }
+
+    await widget.updateAccount();
+
     _closeLoadingIndicator();
-
-    if (!_isPasswordChanged) return;
-
-    await accountManager.updatePassword(
-      currentEmail: widget.account.email,
-      currentPassword: _oldPassword!,
-      newPassword: _password!,
-    );
-
-    await accountManager.signOut();
+    _closeLoadingIndicator();
   }
 
   String? _validateLocation(String? location) {
@@ -121,13 +161,9 @@ class _AccountScreenState extends State<AccountScreen> {
   }
 
   String? _validateOldPassword(String? oldPassword) {
-    if (oldPassword == null || oldPassword.isEmpty) {
-      _isPasswordChanged = false;
-      return null;
-    }
+    if (oldPassword == null || oldPassword.isEmpty) return null;
 
     if (oldPassword.length < 6 || oldPassword.length > 20) {
-      _isPasswordChanged = false;
       return "Invalid Password";
     }
 
@@ -135,13 +171,9 @@ class _AccountScreenState extends State<AccountScreen> {
   }
 
   String? _validatePassword(String? password) {
-    if (password == null || password.isEmpty) {
-      _isPasswordChanged = false;
-      return null;
-    }
+    if (password == null || password.isEmpty) return null;
 
     if (password.length < 6 || password.length > 20) {
-      _isPasswordChanged = false;
       return "Invalid Password";
     }
 
@@ -241,6 +273,19 @@ class _AccountScreenState extends State<AccountScreen> {
     _isProfileChanged = false;
   }
 
+  void _showWarningSnackBar({
+    required String message,
+    required IconData icon,
+  }) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      warningSnackBar(
+        message: message,
+        icon: icon,
+      ),
+    );
+  }
+
   void _closeLoadingIndicator() {
     Navigator.of(context).pop();
   }
@@ -262,10 +307,7 @@ class _AccountScreenState extends State<AccountScreen> {
         elevation: 0,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 40,
-        ),
+        padding: const EdgeInsets.all(20),
         child: Form(
           key: _formKey,
           child: Column(
@@ -297,7 +339,13 @@ class _AccountScreenState extends State<AccountScreen> {
                 icon: Icons.face,
               ),
               const SizedBox(
-                height: 15,
+                height: 30,
+              ),
+              const LabelledDivider(
+                label: "REQUIRES AUTHENTICATION",
+              ),
+              const SizedBox(
+                height: 25,
               ),
               AccountInput(
                 validateInput: _validateOldPassword,
