@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../database/account_manager.dart';
 
 import './drawer/home_drawer_account.dart';
 import './drawer/home_drawer_tile.dart';
@@ -74,7 +75,7 @@ class HomeDrawer extends StatelessWidget {
           ),
           HomeDrawerTile(
             icon: FontAwesomeIcons.arrowRightFromBracket,
-            onTap: () => FirebaseAuth.instance.signOut(),
+            onTap: () async => await accountManager.signOut(),
             label: "Logout",
           ),
         ],

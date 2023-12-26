@@ -12,7 +12,7 @@ class _AccountManager {
         _firebaseStorage = FirebaseStorage.instance,
         _firestore = FirebaseFirestore.instance,
         _userCredential = null,
-        _accountProfile = null,
+        _profile = null,
         _account = null;
 
   final FirebaseAuth _firebaseAuth;
@@ -20,7 +20,7 @@ class _AccountManager {
   final FirebaseFirestore _firestore;
   UserCredential? _userCredential;
   DocumentReference? _account;
-  Reference? _accountProfile;
+  Reference? _profile;
 
   FirebaseAuth get firebaseAuthInstance {
     return _firebaseAuth;
@@ -28,6 +28,16 @@ class _AccountManager {
 
   DocumentReference? get firestoreAccount {
     return _account;
+  }
+
+  void initializeFirebase() {
+    _account = _firestore.collection("accounts").doc(
+          _firebaseAuth.currentUser!.uid,
+        );
+
+    _profile = _firebaseStorage.ref().child("accounts").child(
+          "${_firebaseAuth.currentUser!.uid}.jpg",
+        );
   }
 
   Future<bool> createAccount({
@@ -47,7 +57,7 @@ class _AccountManager {
             _userCredential!.user!.uid,
           );
 
-      _accountProfile = _firebaseStorage.ref().child("accounts").child(
+      _profile = _firebaseStorage.ref().child("accounts").child(
             "${_userCredential!.user!.uid}.jpg",
           );
 
@@ -63,11 +73,11 @@ class _AccountManager {
         return true;
       }
 
-      await _accountProfile!.putFile(profileImage!);
+      await _profile!.putFile(profileImage!);
 
       await _account!.set(
         {
-          "profile": await _accountProfile!.getDownloadURL(),
+          "profile": await _profile!.getDownloadURL(),
           "username": username,
           "email": email,
         },
@@ -93,7 +103,7 @@ class _AccountManager {
             _userCredential!.user!.uid,
           );
 
-      _accountProfile = _firebaseStorage.ref().child("accounts").child(
+      _profile = _firebaseStorage.ref().child("accounts").child(
             "${_userCredential!.user!.uid}.jpg",
           );
     } on FirebaseAuthException {
@@ -130,13 +140,13 @@ class _AccountManager {
       return;
     }
 
-    await _accountProfile!.putFile(
+    await _profile!.putFile(
       File(profileImage!),
     );
 
     await _account!.update(
       {
-        "profile": await _accountProfile!.getDownloadURL(),
+        "profile": await _profile!.getDownloadURL(),
       },
     );
   }

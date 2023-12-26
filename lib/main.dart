@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import './database/account_manager.dart';
+
 import './firebase_options.dart';
 
 import './screens/register.dart';
+import './screens/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,8 +26,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: RegisterScreen(),
+    return MaterialApp(
+      home: StreamBuilder(
+        stream: accountManager.firebaseAuthInstance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError || !snapshot.hasData) {
+            return const RegisterScreen();
+          }
+
+          accountManager.initializeFirebase();
+
+          return const SplashScreen(
+            isLogin: false,
+          );
+        },
+      ),
     );
   }
 }
