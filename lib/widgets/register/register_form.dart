@@ -15,8 +15,6 @@ import './form/register_form_input.dart';
 import './form/register_form_button.dart';
 import './form/register_form_switcher.dart';
 
-import '../../screens/splash.dart';
-
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
 
@@ -47,7 +45,10 @@ class _RegisterFormState extends State<RegisterForm> {
     }
 
     _formKey.currentState!.save();
-    loadingIndicator(context: context);
+
+    loadingIndicator(
+      context: context,
+    );
 
     if (_isLogin) {
       final isLogged = await accountManager.loginAccount(
@@ -63,8 +64,6 @@ class _RegisterFormState extends State<RegisterForm> {
 
         return;
       }
-
-      _openSplashScreen();
 
       return;
     }
@@ -85,8 +84,6 @@ class _RegisterFormState extends State<RegisterForm> {
 
       return;
     }
-
-    _openSplashScreen();
   }
 
   String? _validateUsername(String? username) {
@@ -175,15 +172,9 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
-  void _openSplashScreen() {
-    Navigator.of(context).pop();
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => SplashScreen(
-          isLogin: _isLogin,
-        ),
-      ),
-    );
+  void _switchForm() {
+    setState(() => _isLogin = !_isLogin);
+    _formKey.currentState!.reset();
   }
 
   void _warningMessage({
@@ -200,11 +191,6 @@ class _RegisterFormState extends State<RegisterForm> {
 
     if (icon.codePoint == Icons.face.codePoint) return;
     Navigator.of(context).pop();
-  }
-
-  void _switchForm() {
-    setState(() => _isLogin = !_isLogin);
-    _formKey.currentState!.reset();
   }
 
   @override

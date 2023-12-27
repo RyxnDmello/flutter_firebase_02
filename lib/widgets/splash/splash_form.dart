@@ -7,6 +7,7 @@ import '../../models/account_model.dart';
 import '../../models/weather_model.dart';
 
 import '../common/warning_snack_bar.dart';
+import '../common/loading_indicator.dart';
 
 import './form/splash_form_input.dart';
 import './form/splash_form_button.dart';
@@ -28,6 +29,10 @@ class _SplashFormState extends State<SplashForm> {
     if (!_formKey.currentState!.validate()) return;
     _formKey.currentState!.save();
 
+    loadingIndicator(
+      context: context,
+    );
+
     await accountManager.updateLocation(
       location: _location!,
     );
@@ -44,11 +49,14 @@ class _SplashFormState extends State<SplashForm> {
         icon: Icons.wifi_off_sharp,
       );
 
+      _closeLoadingIndicator();
       return;
     }
 
+    _closeLoadingIndicator();
+
     _openHomeScreen(
-      account: account,
+      account: account!,
       weather: weather,
     );
   }
@@ -94,6 +102,10 @@ class _SplashFormState extends State<SplashForm> {
         icon: icon,
       ),
     );
+  }
+
+  void _closeLoadingIndicator() {
+    Navigator.of(context).pop();
   }
 
   @override

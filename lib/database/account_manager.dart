@@ -113,10 +113,12 @@ class _AccountManager {
     return true;
   }
 
-  Future<AccountModel> account() async {
+  Future<AccountModel?> account() async {
     final accountDoc = await _account!.get().then(
           (doc) => doc.data() as Map,
         );
+
+    if (accountDoc["location"] == null) return null;
 
     return AccountModel(
       email: accountDoc["email"],

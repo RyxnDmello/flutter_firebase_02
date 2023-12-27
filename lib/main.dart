@@ -35,10 +35,7 @@ class MyApp extends StatelessWidget {
           }
 
           accountManager.initializeFirebase();
-
-          return const SplashScreen(
-            isLogin: false,
-          );
+          return const SplashScreen();
         },
       ),
     );
