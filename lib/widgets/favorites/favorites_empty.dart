@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FavoritesEmpty extends StatelessWidget {
   const FavoritesEmpty({
-    required this.onTapSearch,
+    required this.onSearch,
     required this.message,
+    required this.label,
     required this.image,
     super.key,
   });
 
-  final void Function() onTapSearch;
+  final void Function() onSearch;
   final String message;
+  final String label;
   final String image;
 
   @override
@@ -23,10 +24,10 @@ class FavoritesEmpty extends StatelessWidget {
         Image.asset(
           image,
           fit: BoxFit.cover,
-          width: 125,
+          width: 180,
         ),
         const SizedBox(
-          height: 25,
+          height: 30,
         ),
         Text(
           message,
@@ -34,37 +35,45 @@ class FavoritesEmpty extends StatelessWidget {
             fontWeight: FontWeight.w500,
             color: Colors.white,
             letterSpacing: 1,
-            fontSize: 18,
+            fontSize: 20,
+            height: 1,
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
-        ElevatedButton.icon(
-          onPressed: onTapSearch,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromARGB(255, 0, 0, 150),
-            padding: const EdgeInsets.symmetric(
-              horizontal: 60,
-              vertical: 12,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton.icon(
+              onPressed: onSearch,
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.only(
+                  bottom: 8.5,
+                  top: 8.5,
+                ),
+                backgroundColor: const Color.fromARGB(255, 0, 0, 150),
+                foregroundColor: const Color.fromARGB(255, 0, 0, 255),
+              ),
+              icon: const Icon(
+                Icons.place_outlined,
+                color: Colors.white,
+                size: 25,
+              ),
+              label: Text(
+                label,
+                style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                  letterSpacing: 0.65,
+                  fontSize: 20,
+                  height: 1,
+                ),
+              ),
             ),
-          ),
-          icon: const FaIcon(
-            FontAwesomeIcons.magnifyingGlass,
-            color: Colors.white,
-            size: 16,
-          ),
-          label: Text(
-            "Explore Places",
-            style: GoogleFonts.montserrat(
-              fontWeight: FontWeight.w500,
-              color: Colors.white,
-              letterSpacing: 0.65,
-              fontSize: 18,
-              height: 1,
-            ),
-          ),
-        ),
+          ],
+        )
       ],
     );
   }

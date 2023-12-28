@@ -135,6 +135,43 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Widget content = SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const FavoritesHeader(
+            image: "./lib/images/favorites/location.png",
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          FavoritesList(
+            favorites: _favorites,
+            onExplore: _exploreWeather,
+            onRemove: _removeFavorite,
+          ),
+        ],
+      ),
+    );
+
+    if (_favorites.isEmpty) {
+      content = SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 150,
+        ),
+        child: FavoritesEmpty(
+          image: "./lib/images/favorites/empty.png",
+          message: "YOU HAVE NO SAVED PLACES",
+          label: "Explore The World",
+          onSearch: _openSearchScreen,
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 0, 20),
       appBar: AppBar(
@@ -150,34 +187,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         ),
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const FavoritesHeader(
-              image: "./lib/images/favorites/location.png",
-            ),
-            SizedBox(
-              height: _favorites.isNotEmpty ? 50 : 120,
-            ),
-            if (_favorites.isEmpty)
-              FavoritesEmpty(
-                image: "./lib/images/favorites/empty.png",
-                onTapSearch: _openSearchScreen,
-                message: "NO PLACES SAVED",
-              ),
-            if (_favorites.isNotEmpty)
-              FavoritesList(
-                favorites: _favorites,
-                onExplore: _exploreWeather,
-                onRemove: _removeFavorite,
-              ),
-          ],
-        ),
-      ),
+      body: content,
     );
   }
 }

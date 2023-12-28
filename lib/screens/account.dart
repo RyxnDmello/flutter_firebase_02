@@ -33,7 +33,6 @@ class _AccountScreenState extends State<AccountScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _isProfileChanged = false;
   bool _isUsernameChanged = false;
-  bool _isPasswordChanged = false;
   bool _isLocationChanged = false;
   String? _profileAvatar;
   String? _profileImage;
@@ -76,13 +75,11 @@ class _AccountScreenState extends State<AccountScreen> {
       return;
     }
 
-    _isPasswordChanged = _password!.isNotEmpty && _oldPassword!.isNotEmpty;
-
     loadingIndicator(
       context: context,
     );
 
-    if (_isPasswordChanged) {
+    if (_password!.isNotEmpty && _oldPassword!.isNotEmpty) {
       final isSuccessful = await accountManager.updatePassword(
         currentEmail: widget.account.email,
         currentPassword: _oldPassword!,
@@ -117,11 +114,6 @@ class _AccountScreenState extends State<AccountScreen> {
       await accountManager.updateUsername(
         username: _username!,
       );
-    }
-
-    if (_isPasswordChanged) {
-      await accountManager.signOut();
-      return;
     }
 
     await widget.updateAccount();
@@ -268,7 +260,6 @@ class _AccountScreenState extends State<AccountScreen> {
 
     _formKey.currentState!.reset();
     _isUsernameChanged = false;
-    _isPasswordChanged = false;
     _isLocationChanged = false;
     _isProfileChanged = false;
   }

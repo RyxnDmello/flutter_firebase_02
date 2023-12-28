@@ -7,7 +7,6 @@ import '../../database/account_manager.dart';
 
 import '../common/avatars_modal.dart';
 import '../common/warning_snack_bar.dart';
-import '../common/loading_indicator.dart';
 
 import './form/register_form_title.dart';
 import './form/register_form_profile.dart';
@@ -24,7 +23,7 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
-
+  bool _isAuthenticating = false;
   bool _isLogin = false;
   File? _profileImage;
   String? _profileAvatar;
@@ -45,10 +44,7 @@ class _RegisterFormState extends State<RegisterForm> {
     }
 
     _formKey.currentState!.save();
-
-    loadingIndicator(
-      context: context,
-    );
+    _toggleAuthenticationIndicator();
 
     if (_isLogin) {
       final isLogged = await accountManager.loginAccount(
@@ -62,6 +58,7 @@ class _RegisterFormState extends State<RegisterForm> {
           icon: Icons.error_outline,
         );
 
+        _toggleAuthenticationIndicator();
         return;
       }
 
@@ -82,6 +79,7 @@ class _RegisterFormState extends State<RegisterForm> {
         icon: Icons.error_outline,
       );
 
+      _toggleAuthenticationIndicator();
       return;
     }
   }
@@ -193,6 +191,10 @@ class _RegisterFormState extends State<RegisterForm> {
     Navigator.of(context).pop();
   }
 
+  void _toggleAuthenticationIndicator() {
+    setState(() => _isAuthenticating = !_isAuthenticating);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -251,6 +253,7 @@ class _RegisterFormState extends State<RegisterForm> {
             RegisterFormButton(
               onSubmitForm: _submitForm,
               label: _isLogin ? "Login" : "Create Account",
+              isAuthenticating: _isAuthenticating,
             ),
             const SizedBox(
               height: 20,
